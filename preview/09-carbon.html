@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1200">
+<title>Parcel — Carbon Edition (Dark Variant)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Syne:wght@400..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="parcel-preview.css">
+<style>
+  /*
+   * CARBON EDITION PALETTE — all-dark variant.
+   * Parcel makes this a 5-minute palette swap: override the
+   * --wp--preset--color-- custom properties only. The structural CSS,
+   * spacing system, typography scale, and component library are inherited
+   * unchanged. This demonstrates the theme's flexibility for brands that
+   * skew dark — think premium spirits, luxury food, black-label products.
+   *
+   * Key changes:
+   *   parcel-cream  → deep carbon page base (was warm off-white)
+   *   parcel-linen  → dark charcoal section band (was warm off-white)
+   *   parcel-carbon → near-white text (inverted from dark text)
+   *   parcel-charcoal → lighter grey text (inverted)
+   *   parcel-rule   → subtle dark rule
+   *   Orange is preserved — it reads as fire against the dark background,
+   *   stronger than it does on the light palette.
+   */
+  :root {
+    --wp--preset--color--parcel-carbon:       #f0ece6;
+    --wp--preset--color--parcel-charcoal:     #c8c2ba;
+    --wp--preset--color--parcel-slate:        #8a8480;
+    --wp--preset--color--parcel-mist:         #5c5854;
+    --wp--preset--color--parcel-linen:        #1e1c1a;
+    --wp--preset--color--parcel-cream:        #131210;
+    --wp--preset--color--parcel-orange:       #e8622a;
+    --wp--preset--color--parcel-orange-tint:  #2a1a10;
+    --wp--preset--color--parcel-rule:         #2a2826;
+  }
+</style>
+</head>
+<body>
+<div class="parcel-site">
+
+  <!-- Dark header — cream rule and inverted type  -->
+  <header class="parcel-site-header parcel-site-header--dark" style="border-bottom-color:rgba(240,236,230,0.08);">
+    <div style="display:flex; flex-direction:column; gap:0.15rem;">
+      <a class="parcel-site-title-link" href="#">Timber &amp; Salt</a>
+      <span class="parcel-site-tagline">Carbon Edition</span>
+    </div>
+    <nav class="parcel-nav">
+      <a href="#">Shop</a>
+      <a href="#">Subscribe</a>
+      <a href="#">Journal</a>
+      <a href="#">About</a>
+      <a href="#" class="parcel-nav-cart">&#9673; Cart (2)</a>
+    </nav>
+  </header>
+
+  <main class="parcel-main">
+
+    <!-- Hero — now even darker against the dark base -->
+    <section class="parcel-hero parcel-section" style="min-height:520px; height:520px; padding-bottom:var(--wp--preset--spacing--10); display:flex; flex-direction:column; justify-content:flex-end; background:linear-gradient(135deg, #0c0b0a 0%, #1a1814 100%);">
+      <div style="position:absolute; top:0; left:0; width:4px; height:100%; background:var(--wp--preset--color--parcel-orange);"></div>
+      <div class="parcel-constrained" style="padding-left: var(--wp--preset--spacing--6);">
+        <p class="parcel-eyebrow" style="color:rgba(240,236,230,0.35); margin-bottom:var(--wp--preset--spacing--4);">Black Label · June 2026</p>
+        <h1 style="color:#f0ece6; font-size:clamp(3.5rem, 5vw, 6rem); margin-bottom:var(--wp--preset--spacing--5);">
+          The Black<br>
+          <span style="color:var(--wp--preset--color--parcel-orange);">Box Edition.</span>
+        </h1>
+        <p style="font-family:var(--wp--preset--font-family--outfit); font-size:var(--wp--preset--font-size--lg); font-weight:300; color:rgba(240,236,230,0.55); max-width:44ch; line-height:1.55; margin-bottom:var(--wp--preset--spacing--8);">
+          Premium small-batch provisions in matte black packaging. The Carbon Edition ships the same products in a different register.
+        </p>
+        <div style="display:flex; gap:var(--wp--preset--spacing--4); flex-wrap:wrap;">
+          <a href="#" class="parcel-btn">Subscribe — $48/mo</a>
+          <a href="#" class="parcel-btn-ghost">See What's Inside &darr;</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust strip — reads on dark background -->
+    <div class="parcel-trust-strip parcel-band--linen" style="padding:var(--wp--preset--spacing--5) var(--wp--preset--spacing--6); border-top-color:var(--wp--preset--color--parcel-rule); border-bottom-color:var(--wp--preset--color--parcel-rule);">
+      <div class="parcel-trust-item">
+        <svg class="parcel-trust-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.44.91-5.32L2.27 6.62l5.34-.78L10 1z"/></svg>
+        <span>4.9 stars · 2,400+ subscribers</span>
+      </div>
+      <div class="parcel-trust-item">
+        <svg class="parcel-trust-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9 12l-3-3 1.41-1.42L9 9.17l5.59-5.58L16 5l-7 7z"/><path d="M10 18a8 8 0 110-16 8 8 0 010 16z"/></svg>
+        <span>Pause or cancel anytime</span>
+      </div>
+      <div class="parcel-trust-item">
+        <svg class="parcel-trust-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M4 3h12a2 2 0 012 2v3H2V5a2 2 0 012-2zM2 10h16v7a2 2 0 01-2 2H4a2 2 0 01-2-2v-7z"/></svg>
+        <span>Free shipping on all boxes</span>
+      </div>
+      <div class="parcel-trust-item">
+        <svg class="parcel-trust-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10 2a8 8 0 100 16A8 8 0 0010 2zm0 14a6 6 0 110-12 6 6 0 010 12zm1-9H9v4l3.5 2.1.75-1.23L11 10.5V7z"/></svg>
+        <span>Ships within 2 business days</span>
+      </div>
+    </div>
+
+    <!-- Featured products — dark ground, cream cards -->
+    <section class="parcel-band--cream parcel-section">
+      <div class="parcel-section-inner">
+        <div class="parcel-section-header" style="margin-bottom:var(--wp--preset--spacing--6);">
+          <h2 class="parcel-eyebrow" style="color:var(--wp--preset--color--parcel-charcoal);">June Provisions</h2>
+          <a href="#" style="font-family:var(--wp--preset--font-family--outfit); font-size:var(--wp--preset--font-size--xs); color:var(--wp--preset--color--parcel-mist); letter-spacing:0.06em; text-decoration:none;">Full Shop &rarr;</a>
+        </div>
+        <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:var(--wp--preset--spacing--5);">
+          <div class="parcel-product-card" style="background:var(--wp--preset--color--parcel-linen); border-color:var(--wp--preset--color--parcel-rule);">
+            <div class="parcel-product-card-img" style="aspect-ratio:4/3; background:linear-gradient(135deg, #2a2826, #1e1c1a);">
+              <span class="parcel-product-card-img-label" style="color:rgba(240,236,230,0.3);">Olive Oil</span>
+            </div>
+            <div class="parcel-product-card-body">
+              <p class="parcel-cat-label">Oils &amp; Vinegars</p>
+              <div class="parcel-product-card-title">Burnished Garlic Oil</div>
+              <p class="parcel-product-card-desc">Cold-pressed Okanagan extra virgin, 48-hour garlic infusion. The foundation of the pantry.</p>
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-top:auto; padding-top:var(--wp--preset--spacing--4);">
+                <div class="parcel-product-card-price">$24</div>
+                <a href="#" class="parcel-btn" style="padding:0.5rem 1rem; font-size:var(--wp--preset--font-size--2xs);">Add</a>
+              </div>
+            </div>
+          </div>
+          <div class="parcel-product-card" style="background:var(--wp--preset--color--parcel-linen); border-color:var(--wp--preset--color--parcel-rule);">
+            <div class="parcel-product-card-img" style="aspect-ratio:4/3; background:linear-gradient(135deg, #2a2826, #1e1c1a);">
+              <span class="parcel-product-card-img-label" style="color:rgba(240,236,230,0.3);">Mustard</span>
+            </div>
+            <div class="parcel-product-card-body">
+              <p class="parcel-cat-label">Condiments</p>
+              <div class="parcel-product-card-title">Heritage Grain Mustard</div>
+              <p class="parcel-product-card-desc">Stone-ground, birch-barrel fermented for eight weeks. Sharp and irreplaceable.</p>
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-top:auto; padding-top:var(--wp--preset--spacing--4);">
+                <div class="parcel-product-card-price">$18</div>
+                <a href="#" class="parcel-btn" style="padding:0.5rem 1rem; font-size:var(--wp--preset--font-size--2xs);">Add</a>
+              </div>
+            </div>
+          </div>
+          <div class="parcel-product-card" style="background:var(--wp--preset--color--parcel-linen); border-color:var(--wp--preset--color--parcel-rule);">
+            <div class="parcel-product-card-img" style="aspect-ratio:4/3; background:linear-gradient(135deg, #2a2826, #1e1c1a);">
+              <span class="parcel-product-card-img-label" style="color:rgba(240,236,230,0.3);">Salt</span>
+            </div>
+            <div class="parcel-product-card-body">
+              <p class="parcel-cat-label">Spices &amp; Salts</p>
+              <div class="parcel-product-card-title">Smoked Sea Salt</div>
+              <p class="parcel-product-card-desc">Pacific flake, cold-smoked over alder wood. The definitive finishing salt.</p>
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-top:auto; padding-top:var(--wp--preset--spacing--4);">
+                <div class="parcel-product-card-price">$16</div>
+                <a href="#" class="parcel-btn" style="padding:0.5rem 1rem; font-size:var(--wp--preset--font-size--2xs);">Add</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Subscribe CTA on dark background -->
+    <section class="parcel-band--linen parcel-section">
+      <div class="parcel-section-inner" style="text-align:center; max-width:640px; margin-inline:auto;">
+        <p class="parcel-eyebrow" style="color:var(--wp--preset--color--parcel-orange); margin-bottom:var(--wp--preset--spacing--5);">The Monthly Box</p>
+        <h2 style="color:var(--wp--preset--color--parcel-carbon); margin-bottom:var(--wp--preset--spacing--5);">Get the whole collection<br>for $48/month</h2>
+        <p style="font-size:var(--wp--preset--font-size--base); color:var(--wp--preset--color--parcel-slate); margin-bottom:var(--wp--preset--spacing--8); line-height:1.65;">
+          Six curated provisions every month. Free shipping. Skip or cancel whenever you want.
+        </p>
+        <a href="#" class="parcel-btn">Start Your Subscription</a>
+      </div>
+    </section>
+
+    <!-- Palette note -->
+    <section class="parcel-band--orange-tint parcel-section-sm">
+      <div class="parcel-section-inner">
+        <p class="parcel-eyebrow" style="margin-bottom:var(--wp--preset--spacing--4); color:var(--wp--preset--color--parcel-orange);">About This Palette</p>
+        <p style="font-family:var(--wp--preset--font-family--outfit); font-size:var(--wp--preset--font-size--base); line-height:1.7; color:var(--wp--preset--color--parcel-charcoal); max-width:65ch;">
+          <strong>Carbon Edition</strong> — parcel-cream: #131210 · parcel-linen: #1e1c1a · parcel-carbon: #f0ece6. This palette inverts the light/dark contrast while preserving the orange accent unchanged. Five CSS custom property overrides in <code>theme.json</code>. No template, pattern, or structural changes required.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="parcel-site-footer" style="background:#0c0b0a; border-top:1px solid rgba(240,236,230,0.06);">
+    <div class="parcel-footer-inner">
+      <div class="parcel-footer-top">
+        <div>
+          <div class="parcel-footer-brand-name">Timber &amp; Salt</div>
+          <p class="parcel-footer-brand-desc">Small-batch pantry provisions, curated monthly and shipped to your door.</p>
+        </div>
+        <div>
+          <div class="parcel-footer-col-label">Shop</div>
+          <nav class="parcel-footer-links">
+            <a href="#">Monthly Box</a>
+            <a href="#">Pantry Staples</a>
+            <a href="#">Gift Boxes</a>
+          </nav>
+        </div>
+        <div>
+          <div class="parcel-footer-col-label">Company</div>
+          <nav class="parcel-footer-links">
+            <a href="#">Our Story</a>
+            <a href="#">Makers</a>
+            <a href="#">Journal</a>
+          </nav>
+        </div>
+        <div>
+          <div class="parcel-footer-col-label">Support</div>
+          <nav class="parcel-footer-links">
+            <a href="#">Manage Subscription</a>
+            <a href="#">Shipping &amp; Returns</a>
+            <a href="#">Contact</a>
+          </nav>
+        </div>
+      </div>
+      <div class="parcel-footer-bottom">
+        <span>&copy; 2026 Timber &amp; Salt</span>
+        <span>Built with WordPress &amp; <a href="https://thisismyurl.com/parcel/">Parcel</a></span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>

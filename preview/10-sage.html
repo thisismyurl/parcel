@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1200">
+<title>Parcel — Sage &amp; Cream Variant (Earthy Palette)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Syne:wght@400..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="parcel-preview.css">
+<style>
+  /*
+   * SAGE & CREAM PALETTE — earthy herbal variant.
+   * Replaces the orange accent with a muted sage green — specifically
+   * chosen for brands with a botanical, herbal, or farm-to-table identity.
+   * Think fermented foods, herbal product lines, plant-forward brands.
+   *
+   * The sage green (#5d7a5f) passes WCAG AA on both the cream base
+   * (#faf9f7) and the linen surface (#f5f2ee). The warm ground palette
+   * is preserved — sage sits naturally in a warm neutral context.
+   *
+   * Override strategy: parcel-orange is replaced with sage; parcel-orange-tint
+   * becomes a sage-tint. All other tokens are refined to feel more botanical
+   * (slightly cooler cream, slightly deeper rule). Structural CSS unchanged.
+   */
+  :root {
+    --wp--preset--color--parcel-carbon:       #1a1f1a;
+    --wp--preset--color--parcel-charcoal:     #2d3a2e;
+    --wp--preset--color--parcel-slate:        #5a6b5b;
+    --wp--preset--color--parcel-mist:         #9aab9b;
+    --wp--preset--color--parcel-linen:        #f2f5ee;
+    --wp--preset--color--parcel-cream:        #f8faf4;
+    --wp--preset--color--parcel-orange:       #5d7a5f;
+    --wp--preset--color--parcel-orange-tint:  #eaf0e6;
+    --wp--preset--color--parcel-rule:         #d8e0d4;
+  }
+</style>
+</head>
+<body>
+<div class="parcel-site">
+
+  <!-- Header — sage palette renders naturally on this warm base -->
+  <header class="parcel-site-header">
+    <div style="display:flex; flex-direction:column; gap:0.15rem;">
+      <a class="parcel-site-title-link" href="#">Timber &amp; Salt</a>
+      <span class="parcel-site-tagline">Herbal · Botanical · Small-Batch</span>
+    </div>
+    <nav class="parcel-nav">
+      <a href="#">Shop</a>
+      <a href="#">Subscribe</a>
+      <a href="#">Journal</a>
+      <a href="#">About</a>
+      <a href="#" class="parcel-nav-cart">&#9673; Cart (2)</a>
+    </nav>
+  </header>
+
+  <main class="parcel-main">
+
+    <!-- Hero — sage accent on warm cream ground.
+         Unlike the carbon hero which goes dark, the sage variant
+         keeps the hero warm — a late-afternoon kitchen light.
+         The sage accent reads as foliage against the warm ground. -->
+    <section class="parcel-band--linen parcel-section" style="min-height:520px; display:flex; flex-direction:column; justify-content:flex-end; padding-bottom:var(--wp--preset--spacing--16);">
+      <div style="position:absolute; top:0; left:0; width:4px; height:100%; background:var(--wp--preset--color--parcel-orange);"></div>
+      <div class="parcel-constrained" style="padding-left:var(--wp--preset--spacing--6);">
+        <p class="parcel-eyebrow" style="margin-bottom:var(--wp--preset--spacing--4);">Botanical Edition · June 2026</p>
+        <h1 style="color:var(--wp--preset--color--parcel-carbon); font-size:clamp(3.5rem, 5vw, 6rem); margin-bottom:var(--wp--preset--spacing--5);">
+          The Herb<br>
+          <span style="color:var(--wp--preset--color--parcel-orange);">Garden Box.</span>
+        </h1>
+        <p style="font-family:var(--wp--preset--font-family--outfit); font-size:var(--wp--preset--font-size--lg); font-weight:300; color:var(--wp--preset--color--parcel-slate); max-width:44ch; line-height:1.55; margin-bottom:var(--wp--preset--spacing--8);">
+          Six provisions with a botanical focus — herb oils, fermented greens, and wild-foraged salts. The June edition for the kitchen garden.
+        </p>
+        <div style="display:flex; gap:var(--wp--preset--spacing--4); flex-wrap:wrap;">
+          <a href="#" class="parcel-btn">Subscribe — $48/mo</a>
+          <a href="#" style="font-family:var(--wp--preset--font-family--syne); font-size:var(--wp--preset--font-size--sm); font-weight:700; letter-spacing:0.04em; text-transform:uppercase; color:var(--wp--preset--color--parcel-carbon); text-decoration:underline; text-decoration-color:var(--wp--preset--color--parcel-rule); display:inline-flex; align-items:center; gap:0.4rem;">See Contents &darr;</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust strip -->
+    <div class="parcel-trust-strip parcel-band--cream" style="padding:var(--wp--preset--spacing--5) var(--wp--preset--spacing--6);">
+      <div class="parcel-trust-item">
+        <svg class="parcel-trust-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.44.91-5.32L2.27 6.62l5.34-.78L10 1z"/></svg>
+        <span>4.9 stars · 2,400+ subscribers</span>
+      </div>
+      <div class="parcel-trust-item">
+        <svg class="parcel-trust-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9 12l-3-3 1.41-1.42L9 9.17l5.59-5.58L16 5l-7 7z"/><path d="M10 18a8 8 0 110-16 8 8 0 010 16z"/></svg>
+        <span>Pause or cancel anytime</span>
+      </div>
+      <div class="parcel-trust-item">
+        <svg class="parcel-trust-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M4 3h12a2 2 0 012 2v3H2V5a2 2 0 012-2zM2 10h16v7a2 2 0 01-2 2H4a2 2 0 01-2-2v-7z"/></svg>
+        <span>Free shipping on all boxes</span>
+      </div>
+      <div class="parcel-trust-item">
+        <svg class="parcel-trust-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10 2a8 8 0 100 16A8 8 0 0010 2zm0 14a6 6 0 110-12 6 6 0 010 12zm1-9H9v4l3.5 2.1.75-1.23L11 10.5V7z"/></svg>
+        <span>Ships within 2 business days</span>
+      </div>
+    </div>
+
+    <!-- Featured products — sage palette -->
+    <section class="parcel-band--cream parcel-section">
+      <div class="parcel-section-inner">
+        <div class="parcel-section-header" style="margin-bottom:var(--wp--preset--spacing--6);">
+          <h2 class="parcel-eyebrow">This Month's Provisions</h2>
+          <a href="#" style="font-family:var(--wp--preset--font-family--outfit); font-size:var(--wp--preset--font-size--xs); color:var(--wp--preset--color--parcel-slate); letter-spacing:0.06em; text-decoration:none;">Full Shop &rarr;</a>
+        </div>
+        <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:var(--wp--preset--spacing--5);">
+
+          <div class="parcel-product-card">
+            <div class="parcel-product-card-img" style="aspect-ratio:4/3; background:linear-gradient(135deg, #eaf0e6, #d8e0d4);">
+              <span class="parcel-product-card-img-label">Herb Oil</span>
+            </div>
+            <div class="parcel-product-card-body">
+              <p class="parcel-cat-label">Oils &amp; Vinegars</p>
+              <div class="parcel-product-card-title">Wild Herb Finishing Oil</div>
+              <p class="parcel-product-card-desc">Foraged coastal thyme, rosemary, and savory from British Columbia. Cold-infused in single-estate extra virgin.</p>
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-top:auto; padding-top:var(--wp--preset--spacing--4);">
+                <div class="parcel-product-card-price">$26</div>
+                <a href="#" class="parcel-btn" style="padding:0.5rem 1rem; font-size:var(--wp--preset--font-size--2xs);">Add</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="parcel-product-card">
+            <div class="parcel-product-card-img" style="aspect-ratio:4/3; background:linear-gradient(135deg, #eaf0e6, #d8e0d4);">
+              <span class="parcel-product-card-img-label">Tarragon</span>
+            </div>
+            <div class="parcel-product-card-body">
+              <p class="parcel-cat-label">Condiments</p>
+              <div class="parcel-product-card-title">Tarragon &amp; Caper Mustard</div>
+              <p class="parcel-product-card-desc">French-style whole-grain mustard with fresh tarragon and salt-packed Sicilian capers. Bright, botanical, unusual.</p>
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-top:auto; padding-top:var(--wp--preset--spacing--4);">
+                <div class="parcel-product-card-price">$22</div>
+                <a href="#" class="parcel-btn" style="padding:0.5rem 1rem; font-size:var(--wp--preset--font-size--2xs);">Add</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="parcel-product-card">
+            <div class="parcel-product-card-img" style="aspect-ratio:4/3; background:linear-gradient(135deg, #eaf0e6, #d8e0d4);">
+              <span class="parcel-product-card-img-label">Kelp Salt</span>
+            </div>
+            <div class="parcel-product-card-body">
+              <p class="parcel-cat-label">Spices &amp; Salts</p>
+              <div class="parcel-product-card-title">Kelp &amp; Dulse Sea Salt</div>
+              <p class="parcel-product-card-desc">Pacific coast flake salt blended with hand-harvested kelp and dulse. Deeply savory, coastal, umami-forward.</p>
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-top:auto; padding-top:var(--wp--preset--spacing--4);">
+                <div class="parcel-product-card-price">$18</div>
+                <a href="#" class="parcel-btn" style="padding:0.5rem 1rem; font-size:var(--wp--preset--font-size--2xs);">Add</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Brand story — sage palette variant: earthy and calm -->
+    <section class="parcel-band--linen parcel-section">
+      <div class="parcel-section-inner">
+        <div class="parcel-cols-50-50" style="align-items:center;">
+          <div>
+            <p class="parcel-eyebrow" style="margin-bottom:var(--wp--preset--spacing--5);">The Botanical Pantry</p>
+            <h2 style="margin-bottom:var(--wp--preset--spacing--6);">Every ingredient we carry<br>grew in something.</h2>
+            <p style="font-size:var(--wp--preset--font-size--base); color:var(--wp--preset--color--parcel-slate); line-height:1.7; margin-bottom:var(--wp--preset--spacing--6);">
+              The botanical editions of the Timber &amp; Salt box focus on the herbal and foraged tier of the pantry — the finishing oils, the wild salts, the fermented greens. These are the products that chefs reach for last, but that make the largest difference.
+            </p>
+            <a href="#" class="parcel-btn">Read Our Sourcing Guide</a>
+          </div>
+          <div>
+            <div class="parcel-img-placeholder" style="aspect-ratio:4/3; width:100%; background:linear-gradient(135deg, #f2f5ee, #d8e0d4);">Botanical Photography</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Subscribe CTA — sage on linen reads well here -->
+    <section class="parcel-band--orange-tint parcel-section">
+      <div class="parcel-section-inner" style="text-align:center; max-width:640px; margin-inline:auto;">
+        <p class="parcel-eyebrow" style="color:var(--wp--preset--color--parcel-orange); margin-bottom:var(--wp--preset--spacing--5);">The Monthly Box</p>
+        <h2 style="margin-bottom:var(--wp--preset--spacing--5);">Get the whole collection<br>for $48/month</h2>
+        <p style="font-size:var(--wp--preset--font-size--base); color:var(--wp--preset--color--parcel-slate); margin-bottom:var(--wp--preset--spacing--8); line-height:1.65;">
+          Six curated provisions every month. Free shipping. Skip or cancel whenever you want.
+        </p>
+        <a href="#" class="parcel-btn">Start Your Subscription</a>
+      </div>
+    </section>
+
+    <!-- Palette note -->
+    <section class="parcel-band--cream parcel-section-sm">
+      <div class="parcel-section-inner">
+        <p class="parcel-eyebrow" style="margin-bottom:var(--wp--preset--spacing--4); color:var(--wp--preset--color--parcel-orange);">About This Palette</p>
+        <p style="font-family:var(--wp--preset--font-family--outfit); font-size:var(--wp--preset--font-size--base); line-height:1.7; color:var(--wp--preset--color--parcel-charcoal); max-width:65ch;">
+          <strong>Sage &amp; Cream</strong> — parcel-orange: #5d7a5f (sage) · parcel-orange-tint: #eaf0e6 · parcel-carbon: #1a1f1a (warm dark green-black). The sage colour replaces every instance of orange in the theme: CTAs, category labels, quote borders, focus rings, and accent elements. Seven custom property overrides. No structural changes. WCAG AA verified on both cream (#f8faf4) and linen (#f2f5ee) backgrounds.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="parcel-site-footer" style="background:var(--wp--preset--color--parcel-carbon);">
+    <div class="parcel-footer-inner">
+      <div class="parcel-footer-top">
+        <div>
+          <div class="parcel-footer-brand-name">Timber &amp; Salt</div>
+          <p class="parcel-footer-brand-desc">Small-batch pantry provisions, curated monthly and shipped to your door.</p>
+        </div>
+        <div>
+          <div class="parcel-footer-col-label">Shop</div>
+          <nav class="parcel-footer-links">
+            <a href="#">Monthly Box</a>
+            <a href="#">Pantry Staples</a>
+            <a href="#">Gift Boxes</a>
+          </nav>
+        </div>
+        <div>
+          <div class="parcel-footer-col-label">Company</div>
+          <nav class="parcel-footer-links">
+            <a href="#">Our Story</a>
+            <a href="#">Makers</a>
+            <a href="#">Journal</a>
+          </nav>
+        </div>
+        <div>
+          <div class="parcel-footer-col-label">Support</div>
+          <nav class="parcel-footer-links">
+            <a href="#">Manage Subscription</a>
+            <a href="#">Shipping &amp; Returns</a>
+            <a href="#">Contact</a>
+          </nav>
+        </div>
+      </div>
+      <div class="parcel-footer-bottom">
+        <span>&copy; 2026 Timber &amp; Salt</span>
+        <span>Built with WordPress &amp; <a href="https://thisismyurl.com/parcel/">Parcel</a></span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>

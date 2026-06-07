@@ -1,0 +1,273 @@
+/* =====================================================================
+   [SKIN] Parcel — DTC product brand theme.
+   Layer order: reset (core) → base (core) → skin (here) → utilities.
+   ===================================================================== */
+
+@layer skin {
+
+/* ── CSS custom properties ───────────────────────────────────────────── */
+:root {
+	--parcel-manifest-font: 'Outfit', ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, monospace;
+	--parcel-card-radius:   0px;
+	--cl-focus-ring:        var(--wp--preset--color--parcel-orange);
+	--cl-focus-ring-inverse:var(--wp--preset--color--parcel-cream);
+	--cl-skip-bg:           var(--wp--preset--color--parcel-carbon);
+	--cl-skip-fg:           var(--wp--preset--color--parcel-cream);
+}
+
+/* ── Site header ─────────────────────────────────────────────────────── */
+.parcel-site-header {
+	position: sticky;
+	top: 0;
+	z-index: 100;
+	background-color: var(--wp--preset--color--parcel-cream);
+	border-block-end: 1px solid var(--wp--preset--color--parcel-rule);
+}
+
+/* ── Hero section ────────────────────────────────────────────────────── */
+.parcel-main > .parcel-hero-query > .wp-block-query {
+	min-block-size: 90dvh;
+}
+
+.parcel-hero {
+	min-block-size: 90dvh;
+	display: grid;
+	grid-template-columns: 55fr 45fr;
+	align-items: center;
+	gap: 0;
+	max-inline-size: var(--wp--style--global--wide-size);
+	margin-inline: auto;
+	padding-inline: var(--wp--preset--spacing--8);
+}
+
+.parcel-hero__content {
+	padding-block: var(--wp--preset--spacing--16);
+	padding-inline-end: var(--wp--preset--spacing--12);
+}
+
+.parcel-hero__image {
+	height: 100%;
+	min-block-size: 90dvh;
+}
+
+.parcel-hero__image .wp-block-post-featured-image,
+.parcel-hero__image .wp-block-post-featured-image img {
+	height: 100%;
+	min-block-size: 90dvh;
+	object-fit: cover;
+	object-position: center;
+}
+
+@media (max-width: 767px) {
+	.parcel-hero {
+		grid-template-columns: 1fr;
+		min-block-size: auto;
+		padding-inline: var(--wp--preset--spacing--5);
+	}
+	.parcel-hero__image {
+		min-block-size: 60vw;
+	}
+	.parcel-hero__image .wp-block-post-featured-image,
+	.parcel-hero__image .wp-block-post-featured-image img {
+		min-block-size: 60vw;
+	}
+	.parcel-hero__content {
+		padding-inline-end: 0;
+		order: 2;
+	}
+	.parcel-hero__image { order: 1; }
+}
+
+/* ── Story cards ─────────────────────────────────────────────────────── */
+.parcel-story-card {
+	background-color: var(--wp--preset--color--parcel-cream);
+	border: 1px solid var(--wp--preset--color--parcel-rule);
+	overflowI: hidden;
+	transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	.parcel-story-card:hover {
+		box-shadow: var(--wp--preset--shadow--card-raised);
+		transform: translateY(-2px);
+	}
+}
+
+.parcel-category-label,
+.parcel-story-card .wp-block-post-terms {
+	text-transform: uppercase;
+	letter-spacing: 0.12em;
+	font-weight: 600;
+	color: var(--wp--preset--color--parcel-orange);
+	font-size: var(--wp--preset--font-size--2xs);
+}
+
+/* ── Block style: product card ───────────────────────────────────────── */
+.is-style-parcel-product-card {
+	background-color: var(--wp--preset--color--parcel-cream);
+	border: 1px solid var(--wp--preset--color--parcel-rule);
+	overflow: hidden;
+	transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	.is-style-parcel-product-card:hover {
+		box-shadow: 0 6px 24px rgba(28, 28, 28, 0.14);
+		transform: translateY(-2px);
+	}
+}
+
+/* ── Block style: pricing card ───────────────────────────────────────── */
+.is-style-parcel-pricing-card {
+	background-color: var(--wp--preset--color--parcel-orange-tint);
+	border: 2px solid var(--wp--preset--color--parcel-orange);
+	padding: var(--wp--preset--spacing--8);
+}
+
+/* ── Block style: eyebrow label ─────────────────────────────────────── */
+.is-style-parcel-eyebrow {
+	text-transform: uppercase;
+	letter-spacing: 0.12em;
+	font-weight: 700;
+	font-size: var(--wp--preset--font-size--2xs);
+	color: var(--wp--preset--color--parcel-orange);
+}
+
+/* ── Block style: price display ─────────────────────────────────────── */
+.is-style-parcel-price-display {
+	font-weight: 800;
+	line-height: 1.0;
+	letter-spacing: -0.03em;
+	color: var(--wp--preset--color--parcel-orange);
+}
+
+/* ── Block style: order manifest list ───────────────────────────────── */
+.is-style-parcel-manifest {
+	font-family: var(--parcel-manifest-font);
+	font-size: var(--wp--preset--font-size--2xs);
+	letter-spacing: 0.04em;
+	line-height: 2;
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+.is-style-parcel-manifest li {
+	border-block-end: 1px solid var(--wp--preset--color--parcel-rule);
+	padding-block: var(--wp--preset--spacing--2);
+}
+
+/* ── Features row ────────────────────────────────────────────────────── */
+.parcel-features-section {
+	background-color: var(--wp--preset--color--parcel-linen);
+}
+
+/* ── Subscription CTA band ───────────────────────────────────────────── */
+.parcel-subscription-cta {
+	background-color: var(--wp--preset--color--parcel-orange);
+	color: var(--wp--preset--color--parcel-cream);
+}
+
+.parcel-subscription-cta h2,
+.parcel-subscription-cta h3,
+.parcel-subscription-cta h4 {
+	color: var(--wp--preset--color--parcel-cream);
+}
+
+.parcel-subscription-cta p {
+	color: var(--wp--preset--color--parcel-cream);
+}
+
+.parcel-subscription-cta .wp-block-button__link {
+	background-color: var(--wp--preset--color--parcel-cream) !important;
+	color: var(--wp--preset--color--parcel-orange) !important;
+}
+
+.parcel-subscription-cta .wp-block-button.is-style-outline .wp-block-button__link {
+	background-color: transparent !important;
+	color: var(--wp--preset--color--parcel-cream) !important;
+	border-color: var(--wp--preset--color--parcel-cream) !important;
+}
+
+/* ── Review wall ─────────────────────────────────────────────────────── */
+.parcel-review-wall {
+	background-color: var(--wp--preset--color--parcel-cream);
+}
+
+.parcel-review-card,
+.is-style-parcel-review-card {
+	background-color: var(--wp--preset--color--parcel-linen);
+	border-inline-start: 4px solid var(--wp--preset--color--parcel-orange);
+	padding: var(--wp--preset--spacing--6);
+}
+
+/* ── Site footer ─────────────────────────────────────────────────────── */
+.parcel-footer-top {
+	background-color: var(--wp--preset--color--parcel-linen);
+}
+
+.parcel-footer-bottom,
+.parcel-site-footer .parcel-footer-legal {
+	background-color: var(--wp--preset--color--parcel-carbon);
+	color: var(--wp--preset--color--parcel-mist);
+}
+
+.parcel-footer-legal a {
+	color: var(--wp--preset--color--parcel-mist);
+	text-decoration: none;
+}
+
+.parcel-footer-legal a:hover {
+	color: var(--wp--preset--color--parcel-cream);
+}
+
+.parcel-copyright,
+.parcel-credit {
+	color: var(--wp--preset--color--parcel-mist);
+	font-size: var(--wp--preset--font-size--2xs);
+}
+
+/* ── Archive ─────────────────────────────────────────────────────────── */
+.parcel-archive-header {
+	padding-block-end: var(--wp--preset--spacing--8);
+	border-block-end: 1px solid var(--wp--preset--color--parcel-rule);
+	margin-block-end: var(--wp--preset--spacing--10);
+}
+
+.parcel-pagination {
+	margin-block-start: var(--wp--preset--spacing--12);
+}
+
+/* ── Post meta ───────────────────────────────────────────────────────── */
+.parcel-post-meta {
+	border-block: 1px solid var(--wp--preset--color--parcel-rule);
+	padding-block: var(--wp--preset--spacing--3);
+	margin-block: var(--wp--preset--spacing--6);
+	gap: var(--wp--preset--spacing--3);
+}
+
+/* ── Focus styles ────────────────────────────────────────────────────── */
+:focus-visible {
+	outline: 2px solid var(--cl-focus-ring);
+	outline-offset: 3px;
+}
+
+.parcel-site-footer :focus-visible {
+	outline-color: var(--cl-focus-ring-inverse);
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────── */
+@media (max-width: 767px) {
+	.parcel-features-row .wp-block-columns {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (max-width: 479px) {
+	.parcel-features-row .wp-block-columns {
+		grid-template-columns: 1fr;
+	}
+}
+
+} /* end @layer skin */

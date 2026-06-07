@@ -1,0 +1,176 @@
+# Copyright (C) 2026 Christopher Ross
+# This file is distributed under the same license as the Parcel package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Parcel 1.6148\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/parcel\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-06-04T00:00:00+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.x\n"
+"X-Domain: parcel\n"
+
+#. Theme Name of the theme
+msgid "Parcel"
+msgstr ""
+
+#. Theme URI of the theme
+msgid "https://thisismyurl.com/parcel/"
+msgstr ""
+
+#. Description of the theme
+msgid "A conversion-focused product theme for direct-to-consumer brands that ship."
+msgstr ""
+
+#. Author of the theme
+msgid "Christopher Ross"
+msgstr ""
+
+#. Author URI of the theme
+msgid "https://thisismyurl.com/"
+msgstr ""
+
+#: inc/setup.php
+msgid "Primary Navigation"
+msgstr ""
+
+#: inc/setup.php
+msgid "Footer Navigation"
+msgstr ""
+
+#: inc/setup.php
+msgid "Social Links"
+msgstr ""
+
+#: inc/bindings.php
+msgid "Copyright line"
+msgstr ""
+
+#: inc/bindings.php
+msgid "Footer credit line"
+msgstr ""
+
+#: inc/bindings.php
+#. translators: 1: four-digit year, 2: site title.
+msgid "© %1$s %2$s. All rights reserved."
+msgstr ""
+
+#: inc/bindings.php
+#. translators: %s: linked theme name.
+msgid "Built with the %s theme."
+msgstr ""
+
+#: inc/skin.php
+msgid "Product Card"
+msgstr ""
+
+#: inc/skin.php
+msgid "Feature Strip"
+msgstr ""
+
+#: inc/skin.php
+msgid "Pricing Tier"
+msgstr ""
+
+#: inc/skin.php
+msgid "Review Card"
+msgstr ""
+
+#: inc/skin.php
+msgid "Badge"
+msgstr ""
+
+#: inc/skin.php
+msgid "Primary CTA"
+msgstr ""
+
+#: inc/skin.php
+msgid "Unboxing"
+msgstr ""
+
+#: inc/skin.php
+msgid "Parcel: Hero"
+msgstr ""
+
+#: inc/skin.php
+msgid "Product hero sections and unboxing reveals."
+msgstr ""
+
+#: inc/skin.php
+msgid "Parcel: Features"
+msgstr ""
+
+#: inc/skin.php
+msgid "Product feature highlights and benefit strips."
+msgstr ""
+
+#: inc/skin.php
+msgid "Parcel: Pricing"
+msgstr ""
+
+#: inc/skin.php
+msgid "Pricing tiers, subscription plans, and offer blocks."
+msgstr ""
+
+#: inc/skin.php
+msgid "Parcel: Social Proof"
+msgstr ""
+
+#: inc/skin.php
+msgid "Customer reviews, testimonials, and trust badges."
+msgstr ""
+
+#: inc/skin.php
+msgid "Parcel: Calls to Action"
+msgstr ""
+
+#: inc/skin.php
+msgid "Conversion CTA and subscription sign-up patterns."
+msgstr ""
+
+#: inc/admin.php
+#. translators: %s: theme name.
+msgid "Welcome to %s."
+msgstr ""
+
+#: inc/admin.php
+msgid "Thanks for giving it a home. A few small steps will have your site reading the way it should."
+msgstr ""
+
+#: inc/admin.php
+#. translators: %s: theme name.
+msgid "Set up %s →"
+msgstr ""
+
+#: inc/admin.php
+msgid "Dismiss"
+msgstr ""
+
+#: inc/admin.php
+msgid "You do not have permission to do that."
+msgstr ""
+
+#: inc/admin.php
+#. translators: %s: theme name.
+msgid "%s: Get started"
+msgstr ""
+
+#: inc/admin.php
+msgid "Set up"
+msgstr ""
+
+#: inc/admin.php
+msgid "Optimize"
+msgstr ""
+
+#: inc/admin.php
+msgid "The footer credit"
+msgstr ""
+
+#: inc/admin.php
+msgid "For developers"
+msgstr ""

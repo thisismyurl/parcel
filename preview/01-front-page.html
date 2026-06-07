@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1200">
+<title>Parcel — Front Page (WP.org Screenshot)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Syne:wght@400..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="parcel-preview.css">
+<style>
+  /* WP.org 1200×900 crop constraint:
+     header ~68px + hero 490px + product strip ~342px = 900px total.
+     The hero div is locked at exactly 490px so the screenshot captures
+     the right slice for the WP.org submission thumbnail. */
+  .parcel-hero { min-height: 490px; height: 490px; }
+</style>
+</head>
+<body>
+<div class="parcel-site">
+
+  <!-- Header — cream ground, separator rule -->
+  <header class="parcel-site-header">
+    <div style="display:flex; flex-direction:column; gap:0.15rem;">
+      <a class="parcel-site-title-link" href="#">Timber &amp; Salt</a>
+      <span class="parcel-site-tagline">Artisan Pantry · Small-Batch Provisions</span>
+    </div>
+    <nav class="parcel-nav">
+      <a href="#">Shop</a>
+      <a href="#">Subscribe</a>
+      <a href="#">Journal</a>
+      <a href="#">About</a>
+      <a href="#" class="parcel-nav-cart">&#9673; Cart (2)</a>
+    </nav>
+  </header>
+
+  <main class="parcel-main">
+
+    <!-- Unboxing Hero — dark carbon surface with orange accent text.
+         The "unboxing hero" is Parcel's signature section: a dark-ground
+         hero that simulates the product-on-surface photography DTC brands
+         use. The orange headline pops against carbon. No other WP theme
+         section is named for the act of receiving a delivery. -->
+    <section class="parcel-hero parcel-section" style="padding-bottom: var(--wp--preset--spacing--10); padding-top: var(--wp--preset--spacing--10); display:flex; flex-direction:column; justify-content:flex-end;">
+
+      <!-- Decorative orange accent bar — top-left brand signal -->
+      <div style="position:absolute; top:0; left:0; width:4px; height:100%; background:var(--wp--preset--color--parcel-orange);"></div>
+
+      <div class="parcel-constrained" style="padding-left: var(--wp--preset--spacing--6);">
+
+        <!-- Eyebrow — edition label -->
+        <p class="parcel-eyebrow" style="color:rgba(250,249,247,0.5); margin-bottom:var(--wp--preset--spacing--4);">June 2026 Edition</p>
+
+        <!-- Hero heading — Syne 800, white on carbon -->
+        <h1 style="color:var(--wp--preset--color--parcel-cream); font-size: clamp(3.5rem, 5vw, 6rem); margin-bottom:var(--wp--preset--spacing--5);">
+          The Box<br>
+          <span style="color:var(--wp--preset--color--parcel-orange);">Arrived.</span>
+        </h1>
+
+        <!-- Sub-headline -->
+        <p style="font-family:var(--wp--preset--font-family--outfit); font-size:var(--wp--preset--font-size--lg); font-weight:300; color:rgba(250,249,247,0.7); max-width:44ch; line-height:1.55; margin-bottom:var(--wp--preset--spacing--8);">
+          Six small-batch pantry provisions, sourced from artisan makers across the continent. Curated monthly. Delivered to your door.
+        </p>
+
+        <!-- Hero CTAs -->
+        <div style="display:flex; gap:var(--wp--preset--spacing--4); flex-wrap:wrap;">
+          <a href="#" class="parcel-btn">Subscribe — $48/mo</a>
+          <a href="#" class="parcel-btn-ghost">See What's Inside &darr;</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Trust strip — below hero, above product cards.
+         Social proof signals in a single ruled row. This compact format
+         keeps the WP.org 900px crop tight. -->
+    <div class="parcel-trust-strip parcel-band--cream" style="padding:var(--wp--preset--spacing--5) var(--wp--preset--spacing--6);">
+      <div class="parcel-trust-item">
+        <svg class="parcel-trust-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.44.91-5.32L2.27 6.62l5.34-.78L10 1z"/></svg>
+        <span>4.9 out of 5 — 2,400+ subscribers</span>
+      </div>
+      <div class="parcel-trust-item">
+        <svg class="parcel-trust-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10 2a8 8 0 100 16A8 8 0 0010 2zm0 14a6 6 0 110-12 6 6 0 010 12zm1-9H9v4l3.5 2.1.75-1.23L11 10.5V7z"/></svg>
+        <span>Ships within 2 business days</span>
+      </div>
+      <div class="parcel-trust-item">
+        <svg class="parcel-trust-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9 12l-3-3 1.41-1.42L9 9.17l5.59-5.58L16 5l-7 7z"/><path d="M10 18a8 8 0 110-16 8 8 0 010 16z"/></svg>
+        <span>Pause or cancel anytime</span>
+      </div>
+      <div class="parcel-trust-item">
+        <svg class="parcel-trust-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M4 3h12a2 2 0 012 2v3H2V5a2 2 0 012-2zM2 10h16v7a2 2 0 01-2 2H4a2 2 0 01-2-2v-7z"/></svg>
+        <span>Free shipping on all boxes</span>
+      </div>
+    </div>
+
+    <!-- Featured Products — 3-up strip.
+         The WP.org crop ends at approximately 900px; this section is
+         deliberately compact so three product cards are visible in the
+         submission screenshot without cropping. -->
+    <section class="parcel-band--linen parcel-section-sm" style="padding-top:var(--wp--preset--spacing--8);">
+      <div class="parcel-section-inner">
+
+        <div class="parcel-section-header" style="margin-bottom:var(--wp--preset--spacing--6);">
+          <h2 class="parcel-eyebrow" style="color:var(--wp--preset--color--parcel-charcoal);">This Month's Provisions</h2>
+          <a href="#" style="font-family:var(--wp--preset--font-family--outfit); font-size:var(--wp--preset--font-size--xs); color:var(--wp--preset--color--parcel-slate); letter-spacing:0.06em; text-decoration:none;">Full Shop &rarr;</a>
+        </div>
+
+        <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:var(--wp--preset--spacing--5);">
+
+          <!-- Product card 1 -->
+          <div class="parcel-product-card">
+            <div class="parcel-product-card-img" style="aspect-ratio:4/3;">
+              <span class="parcel-product-card-img-label">Olive Oil</span>
+            </div>
+            <div class="parcel-product-card-body">
+              <p class="parcel-cat-label">Featured Provision</p>
+              <div class="parcel-product-card-title">Burnished Garlic Oil</div>
+              <p class="parcel-product-card-desc">Cold-pressed extra virgin from a single grove in the Okanagan. Slow-roasted garlic infused for 48 hours.</p>
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-top:auto;">
+                <div class="parcel-product-card-price">$24</div>
+                <a href="#" class="parcel-btn" style="padding:0.5rem 1rem; font-size:var(--wp--preset--font-size--2xs);">Add to Cart</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product card 2 -->
+          <div class="parcel-product-card">
+            <div class="parcel-product-card-img" style="aspect-ratio:4/3;">
+              <span class="parcel-product-card-img-label">Mustard</span>
+            </div>
+            <div class="parcel-product-card-body">
+              <p class="parcel-cat-label">Featured Provision</p>
+              <div class="parcel-product-card-title">Heritage Grain Mustard</div>
+              <p class="parcel-product-card-desc">Whole-seed mustard from stone-ground heritage grains. Fermented eight weeks in birch barrels. Sharp and complex.</p>
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-top:auto;">
+                <div class="parcel-product-card-price">$18</div>
+                <a href="#" class="parcel-btn" style="padding:0.5rem 1rem; font-size:var(--wp--preset--font-size--2xs);">Add to Cart</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product card 3 -->
+          <div class="parcel-product-card">
+            <div class="parcel-product-card-img" style="aspect-ratio:4/3;">
+              <span class="parcel-product-card-img-label">Salt</span>
+            </div>
+            <div class="parcel-product-card-body">
+              <p class="parcel-cat-label">Featured Provision</p>
+              <div class="parcel-product-card-title">Smoked Sea Salt</div>
+              <p class="parcel-product-card-desc">Hand-harvested flake salt from the Pacific coast, cold-smoked over alder wood. Finishing quality.</p>
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-top:auto;">
+                <div class="parcel-product-card-price">$16</div>
+                <a href="#" class="parcel-btn" style="padding:0.5rem 1rem; font-size:var(--wp--preset--font-size--2xs);">Add to Cart</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="parcel-site-footer">
+    <div class="parcel-footer-inner">
+      <div class="parcel-footer-top">
+        <div>
+          <div class="parcel-footer-brand-name">Timber &amp; Salt</div>
+          <p class="parcel-footer-brand-desc">Small-batch pantry provisions, curated monthly and shipped to your door. Free shipping on every box.</p>
+        </div>
+        <div>
+          <div class="parcel-footer-col-label">Shop</div>
+          <nav class="parcel-footer-links">
+            <a href="#">Monthly Box</a>
+            <a href="#">Pantry Staples</a>
+            <a href="#">Gift Boxes</a>
+            <a href="#">All Products</a>
+          </nav>
+        </div>
+        <div>
+          <div class="parcel-footer-col-label">Company</div>
+          <nav class="parcel-footer-links">
+            <a href="#">Our Story</a>
+            <a href="#">Makers</a>
+            <a href="#">Journal</a>
+            <a href="#">Wholesale</a>
+          </nav>
+        </div>
+        <div>
+          <div class="parcel-footer-col-label">Support</div>
+          <nav class="parcel-footer-links">
+            <a href="#">Manage Subscription</a>
+            <a href="#">Shipping &amp; Returns</a>
+            <a href="#">FAQ</a>
+            <a href="#">Contact</a>
+          </nav>
+        </div>
+      </div>
+      <div class="parcel-footer-bottom">
+        <span>&copy; 2026 Timber &amp; Salt</span>
+        <span>Built with WordPress &amp; <a href="https://thisismyurl.com/parcel/">Parcel</a></span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>

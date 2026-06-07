@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1440">
+<title>Parcel — Product Detail Page</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Syne:wght@400..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="parcel-preview.css">
+</head>
+<body>
+<div class="parcel-site">
+
+  <header class="parcel-site-header">
+    <div style="display:flex; flex-direction:column; gap:0.15rem;">
+      <a class="parcel-site-title-link" href="#">Timber &amp; Salt</a>
+      <span class="parcel-site-tagline">Artisan Pantry · Small-Batch Provisions</span>
+    </div>
+    <nav class="parcel-nav">
+      <a href="#">Shop</a>
+      <a href="#">Subscribe</a>
+      <a href="#">Journal</a>
+      <a href="#">About</a>
+      <a href="#" class="parcel-nav-cart">&#9673; Cart (2)</a>
+    </nav>
+  </header>
+
+  <main class="parcel-main">
+
+    <!-- Breadcrumb -->
+    <section class="parcel-band--linen parcel-section-sm" style="padding-top:var(--wp--preset--spacing--5); padding-bottom:var(--wp--preset--spacing--5);">
+      <div class="parcel-section-inner">
+        <p style="font-family:var(--wp--preset--font-family--outfit); font-size:var(--wp--preset--font-size--xs); color:var(--wp--preset--color--parcel-mist); letter-spacing:0.04em;">
+          <a href="#" style="color:var(--wp--preset--color--parcel-mist);">Shop</a>
+          <span style="margin-inline:0.5rem;">›</span>
+          <a href="#" style="color:var(--wp--preset--color--parcel-mist);">Oils &amp; Vinegars</a>
+          <span style="margin-inline:0.5rem;">›</span>
+          <span style="color:var(--wp--preset--color--parcel-slate);">Burnished Garlic Oil</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- Product hero — two-column: product image + product info -->
+    <section class="parcel-band--cream parcel-section">
+      <div class="parcel-section-inner">
+        <div class="parcel-cols-50-50" style="align-items:start;">
+
+          <!-- Product image -->
+          <div>
+            <div class="parcel-img-placeholder" style="aspect-ratio:1; width:100%; font-size:var(--wp--preset--font-size--sm);">
+              Product Photography<br>
+              <span style="font-size:0.75em; font-weight:400; opacity:0.6;">Burnished Garlic Oil · 250ml</span>
+            </div>
+            <!-- Thumbnail strip -->
+            <div style="display:flex; gap:var(--wp--preset--spacing--3); margin-top:var(--wp--preset--spacing--4);">
+              <div class="parcel-img-placeholder" style="width:80px; height:80px; flex-shrink:0;">Detail</div>
+              <div class="parcel-img-placeholder" style="width:80px; height:80px; flex-shrink:0;">Pour</div>
+              <div class="parcel-img-placeholder" style="width:80px; height:80px; flex-shrink:0;">Label</div>
+              <div class="parcel-img-placeholder" style="width:80px; height:80px; flex-shrink:0;">Maker</div>
+            </div>
+          </div>
+
+          <!-- Product info -->
+          <div style="display:flex; flex-direction:column; gap:var(--wp--preset--spacing--5);">
+
+            <!-- Category + title -->
+            <div>
+              <p class="parcel-cat-label" style="margin-bottom:var(--wp--preset--spacing--3);">Oils &amp; Vinegars</p>
+              <h1 style="font-size:var(--wp--preset--font-size--4xl); margin-bottom:var(--wp--preset--spacing--4);">Burnished<br>Garlic Oil</h1>
+              <p style="font-family:var(--wp--preset--font-family--outfit); font-size:var(--wp--preset--font-size--base); color:var(--wp--preset--color--parcel-slate); line-height:1.65;">
+                Cold-pressed extra virgin from a single-estate grove in the Okanagan Valley. Slow-roasted whole garlic cloves infused at low temperature for 48 hours. Rich, mellow, and deeply aromatic — without the sharpness of raw garlic.
+              </p>
+            </div>
+
+            <!-- Price + volume selector -->
+            <div style="padding:var(--wp--preset--spacing--5) 0; border-top:1px solid var(--wp--preset--color--parcel-rule); border-bottom:1px solid var(--wp--preset--color--parcel-rule);">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:var(--wp--preset--spacing--5);">
+                <div>
+                  <div class="parcel-pricing-price" style="font-size:var(--wp--preset--font-size--3xl);">
+                    <sup>$</sup>24
+                    <span style="font-size:var(--wp--preset--font-size--sm); font-weight:400; color:var(--wp--preset--color--parcel-slate); letter-spacing:0; text-transform:none; font-family:var(--wp--preset--font-family--outfit);">&nbsp;/ 250ml</span>
+                  </div>
+                  <p style="font-family:var(--wp--preset--font-family--outfit); font-size:var(--wp--preset--font-size--xs); color:var(--wp--preset--color--parcel-mist); margin-top:var(--wp--preset--spacing--1);">Free shipping on orders over $65</p>
+                </div>
+                <!-- Volume selector pills -->
+                <div style="display:flex; gap:var(--wp--preset--spacing--2);">
+                  <button style="padding:0.4rem 0.85rem; border:2px solid var(--wp--preset--color--parcel-carbon); background:var(--wp--preset--color--parcel-carbon); color:var(--wp--preset--color--parcel-cream); font-family:var(--wp--preset--font-family--outfit); font-size:var(--wp--preset--font-size--xs); font-weight:600; cursor:pointer;">250ml</button>
+                  <button style="padding:0.4rem 0.85rem; border:1px solid var(--wp--preset--color--parcel-rule); background:transparent; color:var(--wp--preset--color--parcel-slate); font-family:var(--wp--preset--font-family--outfit); font-size:var(--wp--preset--font-size--xs); font-weight:600; cursor:pointer;">500ml</button>
+                  <button style="padding:0.4rem 0.85rem; border:1px solid var(--wp--preset--color--parcel-rule); background:transparent; color:var(--wp--preset--color--parcel-slate); font-family:var(--wp--preset--font-family--outfit); font-size:var(--wp--preset--font-size--xs); font-weight:600; cursor:pointer;">1L</button>
+                </div>
+              </div>
+
+              <!-- Quantity + Add to Cart -->
+              <div style="display:flex; gap:var(--wp--preset--spacing--4); align-items:center;">
+                <div style="display:flex; align-items:center; border:1px solid var(--wp--preset--color--parcel-rule);">
+                  <button style="width:40px; height:40px; background:none; border:none; font-size:1.2rem; cursor:pointer; color:var(--wp--preset--color--parcel-carbon);">−</button>
+                  <span style="width:40px; text-align:center; font-family:var(--wp--preset--font-family--syne); font-weight:700;">1</span>
+                  <button style="width:40px; height:40px; background:none; border:none; font-size:1.2rem; cursor:pointer; color:var(--wp--preset--color--parcel-carbon);">+</button>
+                </div>
+                <a href="#" class="parcel-btn" style="flex:1; text-align:center;">Add to Cart</a>
+              </div>
+            </div>
+
+            <!-- Box manifest — Parcel's signature feature.
+                 The "What's in the box" component, showing the monthly
+                 subscription contents in the DTC packing-slip format. -->
+            <div class="parcel-box-manifest">
+              <div class="parcel-box-manifest-header">
+                <div class="parcel-box-manifest-title">June Box Contents</div>
+                <div class="parcel-box-manifest-count">6 Provisions</div>
+              </div>
+              <div class="parcel-box-manifest-item">
+                <span class="parcel-box-manifest-item-name">Burnished Garlic Oil</span>
+                <span class="parcel-box-manifest-item-origin">Okanagan, BC</span>
+              </div>
+              <div class="parcel-box-manifest-item">
+                <span class="parcel-box-manifest-item-name">Heritage Grain Mustard</span>
+                <span class="parcel-box-manifest-item-origin">Prince Edward Island</span>
+              </div>
+              <div class="parcel-box-manifest-item">
+                <span class="parcel-box-manifest-item-name">Smoked Sea Salt</span>
+                <span class="parcel-box-manifest-item-origin">Haida Gwaii, BC</span>
+              </div>
+              <div class="parcel-box-manifest-item">
+                <span class="parcel-box-manifest-item-name">Wild Honey, Dark Buckwheat</span>
+                <span class="parcel-box-manifest-item-origin">Niagara Region, ON</span>
+              </div>
+              <div class="parcel-box-manifest-item">
+                <span class="parcel-box-manifest-item-name">Fermented Hot Sauce</span>
+                <span class="parcel-box-manifest-item-origin">Sonoma County, CA</span>
+              </div>
+              <div class="parcel-box-manifest-item" style="border-bottom:none;">
+                <span class="parcel-box-manifest-item-name">Aged Sherry Vinegar</span>
+                <span class="parcel-box-manifest-item-origin">Jerez de la Frontera, ES</span>
+              </div>
+            </div>
+
+            <!-- Subscribe prompt -->
+            <div style="background:var(--wp--preset--color--parcel-orange-tint); padding:var(--wp--preset--spacing--5); display:flex; justify-content:space-between; align-items:center; gap:var(--wp--preset--spacing--4);">
+              <div>
+                <p class="parcel-eyebrow" style="color:var(--wp--preset--color--parcel-orange); margin-bottom:0.25rem;">Subscribe &amp; Save 15%</p>
+                <p style="font-size:var(--wp--preset--font-size--sm); color:var(--wp--preset--color--parcel-charcoal);">Get this in your monthly box. Pause or cancel anytime.</p>
+              </div>
+              <a href="#" class="parcel-btn" style="white-space:nowrap; flex-shrink:0;">Subscribe $48/mo</a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Product features — three rows -->
+    <section class="parcel-band--linen parcel-section">
+      <div class="parcel-section-inner">
+
+        <div class="parcel-section-header">
+          <h2 style="font-size:var(--wp--preset--font-size--2xl);">What Makes It Different</h2>
+        </div>
+
+        <div class="parcel-cols-50-50">
+
+          <div>
+            <div class="parcel-feature-row">
+              <div class="parcel-feature-icon">&#127807;</div>
+              <div>
+                <div class="parcel-feature-heading">Single-Estate Sourcing</div>
+                <p class="parcel-feature-text">Every bottle comes from one grove, one harvest, one producer. We know their names. We've been to the farm.</p>
+              </div>
+            </div>
+            <div class="parcel-feature-row">
+              <div class="parcel-feature-icon">&#9201;</div>
+              <div>
+                <div class="parcel-feature-heading">48-Hour Cold Infusion</div>
+                <p class="parcel-feature-text">Slow-roasted garlic, introduced at harvest temperature, never above 32°C. The result is mellow depth, not sharp bite.</p>
+              </div>
+            </div>
+            <div class="parcel-feature-row" style="border-bottom:none;">
+              <div class="parcel-feature-icon">&#127758;</div>
+              <div>
+                <div class="parcel-feature-heading">No Additives, Ever</div>
+                <p class="parcel-feature-text">Cold-press only. No additives, no preservatives, no colour treatment. The label lists two ingredients: olive oil, garlic.</p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <!-- Maker profile -->
+            <div style="background:var(--wp--preset--color--parcel-cream); padding:var(--wp--preset--spacing--8); border:1px solid var(--wp--preset--color--parcel-rule);">
+              <p class="parcel-eyebrow" style="margin-bottom:var(--wp--preset--spacing--4);">The Maker</p>
+              <div class="parcel-img-placeholder" style="height:200px; margin-bottom:var(--wp--preset--spacing--5);">Maker Portrait</div>
+              <h3 style="font-size:var(--wp--preset--font-size--xl); margin-bottom:var(--wp--preset--spacing--3);">Sanjukta &amp; Marco Ferreira</h3>
+              <p style="font-size:var(--wp--preset--font-size--sm); color:var(--wp--preset--color--parcel-slate); line-height:1.65; margin-bottom:var(--wp--preset--spacing--5);">
+                Second-generation olive growers in the South Okanagan. They converted the family orchard to certified organic in 2011. The garlic oil is a side project that became their most requested product.
+              </p>
+              <p class="parcel-date-label">Peachland, British Columbia · Est. 1978</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Related products -->
+    <section class="parcel-band--cream parcel-section">
+      <div class="parcel-section-inner">
+        <div class="parcel-section-header">
+          <h2 style="font-size:var(--wp--preset--font-size--2xl);">You Might Also Like</h2>
+          <a href="#" style="font-family:var(--wp--preset--font-family--outfit); font-size:var(--wp--preset--font-size--xs); color:var(--wp--preset--color--parcel-slate); letter-spacing:0.06em; text-decoration:none;">All Oils &rarr;</a>
+        </div>
+        <div class="parcel-product-grid">
+          <div class="parcel-product-card">
+            <div class="parcel-product-card-img"><span class="parcel-product-card-img-label">Vinegar</span></div>
+            <div class="parcel-product-card-body">
+              <p class="parcel-cat-label">Oils &amp; Vinegars</p>
+              <div class="parcel-product-card-title">Aged Sherry Vinegar</div>
+              <p class="parcel-product-card-desc">Eight-year barrel aged, from Jerez. Rich, complex, nutty.</p>
+              <div class="parcel-product-card-price">$22</div>
+            </div>
+          </div>
+          <div class="parcel-product-card">
+            <div class="parcel-product-card-img"><span class="parcel-product-card-img-label">Herb Oil</span></div>
+            <div class="parcel-product-card-body">
+              <p class="parcel-cat-label">Oils &amp; Vinegars</p>
+              <div class="parcel-product-card-title">Wild Herb Finishing Oil</div>
+              <p class="parcel-product-card-desc">Foraged thyme, rosemary, and savory from coastal BC.</p>
+              <div class="parcel-product-card-price">$26</div>
+            </div>
+          </div>
+          <div class="parcel-product-card">
+            <div class="parcel-product-card-img"><span class="parcel-product-card-img-label">Honey</span></div>
+            <div class="parcel-product-card-body">
+              <p class="parcel-cat-label">Condiments</p>
+              <div class="parcel-product-card-title">Dark Buckwheat Honey</div>
+              <p class="parcel-product-card-desc">Wild buckwheat from small hives in the Niagara Escarpment.</p>
+              <div class="parcel-product-card-price">$19</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="parcel-site-footer">
+    <div class="parcel-footer-inner">
+      <div class="parcel-footer-top">
+        <div>
+          <div class="parcel-footer-brand-name">Timber &amp; Salt</div>
+          <p class="parcel-footer-brand-desc">Small-batch pantry provisions, curated monthly and shipped to your door.</p>
+        </div>
+        <div>
+          <div class="parcel-footer-col-label">Shop</div>
+          <nav class="parcel-footer-links">
+            <a href="#">Monthly Box</a>
+            <a href="#">Pantry Staples</a>
+            <a href="#">Gift Boxes</a>
+          </nav>
+        </div>
+        <div>
+          <div class="parcel-footer-col-label">Company</div>
+          <nav class="parcel-footer-links">
+            <a href="#">Our Story</a>
+            <a href="#">Makers</a>
+            <a href="#">Journal</a>
+          </nav>
+        </div>
+        <div>
+          <div class="parcel-footer-col-label">Support</div>
+          <nav class="parcel-footer-links">
+            <a href="#">Manage Subscription</a>
+            <a href="#">Shipping &amp; Returns</a>
+            <a href="#">Contact</a>
+          </nav>
+        </div>
+      </div>
+      <div class="parcel-footer-bottom">
+        <span>&copy; 2026 Timber &amp; Salt</span>
+        <span>Built with WordPress &amp; <a href="https://thisismyurl.com/parcel/">Parcel</a></span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>

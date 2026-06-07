@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=375">
+<title>Parcel — Front Page Mobile (375px)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Syne:wght@400..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="parcel-preview.css">
+<style>
+  /* Mobile-specific overrides — the desktop nav collapses to hamburger.
+     Section padding reduces to maintain content density on small screens.
+     The hero still occupies most of the viewport to preserve the brand
+     impact: this is a DTC brand, the hero is the product promise. */
+  .parcel-nav { display: none; }
+  .parcel-hamburger { display: flex; }
+
+  .parcel-section { padding: var(--wp--preset--spacing--10) var(--wp--preset--spacing--4); }
+  .parcel-section-sm { padding: var(--wp--preset--spacing--6) var(--wp--preset--spacing--4); }
+  .parcel-site-header { padding: var(--wp--preset--spacing--4) var(--wp--preset--spacing--4); }
+
+  /* Hero fills ~70% of the viewport height on mobile */
+  .parcel-hero { min-height: 68dvh; }
+
+  /* Trust strip stacks on mobile */
+  .parcel-trust-strip { flex-direction: column; gap: var(--wp--preset--spacing--4); align-items: flex-start; }
+
+  /* Product cards stack single column */
+  .parcel-product-grid-mobile { display: flex; flex-direction: column; gap: var(--wp--preset--spacing--5); }
+  .parcel-product-card { flex-direction: row; }
+  .parcel-product-card-img { width: 100px; flex-shrink: 0; aspect-ratio: 1; }
+
+  /* Footer stacks */
+  .parcel-footer-top { grid-template-columns: 1fr 1fr; gap: var(--wp--preset--spacing--8); }
+  .parcel-footer-bottom { flex-direction: column; gap: var(--wp--preset--spacing--2); }
+</style>
+</head>
+<body>
+<div class="parcel-site">
+
+  <!-- Mobile header: brand + hamburger only -->
+  <header class="parcel-site-header">
+    <a class="parcel-site-title-link" href="#">Timber &amp; Salt</a>
+    <div style="display:flex; align-items:center; gap:var(--wp--preset--spacing--5);">
+      <a href="#" class="parcel-nav-cart" style="font-size:var(--wp--preset--font-size--xs);">&#9673; 2</a>
+      <div class="parcel-hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+
+  <main class="parcel-main">
+
+    <!-- Hero — mobile -->
+    <section class="parcel-hero parcel-section" style="padding-bottom:var(--wp--preset--spacing--8); display:flex; flex-direction:column; justify-content:flex-end;">
+      <div style="position:absolute; top:0; left:0; width:3px; height:100%; background:var(--wp--preset--color--parcel-orange);"></div>
+      <p class="parcel-eyebrow" style="color:rgba(250,249,247,0.45); margin-bottom:var(--wp--preset--spacing--3);">June 2026 Edition</p>
+      <h1 style="color:var(--wp--preset--color--parcel-cream); font-size:var(--wp--preset--font-size--4xl); margin-bottom:var(--wp--preset--spacing--4);">
+        The Box<br>
+        <span style="color:var(--wp--preset--color--parcel-orange);">Arrived.</span>
+      </h1>
+      <p style="font-family:var(--wp--preset--font-family--outfit); font-size:var(--wp--preset--font-size--base); font-weight:300; color:rgba(250,249,247,0.65); line-height:1.55; margin-bottom:var(--wp--preset--spacing--6); max-width:36ch;">
+        Six small-batch pantry provisions. Curated monthly. Delivered to your door.
+      </p>
+      <div style="display:flex; flex-direction:column; gap:var(--wp--preset--spacing--3);">
+        <a href="#" class="parcel-btn" style="text-align:center;">Subscribe — $48/mo</a>
+        <a href="#" class="parcel-btn-ghost" style="text-align:center;">See What's Inside</a>
+      </div>
+    </section>
+
+    <!-- Trust strip — mobile: stacked -->
+    <div class="parcel-trust-strip parcel-band--cream" style="padding:var(--wp--preset--spacing--5) var(--wp--preset--spacing--4);">
+      <div class="parcel-trust-item">
+        <svg class="parcel-trust-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27l-4.77 2.44.91-5.32L2.27 6.62l5.34-.78L10 1z"/></svg>
+        <span>4.9 stars · 2,400+ subscribers</span>
+      </div>
+      <div class="parcel-trust-item">
+        <svg class="parcel-trust-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9 12l-3-3 1.41-1.42L9 9.17l5.59-5.58L16 5l-7 7z"/><path d="M10 18a8 8 0 110-16 8 8 0 010 16z"/></svg>
+        <span>Pause or cancel anytime</span>
+      </div>
+      <div class="parcel-trust-item">
+        <svg class="parcel-trust-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M4 3h12a2 2 0 012 2v3H2V5a2 2 0 012-2zM2 10h16v7a2 2 0 01-2 2H4a2 2 0 01-2-2v-7z"/></svg>
+        <span>Free shipping on all boxes</span>
+      </div>
+    </div>
+
+    <!-- Featured provisions — mobile: stacked rows -->
+    <section class="parcel-band--linen parcel-section-sm">
+      <p class="parcel-eyebrow" style="color:var(--wp--preset--color--parcel-charcoal); margin-bottom:var(--wp--preset--spacing--5);">June Provisions</p>
+      <div class="parcel-product-grid-mobile">
+
+        <div class="parcel-product-card">
+          <div class="parcel-product-card-img">
+            <span class="parcel-product-card-img-label" style="font-size:0.6rem;">Oil</span>
+          </div>
+          <div class="parcel-product-card-body" style="padding:var(--wp--preset--spacing--4);">
+            <p class="parcel-cat-label" style="font-size:0.6rem;">Oils &amp; Vinegars</p>
+            <div class="parcel-product-card-title" style="font-size:var(--wp--preset--font-size--base);">Burnished Garlic Oil</div>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-top:var(--wp--preset--spacing--3);">
+              <div class="parcel-product-card-price" style="font-size:var(--wp--preset--font-size--base);">$24</div>
+              <a href="#" class="parcel-btn" style="padding:0.4rem 0.75rem; font-size:0.65rem;">Add</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="parcel-product-card">
+          <div class="parcel-product-card-img">
+            <span class="parcel-product-card-img-label" style="font-size:0.6rem;">Mustard</span>
+          </div>
+          <div class="parcel-product-card-body" style="padding:var(--wp--preset--spacing--4);">
+            <p class="parcel-cat-label" style="font-size:0.6rem;">Condiments</p>
+            <div class="parcel-product-card-title" style="font-size:var(--wp--preset--font-size--base);">Heritage Grain Mustard</div>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-top:var(--wp--preset--spacing--3);">
+              <div class="parcel-product-card-price" style="font-size:var(--wp--preset--font-size--base);">$18</div>
+              <a href="#" class="parcel-btn" style="padding:0.4rem 0.75rem; font-size:0.65rem;">Add</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="parcel-product-card">
+          <div class="parcel-product-card-img">
+            <span class="parcel-product-card-img-label" style="font-size:0.6rem;">Salt</span>
+          </div>
+          <div class="parcel-product-card-body" style="padding:var(--wp--preset--spacing--4);">
+            <p class="parcel-cat-label" style="font-size:0.6rem;">Spices &amp; Salts</p>
+            <div class="parcel-product-card-title" style="font-size:var(--wp--preset--font-size--base);">Smoked Sea Salt</div>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-top:var(--wp--preset--spacing--3);">
+              <div class="parcel-product-card-price" style="font-size:var(--wp--preset--font-size--base);">$16</div>
+              <a href="#" class="parcel-btn" style="padding:0.4rem 0.75rem; font-size:0.65rem;">Add</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Subscribe CTA — mobile -->
+    <section class="parcel-band--carbon parcel-section">
+      <p class="parcel-eyebrow" style="color:rgba(250,249,247,0.4); margin-bottom:var(--wp--preset--spacing--5);">The Monthly Box</p>
+      <h2 style="color:var(--wp--preset--color--parcel-cream); font-size:var(--wp--preset--font-size--3xl); margin-bottom:var(--wp--preset--spacing--5);">
+        Get the whole<br>collection <span style="color:var(--wp--preset--color--parcel-orange);">monthly.</span>
+      </h2>
+      <p style="font-family:var(--wp--preset--font-family--outfit); font-size:var(--wp--preset--font-size--base); font-weight:300; color:rgba(250,249,247,0.65); line-height:1.6; margin-bottom:var(--wp--preset--spacing--8);">
+        Six curated provisions every month. Free shipping. Skip or cancel whenever you want.
+      </p>
+      <a href="#" class="parcel-btn" style="display:block; text-align:center; width:100%;">Subscribe — $48/month</a>
+    </section>
+
+    <!-- Journal teaser — mobile -->
+    <section class="parcel-band--linen parcel-section-sm">
+      <p class="parcel-eyebrow" style="margin-bottom:var(--wp--preset--spacing--5);">From the Journal</p>
+      <article style="border-top:1px solid var(--wp--preset--color--parcel-rule); padding-top:var(--wp--preset--spacing--5); margin-bottom:var(--wp--preset--spacing--5);">
+        <p class="parcel-cat-label" style="margin-bottom:var(--wp--preset--spacing--2);">Sourcing Stories</p>
+        <h3 style="font-size:var(--wp--preset--font-size--lg); margin-bottom:var(--wp--preset--spacing--2);">Why the Garlic Oil Takes 48 Hours</h3>
+        <p style="font-size:var(--wp--preset--font-size--sm); color:var(--wp--preset--color--parcel-slate);">A visit to the Ferreira grove and an education in patience.</p>
+      </article>
+      <article style="border-top:1px solid var(--wp--preset--color--parcel-rule); padding-top:var(--wp--preset--spacing--5);">
+        <p class="parcel-cat-label" style="margin-bottom:var(--wp--preset--spacing--2);">Recipe</p>
+        <h3 style="font-size:var(--wp--preset--font-size--lg); margin-bottom:var(--wp--preset--spacing--2);">Buckwheat Honey Vinaigrette</h3>
+        <p style="font-size:var(--wp--preset--font-size--sm); color:var(--wp--preset--color--parcel-slate);">How to use June's honey in a salad that converts skeptics.</p>
+      </article>
+    </section>
+
+  </main>
+
+  <!-- Footer — mobile -->
+  <footer class="parcel-site-footer" style="padding:var(--wp--preset--spacing--10) var(--wp--preset--spacing--4) var(--wp--preset--spacing--8);">
+    <div>
+      <div class="parcel-footer-brand-name" style="margin-bottom:var(--wp--preset--spacing--3);">Timber &amp; Salt</div>
+      <p class="parcel-footer-brand-desc" style="margin-bottom:var(--wp--preset--spacing--6);">Small-batch pantry provisions, curated monthly.</p>
+      <hr style="border:none; border-top:1px solid rgba(250,249,247,0.1); margin-bottom:var(--wp--preset--spacing--6);">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:var(--wp--preset--spacing--6);">
+        <div>
+          <div class="parcel-footer-col-label" style="margin-bottom:var(--wp--preset--spacing--4);">Shop</div>
+          <nav class="parcel-footer-links">
+            <a href="#">Monthly Box</a>
+            <a href="#">Pantry Staples</a>
+            <a href="#">Gift Boxes</a>
+          </nav>
+        </div>
+        <div>
+          <div class="parcel-footer-col-label" style="margin-bottom:var(--wp--preset--spacing--4);">Support</div>
+          <nav class="parcel-footer-links">
+            <a href="#">My Subscription</a>
+            <a href="#">Shipping</a>
+            <a href="#">Contact</a>
+          </nav>
+        </div>
+      </div>
+      <hr style="border:none; border-top:1px solid rgba(250,249,247,0.1); margin-block:var(--wp--preset--spacing--6);">
+      <div class="parcel-footer-bottom" style="flex-direction:column;">
+        <span>&copy; 2026 Timber &amp; Salt</span>
+        <span>Built with <a href="https://thisismyurl.com/parcel/">Parcel</a></span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
