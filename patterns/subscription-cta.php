@@ -4,6 +4,7 @@
  * Slug: parcel/subscription-cta
  * Categories: parcel-cta
  * Viewport Width: 1280
+ * Inserter: true
  *
  * Full-width orange band — the single high-colour zone. Cream-on-orange headline,
  * price callout, two-button CTA. This earns its intensity by being isolated.

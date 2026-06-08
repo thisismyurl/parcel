@@ -4,6 +4,7 @@
  * Slug: parcel/features-row
  * Categories: parcel-features
  * Viewport Width: 1280
+ * Inserter: true
  *
  * Pattern: Features Row
  *

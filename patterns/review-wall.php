@@ -4,6 +4,7 @@
  * Slug: parcel/review-wall
  * Categories: parcel-social-proof
  * Viewport Width: 1280
+ * Inserter: true
  *
  * Pattern: Review Wall
  *

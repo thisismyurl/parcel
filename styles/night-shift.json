@@ -1,0 +1,117 @@
+{
+  "$schema": "https://schemas.wp.org/wp/6.7/theme.json",
+  "version": 3,
+  "title": "Night Shift",
+  "settings": {
+    "color": {
+      "palette": [
+        {
+          "slug": "parcel-carbon",
+          "color": "#F8F5F0",
+          "name": "Parcel Carbon"
+        },
+        {
+          "slug": "parcel-charcoal",
+          "color": "#D8D0C8",
+          "name": "Parcel Charcoal"
+        },
+        {
+          "slug": "parcel-slate",
+          "color": "#8A8278",
+          "name": "Parcel Slate"
+        },
+        {
+          "slug": "parcel-mist",
+          "color": "#5A5450",
+          "name": "Parcel Mist"
+        },
+        {
+          "slug": "parcel-linen",
+          "color": "#161412",
+          "name": "Parcel Linen"
+        },
+        {
+          "slug": "parcel-cream",
+          "color": "#0C0C0C",
+          "name": "Parcel Cream"
+        },
+        {
+          "slug": "parcel-orange",
+          "color": "#F07030",
+          "name": "Parcel Orange"
+        },
+        {
+          "slug": "parcel-orange-tint",
+          "color": "#201008",
+          "name": "Parcel Orange Tint"
+        },
+        {
+          "slug": "parcel-rule",
+          "color": "#282420",
+          "name": "Parcel Rule"
+        },
+        {
+          "slug": "parcel-ink",
+          "color": "#F0EDE8",
+          "name": "Parcel Ink"
+        },
+        {
+          "slug": "parcel-pearl",
+          "color": "#1C1A18",
+          "name": "Parcel Pearl"
+        },
+        {
+          "slug": "parcel-stone",
+          "color": "#6A6260",
+          "name": "Parcel Stone"
+        }
+      ]
+    },
+    "custom": {
+      "colophon-light": "#0C0C0C",
+      "colophon-dark": "#F0EDE8",
+      "colophon-accent": "#F07030"
+    }
+  },
+  "styles": {
+    "color": {
+      "background": "var(--wp--preset--color--parcel-cream)",
+      "text": "var(--wp--preset--color--parcel-ink)"
+    },
+    "elements": {
+      "heading": {
+        "color": {
+          "text": "var(--wp--preset--color--parcel-carbon)"
+        }
+      },
+      "link": {
+        "color": {
+          "text": "var(--wp--preset--color--parcel-orange)"
+        },
+        ":hover": {
+          "color": {
+            "text": "var(--wp--preset--color--parcel-carbon)"
+          }
+        }
+      },
+      "button": {
+        "color": {
+          "background": "var(--wp--preset--color--parcel-orange)",
+          "text": "var(--wp--preset--color--parcel-cream)"
+        }
+      }
+    },
+    "blocks": {
+      "core/site-title": {
+        "color": {
+          "text": "var(--wp--preset--color--parcel-carbon)"
+        }
+      },
+      "core/navigation": {
+        "color": {
+          "text": "var(--wp--preset--color--parcel-ink)"
+        }
+      }
+    }
+  }
+}

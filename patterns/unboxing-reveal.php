@@ -4,6 +4,7 @@
  * Slug: parcel/unboxing-reveal
  * Categories: parcel-hero
  * Viewport Width: 1280
+ * Inserter: true
  *
  * Two-column layout: left = stacked box photos (closed + open), right = order
  * manifest list + price callout + subscribe CTA. The manifest list uses the

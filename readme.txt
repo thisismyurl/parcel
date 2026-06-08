@@ -5,7 +5,7 @@ Tags: e-commerce, blog, full-site-editing, block-patterns, custom-colors, custom
 Tested up to: 7.0
 Requires at least: 6.7
 Requires PHP: 8.1
-Stable tag: 1.6148
+Stable tag: 1.6148.1706
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -47,6 +47,10 @@ The fonts are bundled — no downloads required. Syne and Outfit are included as
 Parcel is a block theme built for the WordPress Site Editor. Page builders that support the block editor work alongside it; legacy drag-and-drop builders that bypass the block system are not supported.
 
 == Changelog ==
+
+= 1.6148.1706 =
+* Version timestamp suffix added per project versioning scheme.
+* Added explicit Inserter: true header to all patterns.
 
 = 1.6148 =
 * Initial release.

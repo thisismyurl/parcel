@@ -4,6 +4,7 @@
  * Slug: parcel/product-hero
  * Categories: parcel-hero
  * Viewport Width: 1280
+ * Inserter: true
  *
  * Two-column hero: content on the left (55%), product photography on the right (45%).
  * Minimum height 90dvh. No overlay — the product is never obscured.

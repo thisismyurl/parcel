@@ -1,0 +1,62 @@
+{
+  "$schema": "https://schemas.wp.org/wp/6.7/theme.json",
+  "version": 3,
+  "title": "Warehouse",
+  "settings": {
+    "custom": {
+      "colophon-light": "#f0ece6",
+      "colophon-dark": "#2a2420",
+      "colophon-accent": "#e8622a"
+    },
+    "color": {
+      "palette": [
+        {
+          "slug": "parcel-carbon",
+          "color": "#2a2420",
+          "name": "Parcel Carbon"
+        },
+        {
+          "slug": "parcel-charcoal",
+          "color": "#3a3430",
+          "name": "Parcel Charcoal"
+        },
+        {
+          "slug": "parcel-slate",
+          "color": "#7a7068",
+          "name": "Parcel Slate"
+        },
+        {
+          "slug": "parcel-mist",
+          "color": "#b8b0a4",
+          "name": "Parcel Mist"
+        },
+        {
+          "slug": "parcel-linen",
+          "color": "#e0d8cc",
+          "name": "Parcel Linen"
+        },
+        {
+          "slug": "parcel-cream",
+          "color": "#f0ece6",
+          "name": "Parcel Cream"
+        },
+        {
+          "slug": "parcel-orange",
+          "color": "#e8622a",
+          "name": "Parcel Orange"
+        },
+        {
+          "slug": "parcel-orange-tint",
+          "color": "#f5ddd4",
+          "name": "Parcel Orange Tint"
+        }
+      ]
+    }
+  },
+  "styles": {
+    "color": {
+      "background": "var(--wp--preset--color--parcel-linen)",
+      "text": "var(--wp--preset--color--parcel-carbon)"
+    }
+  }
+}
