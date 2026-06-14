@@ -1,7 +1,9 @@
 <!-- wp:group {"className":"parcel-post-meta","metadata":{"name":"Post Meta"},"layout":{"type":"flex","flexWrap":"wrap","verticalAlignment":"center"},"style":{"spacing":{"blockGap":"var:preset|spacing|4"}}} -->
 <div class="wp-block-group parcel-post-meta">
 
-	<!-- wp:post-author {"showAvatar":true,"avatarSize":32,"showBio":false,"byline":"By","isLink":true} /-->
+	<!-- The post-author block omits a hardcoded "byline" prefix so no untranslatable
+	     English ("By") renders; core supplies a translatable byline when set in the editor. -->
+	<!-- wp:post-author {"showAvatar":true,"avatarSize":32,"showBio":false,"isLink":true} /-->
 
 	<!-- wp:post-date {"format":"F j, Y"} /-->
 

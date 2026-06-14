@@ -29,9 +29,11 @@
 	<!-- /wp:group -->
 
 	<!-- RELATED STORIES -->
-	<!-- wp:group {"className":"parcel-related","style":{"spacing":{"padding":{"top":"var:preset|spacing|16","bottom":"var:preset|spacing|16"}},"color":{"background":"var:preset|color|warm-off"}},"layout":{"type":"constrained","contentSize":"1280px"}} -->
-	<div class="wp-block-group parcel-related" style="background-color:var(--wp--preset--color--warm-off)">
-		<!-- wp:heading {"level":3,"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|8"}}}} -->
+	<!-- wp:group {"className":"parcel-related","style":{"spacing":{"padding":{"top":"var:preset|spacing|16","bottom":"var:preset|spacing|16"}},"color":{"background":"var:preset|color|parcel-linen"}},"layout":{"type":"constrained","contentSize":"1280px"}} -->
+	<div class="wp-block-group parcel-related" style="background-color:var(--wp--preset--color--parcel-linen)">
+		<!-- The heading text binds to Parcel's translatable label source (inc/bindings.php)
+		     so "More to Read" travels through the .pot instead of rendering English on every locale. -->
+		<!-- wp:heading {"level":3,"metadata":{"bindings":{"content":{"source":"parcel/label","args":{"key":"related-stories"}}}},"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|8"}}}} -->
 		<h3>More to Read</h3>
 		<!-- /wp:heading -->
 		<!-- wp:query {"queryId":10,"query":{"perPage":3,"postType":"post","order":"desc","orderBy":"date","inherit":false},"layout":{"type":"default"}} -->

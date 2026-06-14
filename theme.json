@@ -47,6 +47,11 @@
           "name": "Parcel Orange"
         },
         {
+          "slug": "parcel-rust",
+          "color": "#b84d1e",
+          "name": "Parcel Rust"
+        },
+        {
           "slug": "parcel-orange-tint",
           "color": "#fdf0ea",
           "name": "Parcel Orange Tint"
@@ -407,7 +412,7 @@
           "textTransform": "uppercase"
         },
         "color": {
-          "text": "var(--wp--preset--color--parcel-mist)"
+          "text": "var(--wp--preset--color--parcel-slate)"
         }
       },
       "link": {
@@ -419,14 +424,14 @@
         },
         ":hover": {
           "color": {
-            "text": "var(--wp--preset--color--parcel-orange)"
+            "text": "var(--wp--preset--color--parcel-rust)"
           }
         }
       },
       "button": {
         "color": {
           "background": "var(--wp--preset--color--parcel-orange)",
-          "text": "var(--wp--preset--color--parcel-cream)"
+          "text": "var(--wp--preset--color--parcel-ink)"
         },
         "typography": {
           "fontFamily": "var(--wp--preset--font-family--syne)",
@@ -472,7 +477,7 @@
           "textTransform": "uppercase"
         },
         "color": {
-          "text": "var(--wp--preset--color--parcel-mist)"
+          "text": "var(--wp--preset--color--parcel-slate)"
         }
       },
       "core/post-terms": {
@@ -483,7 +488,7 @@
           "textTransform": "uppercase"
         },
         "color": {
-          "text": "var(--wp--preset--color--parcel-orange)"
+          "text": "var(--wp--preset--color--parcel-rust)"
         }
       },
       "core/site-title": {
@@ -505,7 +510,7 @@
           "textTransform": "uppercase"
         },
         "color": {
-          "text": "var(--wp--preset--color--parcel-mist)"
+          "text": "var(--wp--preset--color--parcel-slate)"
         }
       },
       "core/navigation": {
@@ -563,7 +568,7 @@
   "customTemplates": [
     {
       "name": "page-blank",
-      "title": "Blank — no header or footer"
+      "title": "Blank canvas — full-bleed main"
     },
     {
       "name": "page-wide",

@@ -34,8 +34,8 @@
 				<!-- wp:paragraph {"style":{"typography":{"fontFamily":"var:preset|font-family|outfit","fontWeight":"700","fontSize":"var:preset|font-size|sm"},"color":{"text":"var:preset|color|parcel-carbon"}}} -->
 				<p style="color:var(--wp--preset--color--parcel-carbon)">Sarah K.</p>
 				<!-- /wp:paragraph -->
-				<!-- wp:paragraph {"style":{"typography":{"fontFamily":"var:preset|font-family|outfit","fontSize":"0.6875rem"},"color":{"text":"var:preset|color|parcel-mist"}}} -->
-				<p style="color:var(--wp--preset--color--parcel-mist)">Subscriber since October 2023</p>
+				<!-- wp:paragraph {"style":{"typography":{"fontFamily":"var:preset|font-family|outfit","fontSize":"0.6875rem"},"color":{"text":"var:preset|color|parcel-slate"}}} -->
+				<p style="color:var(--wp--preset--color--parcel-slate)">Subscriber since October 2023</p>
 				<!-- /wp:paragraph -->
 			</div>
 			<!-- /wp:group -->
@@ -52,8 +52,8 @@
 				<!-- wp:paragraph {"style":{"typography":{"fontFamily":"var:preset|font-family|outfit","fontWeight":"700","fontSize":"var:preset|font-size|sm"},"color":{"text":"var:preset|color|parcel-carbon"}}} -->
 				<p style="color:var(--wp--preset--color--parcel-carbon)">Marcus L.</p>
 				<!-- /wp:paragraph -->
-				<!-- wp:paragraph {"style":{"typography":{"fontFamily":"var:preset|font-family|outfit","fontSize":"0.6875rem"},"color":{"text":"var:preset|color|parcel-mist"}}} -->
-				<p style="color:var(--wp--preset--color--parcel-mist)">Subscriber since January 2024</p>
+				<!-- wp:paragraph {"style":{"typography":{"fontFamily":"var:preset|font-family|outfit","fontSize":"0.6875rem"},"color":{"text":"var:preset|color|parcel-slate"}}} -->
+				<p style="color:var(--wp--preset--color--parcel-slate)">Subscriber since January 2024</p>
 				<!-- /wp:paragraph -->
 			</div>
 			<!-- /wp:group -->
@@ -70,8 +70,8 @@
 				<!-- wp:paragraph {"style":{"typography":{"fontFamily":"var:preset|font-family|outfit","fontWeight":"700","fontSize":"var:preset|font-size|sm"},"color":{"text":"var:preset|color|parcel-carbon"}}} -->
 				<p style="color:var(--wp--preset--color--parcel-carbon)">Priya M.</p>
 				<!-- /wp:paragraph -->
-				<!-- wp:paragraph {"style":{"typography":{"fontFamily":"var:preset|font-family|outfit","fontSize":"0.6875rem"},"color":{"text":"var:preset|color|parcel-mist"}}} -->
-				<p style="color:var(--wp--preset--color--parcel-mist)">Subscriber since June 2023</p>
+				<!-- wp:paragraph {"style":{"typography":{"fontFamily":"var:preset|font-family|outfit","fontSize":"0.6875rem"},"color":{"text":"var:preset|color|parcel-slate"}}} -->
+				<p style="color:var(--wp--preset--color--parcel-slate)">Subscriber since June 2023</p>
 				<!-- /wp:paragraph -->
 			</div>
 			<!-- /wp:group -->

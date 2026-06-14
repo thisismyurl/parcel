@@ -30,9 +30,11 @@ function setup(): void {
 	// CLI rewrites the literal when it generates a theme.
 	load_theme_textdomain( 'parcel', DIR . '/languages' );
 
-	// Fallback content width for oEmbeds in the reading column.
-	// Matches theme.json contentSize (720px).
-	$GLOBALS['content_width'] = 960; // Matches theme.json contentSize (960px).
+	// Fallback content width for oEmbeds in the reading column. Matches
+	// theme.json contentSize (720px), not wideSize (1280px): wide and full
+	// templates set their own group widths in markup, so the reading-column
+	// value is the correct default for an un-aligned embed.
+	$GLOBALS['content_width'] = 720;
 
 	add_theme_support( 'wp-block-styles' );
 	add_theme_support( 'editor-styles' );

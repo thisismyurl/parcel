@@ -1,8 +1,7 @@
 # Files excluded from the WordPress.org distribution zip.
 # The colophon CLI and WP.org deploy tooling both read this file.
 
-# Internal CLI tooling — not for distribution
-inc/github-updater.php
+# WP-CLI command file — operational tooling, not needed in the distributed theme
 inc/cli.php
 
 # Internal tooling manifests
@@ -10,16 +9,11 @@ colophon.json
 .distignore
 
 # Developer tooling
-PILLARS.md
 *.sh
 bin/
 
-# Preview system
-preview/
-
 # Version-control artefacts
 .git
-.github
 .gitignore
 .gitattributes
 

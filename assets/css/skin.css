@@ -113,7 +113,7 @@ body {
 .parcel-story-card {
 	background-color: var(--wp--preset--color--parcel-cream);
 	border: 1px solid var(--wp--preset--color--parcel-rule);
-	overflowI: hidden;
+	overflow: hidden;
 	transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 
@@ -129,7 +129,10 @@ body {
 	text-transform: uppercase;
 	letter-spacing: 0.12em;
 	font-weight: 600;
-	color: var(--wp--preset--color--parcel-orange);
+	/* Pillar 8 (Kodawari): parcel-rust #b84d1e — 4.85:1 on cream, meets WCAG 2.2 AA
+	   at this font-size (2xs / 0.6875rem). parcel-orange #e8622a is kept for non-text
+	   and large-text surfaces; rust carries all normal-size text accent uses. */
+	color: var(--wp--preset--color--parcel-rust);
 	font-size: var(--wp--preset--font-size--2xs);
 }
 
@@ -161,7 +164,10 @@ body {
 	letter-spacing: 0.12em;
 	font-weight: 700;
 	font-size: var(--wp--preset--font-size--2xs);
-	color: var(--wp--preset--color--parcel-orange);
+	/* Pillar 5 (Safe by Default): parcel-rust #b84d1e gives 4.85:1 on cream and
+	   4.57:1 on linen — both clear WCAG 2.2 AA at normal text size. The bright
+	   parcel-orange is reserved for backgrounds, borders, and display-size text. */
+	color: var(--wp--preset--color--parcel-rust);
 }
 
 /* ── Block style: price display ─────────────────────────────────────── */
@@ -211,7 +217,12 @@ body {
 
 .parcel-subscription-cta .wp-block-button__link {
 	background-color: var(--wp--preset--color--parcel-cream) !important;
-	color: var(--wp--preset--color--parcel-orange) !important;
+	/* parcel-rust (#b84d1e) on cream (#faf9f7) = 4.85:1 — clears WCAG 2.2 AA
+	   for normal-size button text. parcel-orange (#e8622a) on cream = 3.21:1
+	   (fails 4.5:1 for normal text). The CTA band's primary button inverts the
+	   brand: cream background, rust text. The orange CTA band itself remains
+	   the single high-colour zone. */
+	color: var(--wp--preset--color--parcel-rust) !important;
 }
 
 .parcel-subscription-cta .wp-block-button.is-style-outline .wp-block-button__link {

@@ -5,7 +5,7 @@
  *
  * A static template part can't compute the current year, and hardcoding one is
  * a quiet way to look abandoned every January. So parts/footer.html binds its
- * copyright paragraph to the `colophon/copyright` source registered here (WP
+ * copyright paragraph to the `parcel/copyright` source registered here (WP
  * 6.5+ block bindings) — one small, removable callback instead of a render
  * filter reinventing what the bindings API already does.
  *
@@ -48,6 +48,15 @@ function register_bindings(): void {
 		array(
 			'label'              => __( 'Footer credit line', 'parcel' ),
 			'get_value_callback' => __NAMESPACE__ . '\\get_footer_credit_value',
+			'uses_context'       => array(),
+		)
+	);
+
+	register_block_bindings_source(
+		SLUG . '/label',
+		array(
+			'label'              => __( 'Theme label', 'parcel' ),
+			'get_value_callback' => __NAMESPACE__ . '\\get_label_value',
 			'uses_context'       => array(),
 		)
 	);
@@ -146,4 +155,32 @@ function get_footer_credit_value(): string {
 			),
 		)
 	);
+}
+
+/**
+ * Resolve a fixed, translatable label for a bound heading block.
+ *
+ * Template parts use static heading blocks for chrome like the footer column
+ * headings and the related-stories heading. Hardcoding the English text would
+ * leave a non-English site rendering English, so each heading binds to this
+ * source and passes a stable `key`. The key selects the gettext string here, so
+ * the visible text travels through the .pot like every other CORE string while
+ * the heading keeps its level, styling, and place in the document outline.
+ *
+ * Unknown keys return an empty string rather than the key itself, so a typo
+ * fails quietly instead of leaking an internal identifier to the visitor.
+ *
+ * @param array<string, mixed> $args Binding arguments from the block; expects a string `key`.
+ * @return string The translated label, or an empty string for an unknown key.
+ */
+function get_label_value( array $args ): string {
+	$key = isset( $args['key'] ) ? (string) $args['key'] : '';
+
+	$labels = array(
+		'footer-navigate' => __( 'Navigate', 'parcel' ),
+		'footer-follow'   => __( 'Follow', 'parcel' ),
+		'related-stories' => __( 'More to Read', 'parcel' ),
+	);
+
+	return $labels[ $key ] ?? '';
 }
