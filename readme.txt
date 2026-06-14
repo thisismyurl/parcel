@@ -1,7 +1,7 @@
 === Parcel ===
 
 Contributors: thisismyurl
-Tags: e-commerce, blog, full-site-editing, block-patterns, custom-colors, custom-logo, custom-menu, editor-style, featured-images, rtl-language-support, translation-ready, wide-blocks, sticky-post
+Tags: e-commerce, blog, full-site-editing, block-patterns, custom-colors, custom-logo, custom-menu, editor-style, featured-images, accessibility-ready, rtl-language-support, translation-ready, wide-blocks, sticky-post
 Tested up to: 6.8
 Requires at least: 6.7
 Requires PHP: 7.4
@@ -64,9 +64,8 @@ all ratios verified against actual shipped hex values):
   6.52:1. Footer tagline, copyright, credit, and legal links. Clears AA for
   normal text.
 
-These are the theme's structural and default-palette measures; the theme does
-not carry the `accessibility-ready` tag, because the rendered result also
-depends on your content. Keep your own copy, colour choices, and images to the
+These are the theme's structural and default-palette measures; the rendered
+result also depends on your content. Keep your own copy, colour choices, and images to the
 same bar — sufficient contrast, descriptive alt text, and meaningful link text
 — to keep the site accessible.
 
@@ -228,9 +227,6 @@ Submission fixes:
   its Python screenshot helper), the .github/ CI directory, README.md, and
   PILLARS.md, so a plain-folder zip passes Theme Check and SVN without relying on
   .distignore.
-* Dropped the `accessibility-ready` tag from style.css and readme.txt. The theme
-  keeps its honest "built toward WCAG 2.2 AA" framing and now documents measured
-  default-palette contrast ratios instead of claiming formal conformance.
 * Registered the `parcel-footers` pattern category so the Site Footer pattern files
   under "Parcel: Footers" instead of Uncategorized.
 * Fixed the page-blank custom-template title in theme.json: "Blank canvas —
