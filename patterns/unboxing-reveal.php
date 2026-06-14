@@ -40,8 +40,8 @@
 		<!-- wp:column {"width":"52%","style":{"spacing":{"padding":{"top":"var:preset|spacing|8"}}}} -->
 		<div class="wp-block-column" style="flex-basis:52%">
 
-			<!-- wp:paragraph {"className":"is-style-parcel-eyebrow","style":{"typography":{"fontFamily":"var:preset|font-family|outfit","fontSize":"0.6875rem","fontWeight":"700","letterSpacing":"0.12em","textTransform":"uppercase"},"color":{"text":"var:preset|color|parcel-orange"},"spacing":{"margin":{"bottom":"var:preset|spacing|2"}}}} -->
-			<p class="is-style-parcel-eyebrow" style="color:var(--wp--preset--color--parcel-orange)">This Month&rsquo;s Box</p>
+			<!-- wp:paragraph {"className":"is-style-parcel-eyebrow","style":{"typography":{"fontFamily":"var:preset|font-family|outfit","fontSize":"0.6875rem","fontWeight":"700","letterSpacing":"0.12em","textTransform":"uppercase"},"color":{"text":"var:preset|color|parcel-rust"},"spacing":{"margin":{"bottom":"var:preset|spacing|2"}}}} -->
+			<p class="is-style-parcel-eyebrow" style="color:var(--wp--preset--color--parcel-rust)">This Month&rsquo;s Box</p>
 			<!-- /wp:paragraph -->
 
 			<!-- wp:heading {"level":3,"style":{"typography":{"fontFamily":"var:preset|font-family|syne","fontWeight":"700","lineHeight":"1.18"},"spacing":{"margin":{"bottom":"var:preset|spacing|6"}}}} -->
@@ -75,9 +75,9 @@
 
 			<!-- wp:buttons -->
 			<div class="wp-block-buttons">
-				<!-- wp:button {"style":{"color":{"background":"var:preset|color|parcel-orange","text":"var:preset|color|parcel-cream"},"typography":{"fontFamily":"var:preset|font-family|syne","fontWeight":"700","letterSpacing":"0.04em"},"border":{"radius":"0"},"spacing":{"padding":{"top":"var:preset|spacing|4","bottom":"var:preset|spacing|4","left":"var:preset|spacing|8","right":"var:preset|spacing|8"}}}} -->
+				<!-- wp:button {"style":{"color":{"background":"var:preset|color|parcel-orange","text":"var:preset|color|parcel-ink"},"typography":{"fontFamily":"var:preset|font-family|syne","fontWeight":"700","letterSpacing":"0.04em"},"border":{"radius":"0"},"spacing":{"padding":{"top":"var:preset|spacing|4","bottom":"var:preset|spacing|4","left":"var:preset|spacing|8","right":"var:preset|spacing|8"}}}} -->
 				<div class="wp-block-button">
-					<a class="wp-block-button__link wp-element-button" href="/subscribe" style="background-color:var(--wp--preset--color--parcel-orange);color:var(--wp--preset--color--parcel-cream)">Subscribe now</a>
+					<a class="wp-block-button__link wp-element-button" href="/subscribe" style="background-color:var(--wp--preset--color--parcel-orange);color:var(--wp--preset--color--parcel-ink)">Subscribe now</a>
 				</div>
 				<!-- /wp:button -->
 			</div>

@@ -37,8 +37,8 @@
 
 		<!-- wp:column {"width":"30%"} -->
 		<div class="wp-block-column" style="flex-basis:30%">
-			<!-- wp:heading {"level":3,"style":{"typography":{"fontFamily":"var:preset|font-family|syne","fontWeight":"700","fontSize":"var:preset|font-size|sm","letterSpacing":"0.08em","textTransform":"uppercase"},"color":{"text":"var:preset|color|parcel-stone"},"spacing":{"margin":{"bottom":"var:preset|spacing|5"}}}} -->
-			<h3 style="color:var(--wp--preset--color--parcel-stone);text-transform:uppercase">Company</h3>
+			<!-- wp:heading {"level":3,"style":{"typography":{"fontFamily":"var:preset|font-family|syne","fontWeight":"700","fontSize":"var:preset|font-size|sm","letterSpacing":"0.08em","textTransform":"uppercase"},"color":{"text":"var:preset|color|parcel-mist"},"spacing":{"margin":{"bottom":"var:preset|spacing|5"}}}} -->
+			<h3 style="color:var(--wp--preset--color--parcel-mist);text-transform:uppercase">Company</h3>
 			<!-- /wp:heading -->
 			<!-- wp:paragraph {"style":{"typography":{"fontFamily":"var:preset|font-family|outfit","fontSize":"var:preset|font-size|base","lineHeight":"2.0"},"color":{"text":"var:preset|color|parcel-pearl"}}} -->
 			<p style="color:var(--wp--preset--color--parcel-pearl)"><a href="#">Services</a><br><a href="#">Track a parcel</a><br><a href="#">Coverage map</a><br><a href="#">Pricing</a><br><a href="#">Careers</a></p>
@@ -48,8 +48,8 @@
 
 		<!-- wp:column {"width":"30%"} -->
 		<div class="wp-block-column" style="flex-basis:30%">
-			<!-- wp:heading {"level":3,"style":{"typography":{"fontFamily":"var:preset|font-family|syne","fontWeight":"700","fontSize":"var:preset|font-size|sm","letterSpacing":"0.08em","textTransform":"uppercase"},"color":{"text":"var:preset|color|parcel-stone"},"spacing":{"margin":{"bottom":"var:preset|spacing|5"}}}} -->
-			<h3 style="color:var(--wp--preset--color--parcel-stone);text-transform:uppercase">Get in touch</h3>
+			<!-- wp:heading {"level":3,"style":{"typography":{"fontFamily":"var:preset|font-family|syne","fontWeight":"700","fontSize":"var:preset|font-size|sm","letterSpacing":"0.08em","textTransform":"uppercase"},"color":{"text":"var:preset|color|parcel-mist"},"spacing":{"margin":{"bottom":"var:preset|spacing|5"}}}} -->
+			<h3 style="color:var(--wp--preset--color--parcel-mist);text-transform:uppercase">Get in touch</h3>
 			<!-- /wp:heading -->
 			<!-- wp:paragraph {"style":{"typography":{"fontFamily":"var:preset|font-family|outfit","fontSize":"var:preset|font-size|base","lineHeight":"1.9"},"color":{"text":"var:preset|color|parcel-pearl"}}} -->
 			<p style="color:var(--wp--preset--color--parcel-pearl)">Dispatch desk: 1-800-555-0142<br>hello@parcel.example<br>Unit 9, Dock Road<br>Fort Erie, ON</p>

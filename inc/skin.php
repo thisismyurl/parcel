@@ -11,10 +11,6 @@
 namespace Parcel;
 
 defined( 'ABSPATH' ) || exit;
-// Opt this theme into GitHub-release self-updates (see inc/github-updater.php).
-add_filter( 'parcel/github_updater_repo', static function (): string {{
-	return 'thisismyurl/parcel';
-}} );
 
 // =========================================================================
 // SETUP — additional menus
@@ -180,6 +176,14 @@ function skin_pattern_categories(): void {
 		'parcel-cta'          => array(
 			'label'       => __( 'Parcel: Calls to Action', 'parcel' ),
 			'description' => __( 'Conversion CTA and subscription sign-up patterns.', 'parcel' ),
+		),
+		'parcel-navigation'   => array(
+			'label'       => __( 'Parcel: Navigation', 'parcel' ),
+			'description' => __( 'Header navigation bars and menu rows.', 'parcel' ),
+		),
+		'parcel-footers'      => array(
+			'label'       => __( 'Parcel: Footers', 'parcel' ),
+			'description' => __( 'Site footers with navigation, contact, and copyright.', 'parcel' ),
 		),
 	);
 	foreach ( $categories as $cat_slug => $args ) {
