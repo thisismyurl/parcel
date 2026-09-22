@@ -6,7 +6,7 @@
 		"appearanceTools": true,
 		"useRootPaddingAwareAlignments": true,
 		"color": {
-			"_comment": "[SKIN] Roast-and-cream palette. terracotta is the single accent — reserved for CTAs and large display text (see WCAG note in skin.css: terracotta-on-paper is 4.25:1, AA for large text only; white-on-terracotta is 4.57:1 and carries every button label). defaultPalette off so the editor offers only the theme's own tokens.",
+			"_comment": "[SKIN] Roast-and-cream palette. terracotta is the single accent, and it splits in two by MEASURED contrast (see the WCAG note in skin.css): terracotta #B75C32 is a SURFACE and LARGE-TEXT colour — 4.25:1 on paper, 3.80:1 on paper-soft, so it fails 1.4.3 at body sizes — while white-on-terracotta is 4.57:1 and carries every button label. terracotta-deep #9C4E2A is the same hue at 85% value and is the only accent allowed on SMALL text: 5.52:1 on paper, 4.94:1 on paper-soft, 4.51:1 on terracotta-soft. defaultPalette off so the editor offers only the theme's own tokens.",
 			"defaultPalette": false,
 			"defaultGradients": false,
 			"defaultDuotone": false,
@@ -18,6 +18,7 @@
 				{ "slug": "paper-soft",      "color": "#F3E9D8", "name": "Paper Soft" },
 				{ "slug": "paper-deep",      "color": "#E7D8BC", "name": "Paper Deep (decorative only)" },
 				{ "slug": "terracotta",      "color": "#B75C32", "name": "Terracotta (large text/UI only)" },
+				{ "slug": "terracotta-deep", "color": "#9C4E2A", "name": "Terracotta Deep (small text)" },
 				{ "slug": "terracotta-soft", "color": "#F1DDCB", "name": "Terracotta Soft" },
 				{ "slug": "roast",           "color": "#241812", "name": "Roast (dark band)" },
 				{ "slug": "roast-fg",        "color": "#F3E9D8", "name": "Roast Foreground (edition-stable light)" },
@@ -106,8 +107,7 @@
 			"presets": [ { "name": "None", "slug": "none", "shadow": "none" } ]
 		},
 		"blocks": {
-			"core/button": { "border": { "radius": false } },
-			"core/post-featured-image": { "allowResize": false }
+			"core/button": { "border": { "radius": false } }
 		},
 		"custom": {
 			"colophon-light": "#FBF6ED",
@@ -162,8 +162,8 @@
 			"link": {
 				"color": { "text": "var(--wp--preset--color--ink)" },
 				"typography": { "textDecoration": "underline" },
-				":hover": { "color": { "text": "var(--wp--preset--color--terracotta)" } },
-				":focus": { "color": { "text": "var(--wp--preset--color--terracotta)" } }
+				":hover": { "color": { "text": "var(--wp--preset--color--terracotta-deep)" } },
+				":focus": { "color": { "text": "var(--wp--preset--color--terracotta-deep)" } }
 			},
 			"button": {
 				"color": { "background": "var(--wp--preset--color--terracotta)", "text": "var(--wp--preset--color--white)" },
@@ -206,7 +206,7 @@
 			},
 			"core/post-terms": {
 				"typography": { "fontFamily": "var(--wp--preset--font-family--dm-sans)", "fontSize": "var(--wp--preset--font-size--2xs)", "fontWeight": "700", "letterSpacing": "0.1em", "textTransform": "uppercase" },
-				"color": { "text": "var(--wp--preset--color--terracotta)" }
+				"color": { "text": "var(--wp--preset--color--terracotta-deep)" }
 			},
 			"core/site-title": {
 				"typography": { "fontFamily": "var(--wp--preset--font-family--fraunces)", "fontSize": "var(--wp--preset--font-size--lg)", "fontWeight": "600", "letterSpacing": "-0.01em", "textDecoration": "none" },

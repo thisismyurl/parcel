@@ -6,12 +6,14 @@
      footer's roast band and the visit-us pattern, not buried in a strip
      nobody reads above the logo.
 
-     The "Skip to content" link is rendered in PHP on wp_body_open (see
-     render_skip_link() in inc/setup.php) so its label is translatable; it
-     prints before this part, as the first focusable element in the DOM. -->
+     The "Skip to content" link comes from WordPress itself: on a block theme
+     core prints one (wp_enqueue_block_template_skip_link) pointing at the
+     first content element, already translated. The theme's job is only to
+     make it visible on focus, which assets/css/core/base.css does with its
+     .skip-link rules. Nothing here renders it. -->
 
 <!-- wp:group {"tagName":"header","className":"parcel-site-header","style":{"spacing":{"padding":{"top":"var:preset|spacing|5","bottom":"var:preset|spacing|5","left":"var:preset|spacing|5","right":"var:preset|spacing|5"}},"border":{"bottom":{"color":"var:preset|color|rule","style":"solid","width":"1px"}},"color":{"background":"var:preset|color|paper"}},"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
-<header class="wp-block-group parcel-site-header" style="padding-top:var(--wp--preset--spacing--5);padding-bottom:var(--wp--preset--spacing--5);padding-left:var(--wp--preset--spacing--5);padding-right:var(--wp--preset--spacing--5);border-bottom:1px solid var(--wp--preset--color--rule);background-color:var(--wp--preset--color--paper)">
+<header class="wp-block-group parcel-site-header has-background" style="border-bottom-color:var(--wp--preset--color--rule);border-bottom-style:solid;border-bottom-width:1px;background-color:var(--wp--preset--color--paper);padding-top:var(--wp--preset--spacing--5);padding-right:var(--wp--preset--spacing--5);padding-bottom:var(--wp--preset--spacing--5);padding-left:var(--wp--preset--spacing--5)">
 
 	<!-- wp:group {"className":"parcel-header__branding","layout":{"type":"flex","verticalAlignment":"center"},"style":{"spacing":{"blockGap":"var:preset|spacing|3"}}} -->
 	<div class="wp-block-group parcel-header__branding">

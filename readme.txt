@@ -35,11 +35,11 @@ And it is a member of a small family of free WordPress themes, each copied from 
 * Eight patterns for a real homepage: hero, feature grid, menu board, promo band, hours & location, testimonials, our story, gallery.
 * Baseline WooCommerce support — product gallery zoom, lightbox, and slider work with no theme conflict.
 * Zero front-end JavaScript, zero plugin dependencies.
-* WCAG 2.2 AA accessibility — skip link, visible focus, sensible heading order, prefers-reduced-motion honoured globally. Every terracotta text usage is checked against WCAG 1.4.3 (see the note in assets/css/skin.css).
+* WCAG 2.2 AA accessibility — skip link, visible focus, sensible heading order, prefers-reduced-motion honoured globally. Every accent text usage is measured against WCAG 1.4.3: terracotta is a surface and large-display colour, terracotta-deep is the small-text cut (see the ratio table in assets/css/skin.css).
 * Core Web Vitals discipline — self-hosted fonts, font-display: swap, LCP font preloaded, no render-blocking requests.
 * Six-layer CSS cascade (reset, base, layout, components, blocks, utilities).
 * WP-CLI — wp parcel version, info, flush.
-* Filterable hooks at every extension point — content_width, skip_link_target, skip_link_label, register_nav_menus, copyright_date_format, register_image_sizes, register_block_styles, register_pattern_categories, onboarding_capability, and more.
+* Hooks at every extension point — filters for content_width, register_nav_menus, preload_fonts, copyright_date_format, copyright_text, publication_date_format and onboarding_capability; actions after setup, register_image_sizes, register_block_styles and register_pattern_categories.
 * Translation-ready — every user-facing string is internationalised.
 * RTL-ready through CSS logical properties.
 
@@ -65,7 +65,7 @@ No. Fraunces and DM Sans are bundled as self-hosted WOFF2 files inside the theme
 
 = Is this related to other themes in a line? =
 
-Yes. Masthead, Margin, Quillwork, and Selvedge are each built on the same Colophon core: copied and re-skinned with their own type families, palettes, and template personalities. Each theme is standalone; installing Colophon is not required to use Parcel. GUIDE.md, included in the theme folder, describes how to build your own theme in the same way.
+Yes. Masthead, Quillwork, Ligature, and Selvedge are each built on the same Colophon core: copied and re-skinned with their own type families, palettes, and template personalities. Each theme is standalone; installing Colophon is not required to use Parcel. GUIDE.md, included in the theme folder, describes how to build your own theme in the same way.
 
 = Can I add a different typeface? =
 
@@ -95,6 +95,12 @@ To build your own theme on Colophon, see GUIDE.md in the theme folder.
 * Rewrote front-page, page, single, archive, index, and 404 templates for the storefront design; renamed all skin CSS classes and block styles from the generic cl- prefix to parcel-.
 * Fixed the footer's copyright line to bind to the real parcel/copyright source (was pointing at the unrelated colophon/ namespace, inherited unedited from the starter core). The separate credit line bound to a source no theme in this line actually registers (parcel/footer-credit); removed it rather than point it at a filter that doesn't exist.
 * editor-style.css rewritten to mirror the new pull-quote, eyebrow, menu-leader, and card treatments.
+* Accessibility: measured every accent pairing and split the accent in two. terracotta (4.25:1 on paper, 3.80:1 on paper-soft) failed WCAG 1.4.3 wherever it carried small text, so eyebrow labels, category terms, and link hover now use terracotta-deep — the same hue at 85% value, 5.52:1 on paper and 4.94:1 on paper-soft. terracotta keeps every surface, button, badge, border, and focus-ring role unchanged.
+* Fixed block markup that did not match its own block attributes and would have shown as "unexpected or invalid content" on first edit: the hero and our-story media-text blocks (imageFill with no image, a hand-written padding style on the content column, a missing vertical-alignment class), headings and paragraphs carrying a colour without has-text-color, spacing nested outside style, and paragraphs carrying a textAlign attribute core/paragraph does not have.
+* Fixed four templates that referenced a "line" colour slug this palette has never had; they now bind to rule, the token they were always meant to use.
+* The search, singular, author, and attachment templates lost their id="main-content" anchor on any re-save, because the id lived in the markup but not in the block attributes. Both now agree.
+* The blog index shipped without an h1 — core/query-title renders nothing on is_home(). It now binds its heading to the posts page's own title.
+* The 404 "back to home" button no longer hardcodes "/", which is the wrong URL on a subdirectory install.
 
 = 1.0.0 =
 * Initial release from the shared Colophon starter core.

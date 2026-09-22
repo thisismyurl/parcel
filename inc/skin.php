@@ -20,6 +20,8 @@ defined( 'ABSPATH' ) || exit;
 /**
  * Register Parcel's image crop sizes.
  *
+ * Four hard crops, one per pattern that shows a photograph:
+ *
  * parcel-hero: 4:5 — the portrait crop used by the hero's media-text image
  * (a latte, a loaf, a bag of beans — the shop's own photography, not stock).
  * parcel-feature: 1:1 — square crop, CSS-masked to a circle in the
@@ -51,24 +53,20 @@ add_action( 'after_setup_theme', 'parcel_skin_image_sizes' );
  * the italics) load lazily as the browser discovers they're needed.
  *
  * Pillar 8 (Kodawari): preloading the exact file that paints, not the whole family.
- */
-add_filter(
-	PARCEL_SLUG . '/preload_fonts',
-	static function ( array $fonts ): array {
-		$fonts[] = 'assets/fonts/fraunces/fraunces-600.woff2';
-		return $fonts;
-	}
-);
-
-/**
- * Declare minimum WooCommerce product-gallery support beyond the CORE floor.
  *
- * inc/bootstrap.php's core `parcel_woocommerce_support()` already declares the
- * baseline theme support every theme in the line ships. Parcel adds nothing
- * further here today — the note exists so a future maintainer knows this is
- * the correct file to extend (product-archive columns, cart-count styling
- * hooks) rather than editing the CORE function in inc/bootstrap.php.
+ * @param string[] $fonts Theme-root-relative WOFF2 paths.
+ * @return string[] The list with Parcel's LCP font appended.
  */
+function parcel_skin_preload_fonts( array $fonts ): array {
+	$fonts[] = 'assets/fonts/fraunces/fraunces-600.woff2';
+	return $fonts;
+}
+add_filter( PARCEL_SLUG . '/preload_fonts', 'parcel_skin_preload_fonts' );
+
+// WooCommerce: parcel_woocommerce_support() in inc/setup.php already declares
+// the baseline every theme in the line ships. Parcel adds nothing beyond it
+// today; when it needs to (product-archive columns, cart-count styling), this
+// file is where that goes — not the CORE function.
 
 /**
  * Register Parcel's block styles.
@@ -86,11 +84,13 @@ add_filter(
  * in the WP.org directory reaches for this convention; every competitor uses
  * a generic pricing-table or list block.
  *
- * WCAG NOTE on terracotta (#B75C32): 4.25:1 against paper — AA for LARGE
- * TEXT ONLY (18pt+/14pt bold+). White-on-terracotta (buttons, badges) is
- * 4.57:1 and IS safe for normal-size text. The parcel-price-tag and
- * parcel-eyebrow styles below apply terracotta only where one of those two
- * conditions holds; assets/css/skin.css repeats this note at each rule.
+ * WCAG NOTE on the accent. terracotta (#B75C32) is 4.25:1 against paper and
+ * 3.80:1 against paper-soft — a SURFACE and large-display colour, never small
+ * text. White-on-terracotta is 4.57:1, so parcel-price-tag and every button
+ * label are safe at any size. Small text that needs the accent takes
+ * terracotta-deep (#9C4E2A, same hue at 85% value): 5.52:1 on paper, 4.94:1
+ * on paper-soft, 4.51:1 on terracotta-soft. That is what parcel-eyebrow and
+ * core/post-terms use; assets/css/skin.css carries the full ratio table.
  *
  * Pillar 7 (High Agency): editors can build a full menu page without a developer.
  */
@@ -118,7 +118,8 @@ function parcel_skin_block_styles(): void {
 	);
 
 	// [SKIN] Paragraph as an eyebrow label — small, DM Sans 700, tracked,
-	// uppercase. The label above the hero, a section header, or a footer column.
+	// uppercase, in terracotta-deep (small text, so it needs the 4.5:1 cut of
+	// the accent). The label above the hero, a section header, a footer column.
 	register_block_style(
 		'core/paragraph',
 		array(

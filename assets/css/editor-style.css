@@ -39,7 +39,7 @@
 	font-weight:    700;
 	letter-spacing: 0.12em;
 	text-transform: uppercase;
-	color:          var(--wp--preset--color--terracotta);
+	color:          var(--wp--preset--color--terracotta-deep);
 }
 
 /* Menu dot leader — mirrored so the editor preview matches the front end;

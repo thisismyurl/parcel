@@ -9,13 +9,14 @@
  *
  * @package parcel
  */
+
 ?>
 <!-- wp:group {"className":"parcel-section parcel-band--paper-soft","style":{"spacing":{"padding":{"top":"var:preset|spacing|12","bottom":"var:preset|spacing|12","left":"var:preset|spacing|5","right":"var:preset|spacing|5"}}},"layout":{"type":"constrained","contentSize":"1200px"}} -->
 <div class="wp-block-group parcel-section parcel-band--paper-soft" style="padding-top:var(--wp--preset--spacing--12);padding-bottom:var(--wp--preset--spacing--12);padding-left:var(--wp--preset--spacing--5);padding-right:var(--wp--preset--spacing--5)">
 
 	<!-- wp:group {"layout":{"type":"constrained","contentSize":"600px","justifyContent":"center"},"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|10"}}}} -->
-	<div class="wp-block-group" style="margin-bottom:var(--wp--preset--spacing--10);text-align:center">
-		<!-- wp:paragraph {"className":"is-style-parcel-eyebrow","style":{"textAlign":"center"}} -->
+	<div class="wp-block-group" style="margin-bottom:var(--wp--preset--spacing--10)">
+		<!-- wp:paragraph {"align":"center","className":"is-style-parcel-eyebrow"} -->
 		<p class="is-style-parcel-eyebrow has-text-align-center"><?php esc_html_e( 'Today on the board', 'parcel' ); ?></p>
 		<!-- /wp:paragraph -->
 		<!-- wp:heading {"level":2,"textAlign":"center"} -->
@@ -31,7 +32,7 @@
 		<!-- wp:group {"className":"parcel-menu-category","layout":{"type":"default"},"style":{"spacing":{"blockGap":"var:preset|spacing|4"}}} -->
 		<div class="wp-block-group parcel-menu-category">
 
-			<!-- wp:heading {"level":3,"style":{"typography":{"fontStyle":"italic"}}} -->
+			<!-- wp:heading {"level":3} -->
 			<h3 class="wp-block-heading"><?php esc_html_e( 'Drinks', 'parcel' ); ?></h3>
 			<!-- /wp:heading -->
 
@@ -98,7 +99,7 @@
 		<!-- wp:group {"className":"parcel-menu-category","layout":{"type":"default"},"style":{"spacing":{"blockGap":"var:preset|spacing|4"}}} -->
 		<div class="wp-block-group parcel-menu-category">
 
-			<!-- wp:heading {"level":3,"style":{"typography":{"fontStyle":"italic"}}} -->
+			<!-- wp:heading {"level":3} -->
 			<h3 class="wp-block-heading"><?php esc_html_e( 'From the oven', 'parcel' ); ?></h3>
 			<!-- /wp:heading -->
 
@@ -164,7 +165,7 @@
 	</div>
 	<!-- /wp:group -->
 
-	<!-- wp:paragraph {"className":"is-style-parcel-annotation","align":"center","style":{"spacing":{"margin":{"top":"var:preset|spacing|8"}}},"textAlign":"center"} -->
+	<!-- wp:paragraph {"align":"center","className":"is-style-parcel-annotation","style":{"spacing":{"margin":{"top":"var:preset|spacing|8"}}}} -->
 	<p class="is-style-parcel-annotation has-text-align-center" style="margin-top:var(--wp--preset--spacing--8)"><?php esc_html_e( 'Full menu, seasonal specials, and dietary notes are posted at the counter and updated weekly.', 'parcel' ); ?></p>
 	<!-- /wp:paragraph -->
 

@@ -1,17 +1,19 @@
 <!-- wp:template-part {"slug":"header","tagName":"header"} /-->
 
-<!-- wp:group {"tagName":"main","className":"parcel-main","metadata":{"name":"Main"},"layout":{"type":"constrained","contentSize":"1100px"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|12","bottom":"var:preset|spacing|16"}}}} -->
+<!-- wp:group {"tagName":"main","id":"main-content","className":"parcel-main","metadata":{"name":"Main"},"layout":{"type":"constrained","contentSize":"1100px"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|12","bottom":"var:preset|spacing|16"}}}} -->
 <main id="main-content" class="wp-block-group parcel-main" style="padding-top:var(--wp--preset--spacing--12);padding-bottom:var(--wp--preset--spacing--16)">
 
-	<!-- The author bio block above the stream — same component used in single.html's
-	     article footer, hoisted here so the archive opens with the writer, not the list. -->
+	<!-- The author's name above the stream, so the archive opens with the writer
+	     rather than the list. There is no biography block here on purpose:
+	     core/post-author-biography needs a post in context and core/term-description
+	     renders only on a category, tag, or custom-taxonomy archive, so both are
+	     silent on an author archive. -->
 	<!-- wp:group {"className":"parcel-author-box","layout":{"type":"constrained","contentSize":"720px"},"style":{"spacing":{"padding":{"bottom":"var:preset|spacing|10"},"blockGap":"var:preset|spacing|4"},"border":{"bottom":{"color":"var:preset|color|rule","width":"1px"}}}} -->
-	<div class="wp-block-group parcel-author-box" style="border-bottom-color:var(--wp--preset--color--line);border-bottom-width:1px;padding-bottom:var(--wp--preset--spacing--10)">
+	<div class="wp-block-group parcel-author-box" style="border-bottom-color:var(--wp--preset--color--rule);border-bottom-width:1px;padding-bottom:var(--wp--preset--spacing--10)">
 		<!-- wp:paragraph {"className":"is-style-parcel-eyebrow parcel-eyebrow"} -->
 		<p class="is-style-parcel-eyebrow parcel-eyebrow">Author</p>
 		<!-- /wp:paragraph -->
-		<!-- wp:query-title {"type":"author","level":1,"fontSize":"2xl"} /-->
-		<!-- wp:term-description /-->
+		<!-- wp:query-title {"type":"archive","level":1,"fontSize":"2xl"} /-->
 	</div>
 	<!-- /wp:group -->
 
@@ -23,7 +25,7 @@
 
 			<!-- wp:post-template {"className":"parcel-index-loop","style":{"spacing":{"blockGap":"var:preset|spacing|10"}}} -->
 				<!-- wp:group {"className":"parcel-story","style":{"spacing":{"padding":{"bottom":"var:preset|spacing|8"}},"border":{"bottom":{"color":"var:preset|color|rule","width":"1px"}}},"layout":{"type":"default"}} -->
-				<div class="wp-block-group parcel-story" style="border-bottom-color:var(--wp--preset--color--line);border-bottom-width:1px;padding-bottom:var(--wp--preset--spacing--8)">
+				<div class="wp-block-group parcel-story" style="border-bottom-color:var(--wp--preset--color--rule);border-bottom-width:1px;padding-bottom:var(--wp--preset--spacing--8)">
 					<!-- wp:post-terms {"term":"category"} /-->
 					<!-- wp:post-title {"level":2,"isLink":true,"fontSize":"lg"} /-->
 					<!-- wp:post-excerpt {"moreText":"Continue reading"} /-->

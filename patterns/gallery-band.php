@@ -9,11 +9,12 @@
  *
  * @package parcel
  */
+
 ?>
 <!-- wp:group {"className":"parcel-section","style":{"spacing":{"padding":{"top":"var:preset|spacing|10","bottom":"var:preset|spacing|10","left":"var:preset|spacing|5","right":"var:preset|spacing|5"}}},"layout":{"type":"constrained","contentSize":"1200px"}} -->
 <div class="wp-block-group parcel-section" style="padding-top:var(--wp--preset--spacing--10);padding-bottom:var(--wp--preset--spacing--10);padding-left:var(--wp--preset--spacing--5);padding-right:var(--wp--preset--spacing--5)">
 
-	<!-- wp:paragraph {"className":"is-style-parcel-eyebrow","align":"center","style":{"spacing":{"margin":{"bottom":"var:preset|spacing|5"}}},"textAlign":"center"} -->
+	<!-- wp:paragraph {"align":"center","className":"is-style-parcel-eyebrow","style":{"spacing":{"margin":{"bottom":"var:preset|spacing|5"}}}} -->
 	<p class="is-style-parcel-eyebrow has-text-align-center" style="margin-bottom:var(--wp--preset--spacing--5)"><?php esc_html_e( 'From the counter', 'parcel' ); ?></p>
 	<!-- /wp:paragraph -->
 

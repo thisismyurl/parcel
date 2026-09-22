@@ -10,7 +10,13 @@
 		<!-- wp:paragraph {"className":"is-style-parcel-eyebrow"} -->
 		<p class="is-style-parcel-eyebrow">From the counter</p>
 		<!-- /wp:paragraph -->
-		<!-- wp:query-title {"type":"archive","level":1,"fontSize":"xl"} /-->
+		<!-- The blog index is is_home(), not an archive, so core/query-title
+		     renders nothing here and the page would ship without an h1. The
+		     heading binds to the parcel/site-strings source instead (see
+		     inc/bindings.php), which returns the posts page's own title. -->
+		<!-- wp:heading {"level":1,"fontSize":"xl","metadata":{"bindings":{"content":{"source":"parcel/site-strings","args":{"key":"posts-title"}}}}} -->
+		<h1 class="wp-block-heading has-xl-font-size"></h1>
+		<!-- /wp:heading -->
 	</div>
 	<!-- /wp:group -->
 

@@ -9,12 +9,13 @@
  *
  * @package parcel
  */
+
 ?>
 <!-- wp:group {"className":"parcel-section parcel-band--terracotta-soft","style":{"spacing":{"padding":{"top":"var:preset|spacing|12","bottom":"var:preset|spacing|12","left":"var:preset|spacing|5","right":"var:preset|spacing|5"}}},"layout":{"type":"constrained","contentSize":"1200px"}} -->
 <div class="wp-block-group parcel-section parcel-band--terracotta-soft" style="padding-top:var(--wp--preset--spacing--12);padding-bottom:var(--wp--preset--spacing--12);padding-left:var(--wp--preset--spacing--5);padding-right:var(--wp--preset--spacing--5)">
 
 	<!-- wp:group {"layout":{"type":"constrained","contentSize":"600px","justifyContent":"center"},"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|10"}}}} -->
-	<div class="wp-block-group" style="margin-bottom:var(--wp--preset--spacing--10);text-align:center">
+	<div class="wp-block-group" style="margin-bottom:var(--wp--preset--spacing--10)">
 		<!-- wp:heading {"level":2,"textAlign":"center"} -->
 		<h2 class="wp-block-heading has-text-align-center"><?php esc_html_e( 'What the regulars say', 'parcel' ); ?></h2>
 		<!-- /wp:heading -->
@@ -34,7 +35,7 @@
 			<!-- wp:paragraph {"fontSize":"sm","style":{"typography":{"fontWeight":"700"}}} -->
 			<p class="has-sm-font-size" style="font-weight:700"><?php esc_html_e( 'Marisol T.', 'parcel' ); ?></p>
 			<!-- /wp:paragraph -->
-			<!-- wp:paragraph {"fontSize":"xs","style":{"color":{"text":"var:preset|color|ink-muted"}}} -->
+			<!-- wp:paragraph {"fontSize":"xs","textColor":"ink-muted"} -->
 			<p class="has-ink-muted-color has-text-color has-xs-font-size"><?php esc_html_e( 'Regular since 2023', 'parcel' ); ?></p>
 			<!-- /wp:paragraph -->
 		</div>
@@ -50,7 +51,7 @@
 			<!-- wp:paragraph {"fontSize":"sm","style":{"typography":{"fontWeight":"700"}}} -->
 			<p class="has-sm-font-size" style="font-weight:700"><?php esc_html_e( 'Owen D.', 'parcel' ); ?></p>
 			<!-- /wp:paragraph -->
-			<!-- wp:paragraph {"fontSize":"xs","style":{"color":{"text":"var:preset|color|ink-muted"}}} -->
+			<!-- wp:paragraph {"fontSize":"xs","textColor":"ink-muted"} -->
 			<p class="has-ink-muted-color has-text-color has-xs-font-size"><?php esc_html_e( 'Saturday regular', 'parcel' ); ?></p>
 			<!-- /wp:paragraph -->
 		</div>
@@ -66,7 +67,7 @@
 			<!-- wp:paragraph {"fontSize":"sm","style":{"typography":{"fontWeight":"700"}}} -->
 			<p class="has-sm-font-size" style="font-weight:700"><?php esc_html_e( 'Priya K.', 'parcel' ); ?></p>
 			<!-- /wp:paragraph -->
-			<!-- wp:paragraph {"fontSize":"xs","style":{"color":{"text":"var:preset|color|ink-muted"}}} -->
+			<!-- wp:paragraph {"fontSize":"xs","textColor":"ink-muted"} -->
 			<p class="has-ink-muted-color has-text-color has-xs-font-size"><?php esc_html_e( 'Neighbour, five years', 'parcel' ); ?></p>
 			<!-- /wp:paragraph -->
 		</div>

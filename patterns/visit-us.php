@@ -9,6 +9,7 @@
  *
  * @package parcel
  */
+
 ?>
 <!-- wp:group {"className":"parcel-section","style":{"spacing":{"padding":{"top":"var:preset|spacing|12","bottom":"var:preset|spacing|12","left":"var:preset|spacing|5","right":"var:preset|spacing|5"}}},"layout":{"type":"constrained","contentSize":"1200px"}} -->
 <div class="wp-block-group parcel-section" style="padding-top:var(--wp--preset--spacing--12);padding-bottom:var(--wp--preset--spacing--12);padding-left:var(--wp--preset--spacing--5);padding-right:var(--wp--preset--spacing--5)">
@@ -79,7 +80,7 @@
 		<!-- Order-ahead card -->
 		<!-- wp:group {"className":"is-style-parcel-card","layout":{"type":"default"},"style":{"spacing":{"blockGap":"var:preset|spacing|4"}}} -->
 		<div class="wp-block-group is-style-parcel-card">
-			<!-- wp:heading {"level":3,"style":{"typography":{"fontStyle":"italic"}}} -->
+			<!-- wp:heading {"level":3} -->
 			<h3 class="wp-block-heading"><?php esc_html_e( 'Skip the line', 'parcel' ); ?></h3>
 			<!-- /wp:heading -->
 			<!-- wp:paragraph -->
@@ -92,7 +93,7 @@
 				<!-- /wp:button -->
 			</div>
 			<!-- /wp:buttons -->
-			<!-- wp:paragraph {"fontSize":"sm","style":{"color":{"text":"var:preset|color|ink-muted"}}} -->
+			<!-- wp:paragraph {"fontSize":"sm","textColor":"ink-muted"} -->
 			<p class="has-ink-muted-color has-text-color has-sm-font-size"><?php esc_html_e( 'Or call ahead: (555) 019-2244', 'parcel' ); ?></p>
 			<!-- /wp:paragraph -->
 		</div>

@@ -7,18 +7,21 @@
  * Inserter: true
  * Description: Media-text pattern for the roaster or baker's background — a portrait photo beside a founding story, for the About page. Image and word at equal weight, no full-bleed photography.
  *
+ * The media slot ships EMPTY on purpose — same reason as patterns/hero.php:
+ * the theme bundles no photography, so the editor supplies the portrait and
+ * its alt text.
+ *
  * @package parcel
  */
+
 ?>
 <!-- wp:group {"className":"parcel-section","style":{"spacing":{"padding":{"top":"var:preset|spacing|12","bottom":"var:preset|spacing|12","left":"0","right":"0"}}},"layout":{"type":"default"}} -->
-<div class="wp-block-group parcel-section" style="padding:var(--wp--preset--spacing--12) 0">
+<div class="wp-block-group parcel-section" style="padding-top:var(--wp--preset--spacing--12);padding-right:0;padding-bottom:var(--wp--preset--spacing--12);padding-left:0">
 
-	<!-- wp:media-text {"mediaPosition":"left","mediaWidth":42,"verticalAlignment":"center","imageFill":true,"className":"parcel-our-story"} -->
-	<div class="wp-block-media-text parcel-our-story has-media-on-the-left is-stacked-on-mobile" style="grid-template-columns:42% auto">
-		<figure class="wp-block-media-text__media">
-			<img src="" alt="<?php esc_attr_e( 'The shop owner standing at the roaster, sleeves rolled up, mid-batch', 'parcel' ); ?>" class="wp-image-placeholder" style="object-fit:cover" />
-		</figure>
-		<div class="wp-block-media-text__content" style="padding:var(--wp--preset--spacing--10) var(--wp--preset--spacing--10)">
+	<!-- wp:media-text {"mediaPosition":"left","mediaWidth":42,"verticalAlignment":"center","className":"parcel-our-story"} -->
+	<div class="wp-block-media-text parcel-our-story has-media-on-the-left is-stacked-on-mobile is-vertically-aligned-center" style="grid-template-columns:42% auto">
+		<figure class="wp-block-media-text__media"></figure>
+		<div class="wp-block-media-text__content">
 
 			<!-- wp:paragraph {"className":"is-style-parcel-eyebrow"} -->
 			<p class="is-style-parcel-eyebrow"><?php esc_html_e( 'Our story', 'parcel' ); ?></p>

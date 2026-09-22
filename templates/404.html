@@ -21,7 +21,10 @@
 
 	<!-- wp:buttons {"style":{"spacing":{"margin":{"top":"var:preset|spacing|6"},"blockGap":"var:preset|spacing|3"}}} -->
 	<div class="wp-block-buttons" style="margin-top:var(--wp--preset--spacing--6)">
-		<!-- wp:button -->
+		<!-- href="/" is only correct on a site installed at the domain root, so
+		     the real URL comes from the parcel/site-strings binding (home_url())
+		     and the literal below is just the fallback in the saved markup. -->
+		<!-- wp:button {"metadata":{"bindings":{"url":{"source":"parcel/site-strings","args":{"key":"home-url"}}}}} -->
 		<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/">Back to home</a></div>
 		<!-- /wp:button -->
 	</div>

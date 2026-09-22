@@ -16,12 +16,21 @@
    note in inc/skin.php's parcel_skin_block_styles(). It exists because a
    real café or bakery menu has never once been typeset as a bullet list.
 
-   WCAG NOTE on terracotta (#B75C32): 4.25:1 against paper — AA for LARGE
-   TEXT ONLY. White-on-terracotta (buttons, badges) is 4.57:1 and IS safe
-   for normal text. Every rule below that sets terracotta as a foreground
-   colour is on a heading-scale or large-text selector; every rule that
-   uses terracotta as a BACKGROUND pairs it with white text. Do not add a
-   rule that sets terracotta as small/body text colour.
+   WCAG NOTE — the accent splits in two, by measured ratio:
+
+     terracotta      #B75C32  paper 4.25:1  paper-soft 3.80:1
+     terracotta-deep #9C4E2A  paper 5.52:1  paper-soft 4.94:1  terracotta-soft 4.51:1
+     white on terracotta      4.57:1
+
+   terracotta is a SURFACE and LARGE-DISPLAY colour: buttons, badges,
+   borders, the focus ring (non-text, needs only 3:1). It fails 1.4.3 as
+   small text on every light ground this theme ships, so small text uses
+   terracotta-deep instead — the same hue at 85% value, which clears 4.5:1
+   on paper, paper-soft and terracotta-soft alike. Every rule that uses
+   terracotta as a BACKGROUND pairs it with white text.
+
+   Do not set terracotta as a text colour. Use terracotta-deep, and on a
+   roast band use terracotta-soft (13.1:1) — see the band override below.
 
    Pillar 9 (Archaeological Records): section headers explain WHY.
    ===================================================================== */
@@ -163,11 +172,11 @@
 		font-weight: 700;
 		letter-spacing: 0.12em;
 		text-transform: uppercase;
-		color: var(--wp--preset--color--terracotta);
-		/* WCAG: terracotta at heading/label weight+tracking reads as large-scale
-		   emphasis, but to stay safely inside the AA large-text rule this class
-		   is only ever used at font-size--xs and above alongside 700 weight on
-		   short label text (never a full sentence of body copy). */
+		/* WCAG 1.4.3: an eyebrow sets at 12–14px, which is small text however
+		   heavy the weight (large-scale starts at 18.66px bold). It therefore
+		   takes terracotta-deep, not terracotta — 5.52:1 on paper, 4.94:1 on
+		   the paper-soft band the menu board sits on. */
+		color: var(--wp--preset--color--terracotta-deep);
 	}
 
 	/* Lead paragraph — Fraunces italic, larger size, used as hero subhead. */
@@ -247,14 +256,16 @@
    ===================================================================== */
 @layer blocks {
 
+	/* Hover colour is still text, so it answers to 1.4.3 the same way the
+	   resting state does — terracotta-deep, not terracotta. */
 	.wp-block-navigation a:hover {
 		text-decoration: none;
-		color: var(--wp--preset--color--terracotta);
+		color: var(--wp--preset--color--terracotta-deep);
 	}
 
 	.wp-block-post-title a:hover {
 		text-decoration: none;
-		color: var(--wp--preset--color--terracotta);
+		color: var(--wp--preset--color--terracotta-deep);
 	}
 
 	.wp-block-post-featured-image img { border-radius: 0.5rem; }
@@ -294,6 +305,13 @@
 	.parcel-band--roast h2,
 	.parcel-band--roast h3,
 	.parcel-band--roast h4 { color: var(--wp--preset--color--roast-fg); }
+
+	/* The accent inverts on a dark band: terracotta-deep is a light-ground
+	   colour (2.7:1 on roast). An eyebrow moved into the footer or the promo
+	   band takes terracotta-soft instead — 13.1:1. */
+	.parcel-band--roast .is-style-parcel-eyebrow {
+		color: var(--wp--preset--color--terracotta-soft);
+	}
 
 	.parcel-band--paper-soft { background: var(--wp--preset--color--paper-soft); }
 	.parcel-band--paper { background: var(--wp--preset--color--paper); }

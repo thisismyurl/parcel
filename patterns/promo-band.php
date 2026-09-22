@@ -9,6 +9,7 @@
  *
  * @package parcel
  */
+
 ?>
 <!-- wp:group {"className":"parcel-band--roast","style":{"spacing":{"padding":{"top":"var:preset|spacing|12","bottom":"var:preset|spacing|12","left":"var:preset|spacing|5","right":"var:preset|spacing|5"}}},"layout":{"type":"constrained","contentSize":"1200px"}} -->
 <div class="wp-block-group parcel-band--roast" style="padding-top:var(--wp--preset--spacing--12);padding-bottom:var(--wp--preset--spacing--12);padding-left:var(--wp--preset--spacing--5);padding-right:var(--wp--preset--spacing--5)">
@@ -19,7 +20,7 @@
 		<!-- wp:group {"layout":{"type":"constrained","contentSize":"520px"},"style":{"spacing":{"blockGap":"var:preset|spacing|3"}}} -->
 		<div class="wp-block-group">
 			<!-- wp:paragraph {"style":{"typography":{"fontFamily":"var:preset|font-family|dm-sans","fontSize":"var:preset|font-size|xs","fontWeight":"700","letterSpacing":"0.12em","textTransform":"uppercase"},"color":{"text":"var:preset|color|terracotta-soft"}}} -->
-			<p style="color:var(--wp--preset--color--terracotta-soft);font-family:var(--wp--preset--font-family--dm-sans);font-size:var(--wp--preset--font-size--xs);font-weight:700;letter-spacing:0.12em;text-transform:uppercase"><?php esc_html_e( 'Weekdays, 7–8am', 'parcel' ); ?></p>
+			<p class="has-text-color" style="color:var(--wp--preset--color--terracotta-soft);font-family:var(--wp--preset--font-family--dm-sans);font-size:var(--wp--preset--font-size--xs);font-weight:700;letter-spacing:0.12em;text-transform:uppercase"><?php esc_html_e( 'Weekdays, 7–8am', 'parcel' ); ?></p>
 			<!-- /wp:paragraph -->
 			<!-- wp:heading {"level":2,"style":{"color":{"text":"var:preset|color|roast-fg"}}} -->
 			<h2 class="wp-block-heading has-text-color" style="color:var(--wp--preset--color--roast-fg)"><?php esc_html_e( 'The Early Pour', 'parcel' ); ?></h2>
