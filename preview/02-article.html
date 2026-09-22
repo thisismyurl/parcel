@@ -2,141 +2,109 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=1440">
-<title>Colophon — Article</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Parcel: Article</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300..900;1,8..60,300..900&family=Inter:wght@100..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="colophon-preview.css">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="parcel-preview.css">
 </head>
 <body>
 
-<header class="co-header">
-  <div class="co-header__inner">
-    <a class="co-site-name" href="#">Adrienne Holloway</a>
-    <nav class="co-nav">
-      <a href="#" class="current">Writing</a>
-      <a href="#">Projects</a>
-      <a href="#">Talks</a>
-      <a href="#">About</a>
-    </nav>
-    <a class="co-cta-btn" href="#">Subscribe</a>
+<header class="parcel-site-header">
+  <div class="parcel-header__branding">
+    <span class="parcel-logo-mark" aria-hidden="true">F</span>
+    <a class="parcel-site-title" href="01-front-page.html">Fernwood Coffee Roasters</a>
   </div>
+  <nav class="parcel-nav" aria-label="Primary">
+    <a href="01-front-page.html">Menu</a>
+    <a href="04-about.html">Our story</a>
+    <a href="03-archive.html">Journal</a>
+    <a href="01-front-page.html#visit">Visit</a>
+    <a href="01-front-page.html#order-ahead" class="parcel-btn" style="padding: var(--sp-2) var(--sp-4); font-size: var(--fs-xs);">Order ahead</a>
+  </nav>
 </header>
 
+<!-- templates/single.html , the shop journal: seasonal-menu notes, roasting
+     updates, event announcements. Category label, title in Fraunces,
+     byline, featured image, content, tags, author box. -->
 <main>
-  <!-- Article header -->
-  <div class="co-section co-section--white" style="padding-block: 4rem; border-bottom: 1px solid var(--wp--preset--color--rule);">
-    <div class="co-wrap">
-      <div style="max-width: var(--co-measure);">
-        <div class="co-eyebrow co-eyebrow--accent">Technology Policy</div>
-        <h1 style="font-family: var(--wp--preset--font-family--serif); font-size: clamp(2.25rem, 4vw, 3.75rem); font-weight: 300; letter-spacing: -0.025em; line-height: 1.1; color: var(--wp--preset--color--ink-deep); margin-bottom: 1.25rem;">The Undersea Cable Map Nobody Wants You to See</h1>
-        <p style="font-family: var(--wp--preset--font-family--serif); font-style: italic; font-size: 1.1875rem; line-height: 1.6; color: var(--wp--preset--color--ink-secondary); margin-bottom: 1.75rem;">How the geography of internet infrastructure — seventeen cables carrying 99% of intercontinental traffic — became a geopolitical fault line.</p>
-        <div style="display: flex; align-items: center; gap: 1.5rem; font-family: var(--wp--preset--font-family--sans); font-size: 0.8125rem; color: var(--wp--preset--color--ink-muted); padding-block: 1.25rem; border-block: 1px solid var(--wp--preset--color--rule);">
-          <span>Adrienne Holloway</span>
-          <span style="color: var(--wp--preset--color--ink-faint);">·</span>
-          <span>May 28, 2025</span>
-          <span style="color: var(--wp--preset--color--ink-faint);">·</span>
-          <span>16 min read</span>
-          <span style="color: var(--wp--preset--color--ink-faint);">·</span>
-          <span style="color: var(--wp--preset--color--accent); font-weight: 500;">Technology Policy</span>
+  <div class="parcel-reading parcel-section">
+    <article>
+      <span class="parcel-terms">Roasting notes</span>
+      <h1 style="font-size: var(--fs-3xl); margin-top: var(--sp-3);">This week&rsquo;s single-origin: a washed Yirgacheffe from the Gedeb co-op</h1>
+
+      <div class="parcel-byline" style="margin-top: var(--sp-5);">
+        <span class="parcel-avatar" role="img" aria-label="Portrait of Dana Okafor"></span>
+        <span>Dana Okafor</span>
+        <span aria-hidden="true">&middot;</span>
+        <span>September 18, 2026</span>
+      </div>
+
+      <hr class="parcel-rule" style="margin-top: var(--sp-6);">
+
+      <div class="parcel-featured" role="img" aria-label="Burlap sacks of green Yirgacheffe coffee beans on the roastery floor"></div>
+
+      <div class="parcel-reading" style="padding-inline: 0;">
+        <p>We picked up forty pounds of a washed Yirgacheffe from the Gedeb co-op this week, and it&rsquo;s the kind of lot that makes the whole roastery smell like citrus zest for two days straight. Bright, floral, a little bit of bergamot up front, and a clean finish that doesn&rsquo;t linger past its welcome.</p>
+
+        <p>We roasted it light, lighter than we usually run our house blend, to keep as much of that top-note brightness as we could. If you&rsquo;ve only ever had it as a French press, try it as a pour-over instead. The paper filter pulls out just enough body to let the citrus lead without getting muddy.</p>
+
+        <blockquote>
+          <p>Every bean is cupped before it&rsquo;s bought, every loaf is shaped by hand, and every regular gets remembered. That&rsquo;s the whole plan.</p>
+        </blockquote>
+
+        <p>It&rsquo;ll be on the board as our single-origin pour-over through the end of the month, or until the forty pounds run out, whichever comes first. Ask at the counter if you want a bag to take home; we&rsquo;ll grind it fresh while you wait.</p>
+
+        <h2 style="margin-top: var(--sp-10);">Where the beans came from</h2>
+        <p>The Gedeb co-op sits at just under two thousand metres in the Gedeo Zone of southern Ethiopia, one of the higher-elevation growing regions we buy from. Higher elevation generally means a slower-ripening cherry and a denser bean, which is a lot of the reason this lot tastes the way it does.</p>
+      </div>
+
+      <div class="parcel-article__footer">
+        <span class="parcel-terms">Tagged: single-origin, ethiopia, pour-over</span>
+        <div class="parcel-byline" style="margin-top: var(--sp-5);">
+          <span class="parcel-avatar" role="img" aria-label="Portrait of Dana Okafor" style="width:56px;height:56px;"></span>
+          <div>
+            <div style="font-weight:700; color: var(--ink);">Dana Okafor</div>
+            <div>Head roaster at Fernwood since 2019.</div>
+          </div>
         </div>
       </div>
-    </div>
+    </article>
+
+    <nav style="display:flex; justify-content:space-between; flex-wrap:wrap; gap: var(--sp-4); margin-top: var(--sp-10); font-size: var(--fs-sm);" aria-label="Post navigation">
+      <a href="#">&larr; The new morning bun is back for fall</a>
+      <a href="#">We&rsquo;re closed Thanksgiving Monday &rarr;</a>
+    </nav>
   </div>
-
-  <section class="co-section co-section--white">
-    <div class="co-wrap">
-      <div class="co-cols-2-1">
-        <!-- Article body -->
-        <article class="co-article">
-          <div style="background: var(--wp--preset--color--ground); aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; font-family: var(--wp--preset--font-family--sans); font-size: 0.75rem; color: var(--wp--preset--color--ink-faint); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5rem;">Lead Image</div>
-          <p style="font-family: var(--wp--preset--font-family--sans); font-size: 0.75rem; color: var(--wp--preset--color--ink-muted); font-style: italic; margin-bottom: 2rem;">The TeleGeography undersea cable map, 2025 edition. (Courtesy TeleGeography)</p>
-
-          <p>On the floor of the Atlantic Ocean, at a depth of roughly 3,000 metres, a bundle of optical fibres carries the emails, the TikToks, the bank transfers, and the classified government communications of the Western world. It is not classified. You can look up the route on TeleGeography's public cable map. The coordinates of the landing stations are known. And yet, for most of the last two decades, governments acted as if the cables were not there.</p>
-
-          <p>That changed sometime around 2022, when the sabotage of the Nord Stream pipeline made European security establishments think seriously about what else runs under the sea. The answer — for anyone who cared to look — was everything. Ninety-nine percent of intercontinental internet traffic moves through seventeen active cable systems. All of them are privately owned. Most are co-owned by Google, Meta, and three or four national telecoms. None have meaningful military protection.</p>
-
-          <blockquote>"We don't think of cables as infrastructure the way we think of highways or power lines, because we don't see them. But remove them and the global economy stops in minutes, not days."</blockquote>
-
-          <h2>The Ownership Problem</h2>
-
-          <p>The governance of undersea cables has never caught up with their strategic importance. The cables are regulated as telecommunications equipment. They are permitted under UNCLOS, which treats the seabed as a shared commons. Repairs are handled by a small cartel of specialized ships — there are roughly fifty capable vessels worldwide. There is no meaningful international framework for protecting them.</p>
-
-          <p>When a fishing trawler dragged its anchor across a cable off Taiwan in 2006, it severed connections between Taiwan and the Philippines and slowed internet speeds across Southeast Asia for weeks. When the Houthi movement damaged cables in the Red Sea in early 2024, the event was treated primarily as a logistics story. The strategic implications received less attention.</p>
-
-          <h2>What Governments Are Actually Doing</h2>
-
-          <p>The policy response has been fragmentary but real. The US has begun scrutinizing cable landing licenses more closely, blocking Huawei Marine from participating in projects connecting American landing stations. The EU has put cables on its critical infrastructure list, though without corresponding enforcement mechanisms. Australia has passed legislation requiring cable operators to notify the government of maintenance work — a measure so minimal it reads as performative.</p>
-
-          <p>The serious work is happening at the national intelligence level, not the policy level. NATO has begun coordinating cable monitoring activities. The UK has established a joint government-industry cable protection group. These are useful, quiet steps. They are not a substitute for a coherent international framework.</p>
-        </article>
-
-        <!-- Sidebar -->
-        <aside style="display: flex; flex-direction: column; gap: 2rem;">
-          <div class="co-newsletter" style="padding: 2rem;">
-            <div class="co-eyebrow co-eyebrow--accent">Newsletter</div>
-            <div class="co-newsletter__heading" style="font-size: 1.25rem;">Essays by email</div>
-            <p class="co-newsletter__desc">Long-form pieces on technology and policy, sent when they're ready. Not weekly.</p>
-            <form>
-              <input type="email" placeholder="your@email.com">
-              <button type="submit" class="co-newsletter__btn">Subscribe</button>
-            </form>
-          </div>
-
-          <div style="border: 1px solid var(--wp--preset--color--rule); padding: 2rem;">
-            <div style="font-family: var(--wp--preset--font-family--sans); font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--wp--preset--color--ink-muted); margin-bottom: 1.25rem; padding-bottom: 0.875rem; border-bottom: 1px solid var(--wp--preset--color--rule);">More in Technology Policy</div>
-            <div style="display: flex; flex-direction: column; gap: 1.25rem;">
-              <div>
-                <a href="#" style="font-family: var(--wp--preset--font-family--serif); font-size: 1rem; font-weight: 400; line-height: 1.35; color: var(--wp--preset--color--ink-deep); text-decoration: none;">Water Utilities and the Software They Can't Afford to Patch</a>
-                <div style="font-family: var(--wp--preset--font-family--sans); font-size: 0.75rem; color: var(--wp--preset--color--ink-faint); margin-top: 0.25rem;">May 14, 2025</div>
-              </div>
-              <hr class="co-divider" style="margin-block: 0;">
-              <div>
-                <a href="#" style="font-family: var(--wp--preset--font-family--serif); font-size: 1rem; font-weight: 400; line-height: 1.35; color: var(--wp--preset--color--ink-deep); text-decoration: none;">Regulating Models You Can't Inspect</a>
-                <div style="font-family: var(--wp--preset--font-family--sans); font-size: 0.75rem; color: var(--wp--preset--color--ink-faint); margin-top: 0.25rem;">Apr 9, 2025</div>
-              </div>
-              <hr class="co-divider" style="margin-block: 0;">
-              <div>
-                <a href="#" style="font-family: var(--wp--preset--font-family--serif); font-size: 1rem; font-weight: 400; line-height: 1.35; color: var(--wp--preset--color--ink-deep); text-decoration: none;">Spectrum Auctions and the Myth of Neutral Connectivity</a>
-                <div style="font-family: var(--wp--preset--font-family--sans); font-size: 0.75rem; color: var(--wp--preset--color--ink-faint); margin-top: 0.25rem;">Apr 18, 2025</div>
-              </div>
-            </div>
-          </div>
-        </aside>
-      </div>
-    </div>
-  </section>
 </main>
 
-<footer class="co-footer">
-  <div class="co-footer__inner">
-    <div>
-      <div class="co-footer__name">Adrienne Holloway</div>
-      <p class="co-footer__desc">Writing on technology, infrastructure, and policy. Published in The Atlantic, MIT Technology Review, and Rest of World.</p>
+<footer class="parcel-site-footer parcel-band--roast">
+  <div class="parcel-container">
+    <div class="parcel-footer-cols">
+      <div>
+        <a class="parcel-site-title" href="01-front-page.html" style="color: var(--roast-fg);">Fernwood Coffee Roasters</a>
+        <p class="site-desc">Small-batch roasting and baking, one neighbourhood counter at a time.</p>
+      </div>
+      <div>
+        <h3>Hours</h3>
+        <div class="parcel-hours-row"><span class="day">Mon&ndash;Fri</span><span class="parcel-leader"></span><span class="time">7am &ndash; 5pm</span></div>
+        <div class="parcel-hours-row" style="margin-top: var(--sp-2);"><span class="day">Sat&ndash;Sun</span><span class="parcel-leader"></span><span class="time">8am &ndash; 4pm</span></div>
+      </div>
+      <div>
+        <h3>Visit</h3>
+        <nav class="parcel-footer-nav" aria-label="Footer">
+          <a href="#">214 Mill Street, unit 2</a>
+          <a href="01-front-page.html#order-ahead">Order ahead</a>
+          <a href="#">Contact</a>
+        </nav>
+      </div>
     </div>
-    <div>
-      <div class="co-footer__heading">Writing</div>
-      <nav class="co-footer__links">
-        <a href="#">Technology Policy</a>
-        <a href="#">Infrastructure</a>
-        <a href="#">Urban Tech</a>
-        <a href="#">AI Policy</a>
-      </nav>
+    <hr class="parcel-footer-hr">
+    <div class="parcel-footer-bottom">
+      <span>&copy; 2026 Fernwood Coffee Roasters. All rights reserved.</span>
+      <span>Built with WordPress &amp; <a href="https://thisismyurl.com/parcel/">Parcel</a></span>
     </div>
-    <div>
-      <div class="co-footer__heading">Connect</div>
-      <nav class="co-footer__links">
-        <a href="#">Newsletter</a>
-        <a href="#">Twitter / X</a>
-        <a href="#">Mastodon</a>
-        <a href="#">Contact</a>
-      </nav>
-    </div>
-  </div>
-  <div class="co-footer__bottom">
-    <span>&copy; 2025 Adrienne Holloway</span>
-    <span>Built with WordPress &amp; <a href="https://thisismyurl.com/colophon/">Colophon</a></span>
   </div>
 </footer>
 

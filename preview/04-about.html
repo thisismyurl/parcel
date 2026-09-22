@@ -2,152 +2,137 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=1200">
-<title>Colophon — About</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Parcel: About / Our Story</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300..900;1,8..60,300..900&family=Inter:wght@100..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="colophon-preview.css">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="parcel-preview.css">
 </head>
 <body>
 
-<header class="co-header">
-  <div class="co-header__inner">
-    <a class="co-site-name" href="#">Adrienne Holloway</a>
-    <nav class="co-nav">
-      <a href="#">Writing</a>
-      <a href="#">Projects</a>
-      <a href="#">Talks</a>
-      <a href="#" class="current">About</a>
-    </nav>
-    <a class="co-cta-btn" href="#">Subscribe</a>
+<header class="parcel-site-header">
+  <div class="parcel-header__branding">
+    <span class="parcel-logo-mark" aria-hidden="true">F</span>
+    <a class="parcel-site-title" href="01-front-page.html">Fernwood Coffee Roasters</a>
   </div>
+  <nav class="parcel-nav" aria-label="Primary">
+    <a href="01-front-page.html">Menu</a>
+    <a href="04-about.html">Our story</a>
+    <a href="03-archive.html">Journal</a>
+    <a href="01-front-page.html#visit">Visit</a>
+    <a href="01-front-page.html#order-ahead" class="parcel-btn" style="padding: var(--sp-2) var(--sp-4); font-size: var(--fs-xs);">Order ahead</a>
+  </nav>
 </header>
 
-<section class="co-hero" style="padding-block: 5rem;">
-  <div class="co-hero__inner">
-    <div class="co-eyebrow">About</div>
-    <h1 class="co-hero__title" style="font-size: clamp(3rem, 5vw, 5.5rem);">Adrienne<br>Holloway</h1>
-    <p class="co-hero__sub" style="font-size: 1.25rem;">Writer and researcher covering technology infrastructure, digital governance, and the politics of connectivity. Based in Toronto.</p>
-  </div>
-</section>
+<!-- templates/page.html assembled from patterns/our-story.php + a reused
+     feature-grid + the visit-us band , the "About" page for the shop's
+     background, built entirely from patterns, no bespoke markup. -->
+<main>
 
-<!-- Bio + photo -->
-<section class="co-section co-section--white">
-  <div class="co-wrap">
-    <div class="co-cols-1-2">
+  <!-- Pattern: parcel/our-story , media-text, portrait photo beside the
+       founding story. Image and word at equal weight, no full-bleed
+       photography. -->
+  <div class="parcel-section">
+    <div class="parcel-container">
+      <div class="parcel-our-story">
+        <div class="parcel-our-story__media" role="img" aria-label="A black and white portrait of the Fernwood founders roasting coffee in their original garage setup"></div>
+        <div>
+          <span class="parcel-eyebrow">Our story</span>
+          <h2 style="margin-top: var(--sp-3);">Started in a garage, still stubborn about it</h2>
+          <p class="parcel-lead">We started roasting a pound at a time on a converted popcorn machine because the coffee we could buy nearby wasn&rsquo;t worth the walk. Nine years later the machine is bigger, but the batches are still small on purpose.</p>
+          <p style="margin-top: var(--sp-4);">Every bean is cupped before it&rsquo;s bought, every loaf is shaped by hand, and every regular gets remembered. That&rsquo;s the whole plan.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pattern: parcel/feature-grid, reused on the About page for the craft
+       specifics , the same pattern that carries the homepage. -->
+  <div class="parcel-section parcel-band--paper-soft">
+    <div class="parcel-container">
+      <div class="parcel-section-head">
+        <span class="parcel-eyebrow">How we work</span>
+        <h2>Small batches, on purpose</h2>
+      </div>
+      <div class="parcel-feature-grid">
+        <div class="parcel-feature">
+          <div class="parcel-feature-circle" role="img" aria-label="A roaster checking bean colour by hand during a roast"></div>
+          <h4>Cupped before we buy</h4>
+          <p>Every lot is tasted blind against three others before it ever makes the truck.</p>
+        </div>
+        <div class="parcel-feature">
+          <div class="parcel-feature-circle" role="img" aria-label="A baker shaping sourdough loaves by hand"></div>
+          <h4>Shaped by hand</h4>
+          <p>No dough sheeter in the building. Every loaf gets the same two hands every morning.</p>
+        </div>
+        <div class="parcel-feature">
+          <div class="parcel-feature-circle" role="img" aria-label="A staff member greeting a regular customer by name at the counter"></div>
+          <h4>We remember your order</h4>
+          <p>Small enough that the regulars are, well, actually regular to us too.</p>
+        </div>
+        <div class="parcel-feature">
+          <div class="parcel-feature-circle" role="img" aria-label="A farmer delivering a crate of eggs to the bakery's back door"></div>
+          <h4>60-mile sourcing</h4>
+          <p>If we can&rsquo;t drive there and back before opening, we don&rsquo;t buy from it.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pattern: parcel/visit-us, reused , hours and order-ahead belong on
+       the About page too, not only the homepage. -->
+  <div id="visit" class="parcel-section">
+    <div class="parcel-container">
+      <div class="parcel-visit-band">
+        <div>
+          <span class="parcel-eyebrow">Visit</span>
+          <h2>Hours and location</h2>
+          <div class="parcel-menu-rows" style="margin-top: var(--sp-5);">
+            <div class="parcel-hours-row"><span class="day">Monday&nbsp;&ndash; Friday</span><span class="parcel-leader"></span><span class="time">7:00am &ndash; 5:00pm</span></div>
+            <div class="parcel-hours-row"><span class="day">Saturday&nbsp;&ndash; Sunday</span><span class="parcel-leader"></span><span class="time">8:00am &ndash; 4:00pm</span></div>
+            <div class="parcel-hours-row"><span class="day">Closed</span><span class="parcel-leader"></span><span class="time">Major holidays</span></div>
+          </div>
+          <p style="margin-top: var(--sp-4);">214 Mill Street, unit 2, street parking after 9am.</p>
+        </div>
+        <div class="parcel-card">
+          <h3>Skip the line</h3>
+          <p>Order ahead and we&rsquo;ll have it ready at the counter, no waiting required.</p>
+          <a class="parcel-btn" href="#">Order ahead</a>
+          <p class="parcel-phone">Or call ahead: (555) 019-2244</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer class="parcel-site-footer parcel-band--roast">
+  <div class="parcel-container">
+    <div class="parcel-footer-cols">
       <div>
-        <div class="co-post-card__img" style="aspect-ratio: 3/4; max-width: 320px;">Portrait placeholder</div>
+        <a class="parcel-site-title" href="01-front-page.html" style="color: var(--roast-fg);">Fernwood Coffee Roasters</a>
+        <p class="site-desc">Small-batch roasting and baking, one neighbourhood counter at a time.</p>
       </div>
-      <div class="co-article" style="max-width: none;">
-        <p>I cover the physical and institutional infrastructure that makes the internet work — or fail to. That means undersea cables, spectrum allocation, municipal broadband debates, smart city contracts, and the governance bodies that theoretically oversee all of it.</p>
-        <p>My work has appeared in The Atlantic, MIT Technology Review, Rest of World, The Walrus, and Toronto Star Weekend. I've been a visiting fellow at the Citizen Lab at the University of Toronto, and a contributor to the Canadian Internet Policy and Public Interest Clinic.</p>
-        <p>Before writing, I worked in telecommunications policy at the CRTC for six years. That institutional experience informs most of what I do: I find the gap between how policy is made and what it actually produces.</p>
-        <p>I hold a master's degree in public policy from the School of Public Policy and Governance at the University of Toronto, and an undergraduate degree in political science from McGill.</p>
-        <hr class="co-divider">
-        <p>For pitches and commissions, email <a href="#" style="color: var(--wp--preset--color--accent);">adrienne@example.com</a>. For speaking enquiries, see the <a href="#" style="color: var(--wp--preset--color--accent);">Talks</a> page.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Publications -->
-<section class="co-section co-section--ground">
-  <div class="co-wrap">
-    <div style="margin-bottom: 2.5rem; display: flex; justify-content: space-between; align-items: baseline;">
       <div>
-        <div class="co-eyebrow">Published in</div>
-        <h2 style="font-family: var(--wp--preset--font-family--serif); font-size: 2.25rem; font-weight: 300; letter-spacing: -0.02em;">Selected Publications</h2>
+        <h3>Hours</h3>
+        <div class="parcel-hours-row"><span class="day">Mon&ndash;Fri</span><span class="parcel-leader"></span><span class="time">7am &ndash; 5pm</span></div>
+        <div class="parcel-hours-row" style="margin-top: var(--sp-2);"><span class="day">Sat&ndash;Sun</span><span class="parcel-leader"></span><span class="time">8am &ndash; 4pm</span></div>
+      </div>
+      <div>
+        <h3>Visit</h3>
+        <nav class="parcel-footer-nav" aria-label="Footer">
+          <a href="#">214 Mill Street, unit 2</a>
+          <a href="01-front-page.html#order-ahead">Order ahead</a>
+          <a href="#">Contact</a>
+        </nav>
       </div>
     </div>
-
-    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; margin-bottom: 3rem;">
-      <div style="background: var(--wp--preset--color--white); border: 1px solid var(--wp--preset--color--rule); padding: 1.75rem; display: flex; align-items: center; justify-content: center;">
-        <span style="font-family: var(--wp--preset--font-family--serif); font-size: 1.375rem; font-weight: 400; color: var(--wp--preset--color--ink-primary); letter-spacing: -0.01em;">The Atlantic</span>
-      </div>
-      <div style="background: var(--wp--preset--color--white); border: 1px solid var(--wp--preset--color--rule); padding: 1.75rem; display: flex; align-items: center; justify-content: center;">
-        <span style="font-family: var(--wp--preset--font-family--sans); font-size: 1rem; font-weight: 600; color: var(--wp--preset--color--ink-primary); letter-spacing: -0.01em;">MIT Technology Review</span>
-      </div>
-      <div style="background: var(--wp--preset--color--white); border: 1px solid var(--wp--preset--color--rule); padding: 1.75rem; display: flex; align-items: center; justify-content: center;">
-        <span style="font-family: var(--wp--preset--font-family--serif); font-size: 1.375rem; font-weight: 400; color: var(--wp--preset--color--ink-primary);">Rest of World</span>
-      </div>
-      <div style="background: var(--wp--preset--color--white); border: 1px solid var(--wp--preset--color--rule); padding: 1.75rem; display: flex; align-items: center; justify-content: center;">
-        <span style="font-family: var(--wp--preset--font-family--serif); font-size: 1.375rem; font-weight: 400; color: var(--wp--preset--color--ink-primary); font-style: italic;">The Walrus</span>
-      </div>
+    <hr class="parcel-footer-hr">
+    <div class="parcel-footer-bottom">
+      <span>&copy; 2026 Fernwood Coffee Roasters. All rights reserved.</span>
+      <span>Built with WordPress &amp; <a href="https://thisismyurl.com/parcel/">Parcel</a></span>
     </div>
-
-    <!-- Featured pieces -->
-    <div class="co-cols-3">
-      <div class="co-post-card">
-        <div class="co-post-card__img co-post-card__img--3-2" style="background: var(--wp--preset--color--paper);">The Atlantic</div>
-        <a class="co-post-card__category" href="#">The Atlantic</a>
-        <a class="co-post-card__title co-post-card__title--sm" href="#">Why Your City's Smart Streetlights Are a Security Risk</a>
-        <div class="co-post-card__meta"><span>Feb 2024</span></div>
-      </div>
-      <div class="co-post-card">
-        <div class="co-post-card__img co-post-card__img--3-2" style="background: var(--wp--preset--color--paper);">MIT Tech Review</div>
-        <a class="co-post-card__category" href="#">MIT Technology Review</a>
-        <a class="co-post-card__title co-post-card__title--sm" href="#">The Internet's Achilles' Heel Lies at the Bottom of the Ocean</a>
-        <div class="co-post-card__meta"><span>Nov 2023</span></div>
-      </div>
-      <div class="co-post-card">
-        <div class="co-post-card__img co-post-card__img--3-2" style="background: var(--wp--preset--color--paper);">Rest of World</div>
-        <a class="co-post-card__category" href="#">Rest of World</a>
-        <a class="co-post-card__title co-post-card__title--sm" href="#">The Countries Building Their Own Internets</a>
-        <div class="co-post-card__meta"><span>Jul 2023</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Newsletter + contact -->
-<section class="co-section co-section--white">
-  <div class="co-wrap">
-    <div class="co-cols-2">
-      <div class="co-newsletter">
-        <div class="co-eyebrow co-eyebrow--accent">Newsletter</div>
-        <div class="co-newsletter__heading">Essays by email</div>
-        <p class="co-newsletter__desc">Long-form pieces on technology and policy, sent when they're ready — not on a schedule.</p>
-        <form>
-          <input type="email" placeholder="your@email.com">
-          <button type="submit" class="co-newsletter__btn">Subscribe</button>
-        </form>
-      </div>
-      <div style="padding: 3rem; background: var(--wp--preset--color--accent); color: var(--wp--preset--color--paper);">
-        <div style="font-family: var(--wp--preset--font-family--sans); font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.6; margin-bottom: 1rem;">Commissions &amp; Speaking</div>
-        <h3 style="font-family: var(--wp--preset--font-family--serif); font-size: 2rem; font-weight: 300; letter-spacing: -0.02em; margin-bottom: 1rem; line-height: 1.2;">Let's work<br>together</h3>
-        <p style="font-family: var(--wp--preset--font-family--sans); font-size: 0.9375rem; opacity: 0.8; line-height: 1.65; margin-bottom: 1.5rem;">I take a limited number of commissions per year. I speak at conferences on technology infrastructure and digital governance.</p>
-        <a href="#" style="display: inline-block; background: var(--wp--preset--color--paper); color: var(--wp--preset--color--accent); font-family: var(--wp--preset--font-family--sans); font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.625rem 1.375rem; text-decoration: none;">Get in Touch</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer class="co-footer">
-  <div class="co-footer__inner">
-    <div>
-      <div class="co-footer__name">Adrienne Holloway</div>
-      <p class="co-footer__desc">Writing on technology, infrastructure, and policy.</p>
-    </div>
-    <div>
-      <div class="co-footer__heading">Writing</div>
-      <nav class="co-footer__links">
-        <a href="#">Technology Policy</a>
-        <a href="#">Infrastructure</a>
-        <a href="#">Urban Tech</a>
-      </nav>
-    </div>
-    <div>
-      <div class="co-footer__heading">Connect</div>
-      <nav class="co-footer__links">
-        <a href="#">Newsletter</a>
-        <a href="#">Contact</a>
-      </nav>
-    </div>
-  </div>
-  <div class="co-footer__bottom">
-    <span>&copy; 2025 Adrienne Holloway</span>
-    <span>Built with WordPress &amp; <a href="https://thisismyurl.com/colophon/">Colophon</a></span>
   </div>
 </footer>
 

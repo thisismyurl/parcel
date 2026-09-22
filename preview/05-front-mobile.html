@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=375, initial-scale=1">
+<title>Parcel: Front Page (Mobile)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="parcel-preview.css">
+<style>
+  /* Mobile stacking, media-text patterns collapse to a single column
+     under 760px, matching parcel's grid-template-columns media queries
+     in assets/css/skin.css. */
+  .parcel-hero { grid-template-columns: 1fr; gap: var(--sp-6); }
+  .parcel-hero__media { order: -1; aspect-ratio: 16/10; }
+  .parcel-hero h1 { font-size: var(--fs-3xl); }
+  .parcel-nav { display: none; }
+  .parcel-site-header { padding: var(--sp-4); }
+</style>
+</head>
+<body>
+
+<header class="parcel-site-header">
+  <div class="parcel-header__branding">
+    <span class="parcel-logo-mark" aria-hidden="true">F</span>
+    <a class="parcel-site-title" href="01-front-page.html" style="font-size: var(--fs-md);">Fernwood Coffee Roasters</a>
+  </div>
+  <button aria-label="Open menu" style="background:none; border:none; font-size:1.5rem; color:var(--ink); line-height:1;">&#9776;</button>
+</header>
+
+<main>
+
+  <div class="parcel-container" style="padding-inline: var(--sp-4);">
+    <div class="parcel-hero" style="padding-block: var(--sp-6);">
+      <div>
+        <span class="parcel-eyebrow">Roasted Tuesdays &middot; Baked daily</span>
+        <h1>A slower kind of good morning</h1>
+        <p class="parcel-lead">We roast in small batches, bake before sunrise, and pour one cup at a time.</p>
+        <div class="parcel-buttons">
+          <a class="parcel-btn" href="#" style="flex: 1 1 auto; text-align:center;">Order ahead</a>
+          <a class="parcel-btn is-outline" href="#" style="flex: 1 1 auto; text-align:center;">View menu</a>
+        </div>
+      </div>
+      <div class="parcel-hero__media" role="img" aria-label="A pour-over coffee being poured behind the counter at Fernwood Coffee Roasters"></div>
+    </div>
+  </div>
+
+  <!-- Menu board , signature dot-leader treatment, stacked single-column
+       on mobile (see 06-menu-mobile.html for a full-width close-up). -->
+  <div class="parcel-section is-tight parcel-band--paper-soft">
+    <div class="parcel-container" style="padding-inline: var(--sp-4);">
+      <div class="parcel-section-head" style="margin-bottom: var(--sp-6);">
+        <span class="parcel-eyebrow">Today on the board</span>
+        <h2 style="font-size: var(--fs-2xl);">The menu</h2>
+      </div>
+      <div class="parcel-menu-board">
+        <div class="parcel-menu-category">
+          <h3>Drinks</h3>
+          <div class="parcel-menu-rows">
+            <div class="parcel-menu-row"><span class="item">Drip coffee</span><span class="parcel-leader"></span><span class="price parcel-menu-price">$3.25</span></div>
+            <div class="parcel-menu-row"><span class="item">Single-origin pour-over</span><span class="parcel-leader"></span><span class="price parcel-menu-price">$5.50</span></div>
+            <div class="parcel-menu-row"><span class="item">Barrel-aged cold brew</span><span class="parcel-leader"></span><span class="price parcel-menu-price">$5.75</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="parcel-buttons" style="margin-top: var(--sp-6); justify-content:center;">
+        <a class="parcel-btn is-outline" href="06-menu-mobile.html">See the full menu</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="parcel-section is-tight parcel-band--roast">
+    <div class="parcel-container" style="padding-inline: var(--sp-4);">
+      <span class="parcel-eyebrow">Weekdays, 7&ndash;8am</span>
+      <h2 style="font-size: var(--fs-2xl); margin-top: var(--sp-2);">The Early Pour</h2>
+      <p style="margin-top: var(--sp-3);">Any drip coffee and a morning bun for one flat price, before eight o&rsquo;clock only.</p>
+      <span class="parcel-price-tag">$5 flat</span>
+    </div>
+  </div>
+
+  <div class="parcel-section is-tight">
+    <div class="parcel-container" style="padding-inline: var(--sp-4);">
+      <span class="parcel-eyebrow">Visit</span>
+      <h2 style="font-size: var(--fs-2xl);">Hours and location</h2>
+      <div class="parcel-menu-rows" style="margin-top: var(--sp-4);">
+        <div class="parcel-hours-row"><span class="day">Mon &ndash; Fri</span><span class="parcel-leader"></span><span class="time">7am &ndash; 5pm</span></div>
+        <div class="parcel-hours-row"><span class="day">Sat &ndash; Sun</span><span class="parcel-leader"></span><span class="time">8am &ndash; 4pm</span></div>
+      </div>
+      <div class="parcel-card" style="margin-top: var(--sp-6);">
+        <h3>Skip the line</h3>
+        <p>Order ahead and we&rsquo;ll have it ready at the counter.</p>
+        <a class="parcel-btn" href="#" style="display:block; text-align:center;">Order ahead</a>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer class="parcel-site-footer parcel-band--roast">
+  <div class="parcel-container" style="padding-inline: var(--sp-4);">
+    <div class="parcel-footer-cols">
+      <div>
+        <a class="parcel-site-title" href="01-front-page.html" style="color: var(--roast-fg); font-size: var(--fs-md);">Fernwood Coffee Roasters</a>
+        <p class="site-desc">Small-batch roasting and baking, one neighbourhood counter at a time.</p>
+      </div>
+      <div>
+        <h3>Hours</h3>
+        <div class="parcel-hours-row"><span class="day">Mon&ndash;Fri</span><span class="parcel-leader"></span><span class="time">7am &ndash; 5pm</span></div>
+      </div>
+    </div>
+    <hr class="parcel-footer-hr">
+    <div class="parcel-footer-bottom">
+      <span>&copy; 2026 Fernwood Coffee Roasters.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

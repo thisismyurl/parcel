@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=375, initial-scale=1">
+<title>Parcel: Menu Board (Mobile)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="parcel-preview.css">
+<style>
+  .parcel-nav { display: none; }
+  .parcel-site-header { padding: var(--sp-4); }
+</style>
+</head>
+<body>
+
+<header class="parcel-site-header">
+  <div class="parcel-header__branding">
+    <span class="parcel-logo-mark" aria-hidden="true">F</span>
+    <a class="parcel-site-title" href="01-front-page.html" style="font-size: var(--fs-md);">Fernwood Coffee Roasters</a>
+  </div>
+  <button aria-label="Open menu" style="background:none; border:none; font-size:1.5rem; color:var(--ink); line-height:1;">&#9776;</button>
+</header>
+
+<!-- The Menu Board pattern (parcel/menu-board) is the theme's signature
+     feature , proving the dot-leader convention holds up at a 375px
+     viewport is the whole point of this mobile variant. On mobile the
+     two-column grid (assets/css/skin.css .parcel-menu-board, min-width
+     760px breakpoint) collapses to a single stacked column; the dot
+     leader itself does not change , it still fills the row from the item
+     name to the price. -->
+<main>
+  <div class="parcel-container parcel-section is-tight" style="padding-inline: var(--sp-4);">
+    <div class="parcel-section-head" style="text-align:left; margin-left:0; margin-bottom: var(--sp-6);">
+      <span class="parcel-eyebrow">Today on the board</span>
+      <h1 style="font-family: var(--font-fraunces); font-size: var(--fs-2xl); font-weight:600; letter-spacing:-0.015em;">The menu</h1>
+    </div>
+
+    <div class="parcel-menu-board">
+      <div class="parcel-menu-category">
+        <h3>Drinks</h3>
+        <div class="parcel-menu-rows">
+          <div class="parcel-menu-row"><span class="item">Drip coffee</span><span class="parcel-leader"></span><span class="price parcel-menu-price">$3.25</span></div>
+          <div class="parcel-menu-row"><span class="item">Single-origin pour-over</span><span class="parcel-leader"></span><span class="price parcel-menu-price">$5.50</span></div>
+          <div class="parcel-menu-row"><span class="item">Barrel-aged cold brew</span><span class="parcel-leader"></span><span class="price parcel-menu-price">$5.75</span></div>
+          <div class="parcel-menu-row"><span class="item">Cardamom oat latte</span><span class="parcel-leader"></span><span class="price parcel-menu-price">$5.95</span></div>
+          <div class="parcel-menu-row"><span class="item">Espresso, double</span><span class="parcel-leader"></span><span class="price parcel-menu-price">$3.75</span></div>
+        </div>
+      </div>
+      <div class="parcel-menu-category" style="margin-top: var(--sp-8);">
+        <h3>From the oven</h3>
+        <div class="parcel-menu-rows">
+          <div class="parcel-menu-row"><span class="item">Sourdough loaf, whole</span><span class="parcel-leader"></span><span class="price parcel-menu-price">$8.00</span></div>
+          <div class="parcel-menu-row"><span class="item">Almond croissant</span><span class="parcel-leader"></span><span class="price parcel-menu-price">$4.75</span></div>
+          <div class="parcel-menu-row"><span class="item">Morning bun, brown butter</span><span class="parcel-leader"></span><span class="price parcel-menu-price">$4.25</span></div>
+          <div class="parcel-menu-row"><span class="item">Egg and cheddar biscuit</span><span class="parcel-leader"></span><span class="price parcel-menu-price">$6.25</span></div>
+        </div>
+      </div>
+    </div>
+
+    <p class="parcel-annotation" style="text-align:left;">Full menu, seasonal specials, and dietary notes are posted at the counter and updated weekly.</p>
+
+    <div class="parcel-buttons" style="margin-top: var(--sp-6);">
+      <a class="parcel-btn" href="01-front-page.html#order-ahead" style="display:block; width:100%; text-align:center;">Order ahead</a>
+    </div>
+  </div>
+</main>
+
+<footer class="parcel-site-footer parcel-band--roast">
+  <div class="parcel-container" style="padding-inline: var(--sp-4);">
+    <div class="parcel-footer-bottom" style="justify-content:center;">
+      <span>&copy; 2026 Fernwood Coffee Roasters.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

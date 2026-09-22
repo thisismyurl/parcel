@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1200">
+<title>Parcel: All Elements</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="parcel-preview.css">
+</head>
+<body>
+
+<header class="parcel-site-header">
+  <div class="parcel-header__branding">
+    <span class="parcel-logo-mark" aria-hidden="true">F</span>
+    <a class="parcel-site-title" href="01-front-page.html">Fernwood Coffee Roasters</a>
+  </div>
+  <nav class="parcel-nav" aria-label="Primary">
+    <a href="01-front-page.html">Menu</a>
+    <a href="04-about.html">Our story</a>
+    <a href="03-archive.html">Journal</a>
+  </nav>
+</header>
+
+<main class="parcel-container parcel-section">
+
+  <div class="parcel-section-head" style="text-align:left; margin-left:0;">
+    <span class="parcel-eyebrow">Reference</span>
+    <h1 style="font-size: var(--fs-3xl);">All elements</h1>
+    <p style="max-width:640px;">Typography, colour, buttons, and block treatments at a glance. Source of truth is parcel/theme.json and parcel/assets/css/skin.css in the theme repository.</p>
+  </div>
+
+  <!-- Typography ============================================== -->
+  <section style="margin-top: var(--sp-12);">
+    <h2 style="font-size: var(--fs-xl);">Typography</h2>
+    <p style="margin-top: var(--sp-2); color: var(--ink-muted);">Fraunces (headings, display serif) &middot; DM Sans (body &amp; UI, warm geometric sans)</p>
+
+    <div style="margin-top: var(--sp-8);">
+      <div class="parcel-type-row"><span class="label">H1 / display</span><span style="font-family: var(--font-fraunces); font-weight:600; font-size: var(--fs-3xl); letter-spacing:-0.02em; line-height:1.02;">A slower kind of good morning</span></div>
+      <div class="parcel-type-row"><span class="label">H2</span><span style="font-family: var(--font-fraunces); font-weight:600; font-size: var(--fs-2xl); letter-spacing:-0.015em;">What we&rsquo;re known for</span></div>
+      <div class="parcel-type-row"><span class="label">H3</span><span style="font-family: var(--font-fraunces); font-weight:500; font-style:italic; font-size: var(--fs-lg);">Skip the line</span></div>
+      <div class="parcel-type-row"><span class="label">H4</span><span style="font-family: var(--font-dm-sans); font-weight:700; font-size: var(--fs-md);">Single-origin pour-over</span></div>
+      <div class="parcel-type-row"><span class="label">H5 / eyebrow</span><span style="font-family: var(--font-dm-sans); font-weight:700; font-size: var(--fs-sm); letter-spacing:0.04em; text-transform:uppercase; color: var(--ink-soft);">Today on the board</span></div>
+      <div class="parcel-type-row"><span class="label">Lead</span><span class="parcel-lead" style="margin-top:0;">We roast in small batches, bake before sunrise, and pour one cup at a time.</span></div>
+      <div class="parcel-type-row"><span class="label">Body</span><span>Every bean is cupped before it&rsquo;s bought, every loaf is shaped by hand, and every regular gets remembered. That&rsquo;s the whole plan.</span></div>
+      <div class="parcel-type-row"><span class="label">Quote</span><span style="font-family: var(--font-fraunces); font-style:italic; font-size: var(--fs-md); color: var(--ink-soft);">&ldquo;They remember my order and my kid&rsquo;s name.&rdquo;</span></div>
+      <div class="parcel-type-row"><span class="label">Link</span><span><a href="#">Order ahead</a> &middot; <a href="#" onmouseover="">hover state shown live</a></span></div>
+    </div>
+  </section>
+
+  <!-- Colour ==================================================== -->
+  <section style="margin-top: var(--sp-16);">
+    <h2 style="font-size: var(--fs-xl);">Colour: roast-and-cream palette</h2>
+    <p style="margin-top: var(--sp-2); color: var(--ink-muted); max-width: 640px;">terracotta is a surface/large-text colour only (4.25:1 on paper). Small text uses terracotta-deep (5.52:1 on paper). See the ratio table in assets/css/skin.css.</p>
+    <div class="parcel-swatch-grid" style="margin-top: var(--sp-6);">
+      <div class="parcel-swatch"><div class="parcel-swatch__chip" style="background: var(--ink);"></div><div class="parcel-swatch__label">Ink<code>#2A1D14</code></div></div>
+      <div class="parcel-swatch"><div class="parcel-swatch__chip" style="background: var(--ink-soft);"></div><div class="parcel-swatch__label">Ink Soft<code>#4A3728</code></div></div>
+      <div class="parcel-swatch"><div class="parcel-swatch__chip" style="background: var(--ink-muted);"></div><div class="parcel-swatch__label">Ink Muted<code>#6E5C4A</code></div></div>
+      <div class="parcel-swatch"><div class="parcel-swatch__chip" style="background: var(--paper); border:1px solid var(--rule);"></div><div class="parcel-swatch__label">Paper<code>#FBF6ED</code></div></div>
+      <div class="parcel-swatch"><div class="parcel-swatch__chip" style="background: var(--paper-soft);"></div><div class="parcel-swatch__label">Paper Soft<code>#F3E9D8</code></div></div>
+      <div class="parcel-swatch"><div class="parcel-swatch__chip" style="background: var(--paper-deep);"></div><div class="parcel-swatch__label">Paper Deep (decorative)<code>#E7D8BC</code></div></div>
+      <div class="parcel-swatch"><div class="parcel-swatch__chip" style="background: var(--terracotta);"></div><div class="parcel-swatch__label">Terracotta (large/UI only)<code>#B75C32</code></div></div>
+      <div class="parcel-swatch"><div class="parcel-swatch__chip" style="background: var(--terracotta-deep);"></div><div class="parcel-swatch__label">Terracotta Deep (small text)<code>#9C4E2A</code></div></div>
+      <div class="parcel-swatch"><div class="parcel-swatch__chip" style="background: var(--terracotta-soft);"></div><div class="parcel-swatch__label">Terracotta Soft<code>#F1DDCB</code></div></div>
+      <div class="parcel-swatch"><div class="parcel-swatch__chip" style="background: var(--roast);"></div><div class="parcel-swatch__label">Roast (dark band)<code>#241812</code></div></div>
+      <div class="parcel-swatch"><div class="parcel-swatch__chip" style="background: var(--rule);"></div><div class="parcel-swatch__label">Rule (decorative)<code>#DED0B8</code></div></div>
+      <div class="parcel-swatch"><div class="parcel-swatch__chip" style="background: var(--white); border:1px solid var(--rule);"></div><div class="parcel-swatch__label">White<code>#FFFFFF</code></div></div>
+    </div>
+  </section>
+
+  <!-- Buttons ==================================================== -->
+  <section style="margin-top: var(--sp-16);">
+    <h2 style="font-size: var(--fs-xl);">Buttons</h2>
+    <div class="parcel-buttons" style="margin-top: var(--sp-6);">
+      <a class="parcel-btn" href="#">Order ahead</a>
+      <a class="parcel-btn is-outline" href="#">View the menu</a>
+    </div>
+    <div class="parcel-band--roast" style="margin-top: var(--sp-6); padding: var(--sp-6); border-radius: 0.75rem;">
+      <div class="parcel-buttons">
+        <a class="parcel-btn" href="#">On a roast band</a>
+        <a class="parcel-btn is-outline" href="#">Outline, inverse</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Signature block: dot-leader menu row =========================== -->
+  <section style="margin-top: var(--sp-16);">
+    <h2 style="font-size: var(--fs-xl);">The signature feature: dot-leader menu row</h2>
+    <p style="margin-top: var(--sp-2); color: var(--ink-muted); max-width: 640px;">A core/spacer block styled to render as a baseline-height dotted rule, walking the eye from an item name to its price. Reused for hours rows. No other WP.org theme ships this typographic device.</p>
+    <div class="parcel-card" style="margin-top: var(--sp-6); max-width: 480px;">
+      <div class="parcel-menu-rows">
+        <div class="parcel-menu-row"><span class="item">Drip coffee</span><span class="parcel-leader"></span><span class="price parcel-menu-price">$3.25</span></div>
+        <div class="parcel-menu-row"><span class="item">Single-origin pour-over</span><span class="parcel-leader"></span><span class="price parcel-menu-price">$5.50</span></div>
+        <div class="parcel-menu-row"><span class="item">Almond croissant</span><span class="parcel-leader"></span><span class="price parcel-menu-price">$4.75</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cards + badges =============================================== -->
+  <section style="margin-top: var(--sp-16);">
+    <h2 style="font-size: var(--fs-xl);">Cards &amp; price tag</h2>
+    <div style="display:flex; gap: var(--sp-6); flex-wrap:wrap; margin-top: var(--sp-6);">
+      <div class="parcel-card" style="max-width: 320px;">
+        <h3>Skip the line</h3>
+        <p>Order ahead and we&rsquo;ll have it ready at the counter.</p>
+        <a class="parcel-btn" href="#">Order ahead</a>
+      </div>
+      <div style="max-width: 320px;">
+        <span class="parcel-price-tag">$5 flat</span>
+      </div>
+      <div class="parcel-feature-circle" style="width:120px; background: var(--paper-deep);"></div>
+    </div>
+  </section>
+
+  <!-- Form ============================================================ -->
+  <section style="margin-top: var(--sp-16); margin-bottom: var(--sp-16);">
+    <h2 style="font-size: var(--fs-xl);">Form fields</h2>
+    <form style="margin-top: var(--sp-6);" onsubmit="return false;">
+      <div class="parcel-form-field">
+        <label for="el-name">Name</label>
+        <input id="el-name" type="text" placeholder="Your name">
+      </div>
+      <div class="parcel-form-field">
+        <label for="el-note">Order note</label>
+        <textarea id="el-note" rows="3" placeholder="Any allergies or special requests?"></textarea>
+      </div>
+      <a class="parcel-btn" href="#" onclick="return false;">Submit</a>
+    </form>
+  </section>
+
+</main>
+
+<footer class="parcel-site-footer parcel-band--roast">
+  <div class="parcel-container">
+    <div class="parcel-footer-bottom">
+      <span>&copy; 2026 Fernwood Coffee Roasters. All rights reserved.</span>
+      <span>Built with WordPress &amp; <a href="https://thisismyurl.com/parcel/">Parcel</a></span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
