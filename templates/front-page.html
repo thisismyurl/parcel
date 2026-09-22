@@ -1,49 +1,36 @@
+<!-- Front page template for Parcel.
+     Storefront homepage: hero → what we're known for → menu board → early
+     pour promo → hours & location → regulars say → counter gallery. This is
+     the full shop pitch in one scroll: what it is, what it costs, when it's
+     open, and what people who already go there think of it. -->
+
 <!-- wp:template-part {"slug":"header","tagName":"header"} /-->
 
-<!-- wp:group {"tagName":"main","className":"cl-main","metadata":{"name":"Main"},"layout":{"type":"constrained","contentSize":"1100px"}} -->
-<main id="main-content" class="wp-block-group cl-main">
+<!-- wp:group {"tagName":"main","id":"main-content","layout":{"type":"constrained","contentSize":"1200px"}} -->
+<main id="main-content" class="wp-block-group">
 
-	<!-- wp:group {"className":"cl-intro","layout":{"type":"constrained","contentSize":"720px"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|16","bottom":"var:preset|spacing|12"},"blockGap":"var:preset|spacing|4"}}} -->
-	<div class="wp-block-group cl-intro" style="padding-top:var(--wp--preset--spacing--16);padding-bottom:var(--wp--preset--spacing--12)">
-		<!-- wp:paragraph {"className":"is-style-cl-eyebrow cl-eyebrow"} -->
-		<p class="is-style-cl-eyebrow cl-eyebrow">Welcome</p>
-		<!-- /wp:paragraph -->
-		<!-- wp:heading {"level":1,"fontSize":"2xl"} -->
-		<h1 class="wp-block-heading has-2-xl-font-size">A clean place to publish.</h1>
-		<!-- /wp:heading -->
-		<!-- wp:paragraph {"fontSize":"md"} -->
-		<p class="has-md-font-size">This is the front page. Edit it in the Site Editor, or set a static page under Settings → Reading. Below, the latest posts.</p>
-		<!-- /wp:paragraph -->
-	</div>
-	<!-- /wp:group -->
+	<!-- Pattern: Storefront Hero — media-text, image right, 55/45.
+	     Supplies the page's single h1; no other h1 appears on the front
+	     page, so heading hierarchy stays valid. -->
+	<!-- wp:pattern {"slug":"parcel/hero"} /-->
 
-	<!-- wp:group {"className":"cl-section","style":{"spacing":{"padding":{"top":"var:preset|spacing|10","bottom":"var:preset|spacing|16","left":"var:preset|spacing|5","right":"var:preset|spacing|5"}}},"layout":{"type":"constrained","contentSize":"1100px"}} -->
-	<div class="wp-block-group cl-section" style="padding-top:var(--wp--preset--spacing--10);padding-bottom:var(--wp--preset--spacing--16);padding-left:var(--wp--preset--spacing--5);padding-right:var(--wp--preset--spacing--5)">
+	<!-- Pattern: What We're Known For — circular-photo feature grid -->
+	<!-- wp:pattern {"slug":"parcel/feature-grid"} /-->
 
-		<!-- wp:query {"queryId":0,"query":{"perPage":6,"postType":"post","order":"desc","orderBy":"date","inherit":false},"layout":{"type":"default"}} -->
-		<div class="wp-block-query">
-			<!-- wp:post-template {"className":"cl-card-grid","layout":{"type":"grid","minimumColumnWidth":"20rem"},"style":{"spacing":{"blockGap":"var:preset|spacing|8"}}} -->
-				<!-- wp:group {"className":"cl-card","layout":{"type":"default"},"style":{"spacing":{"blockGap":"var:preset|spacing|3"}}} -->
-				<div class="wp-block-group cl-card">
-					<!-- wp:post-featured-image {"isLink":true,"aspectRatio":"3/2"} /-->
-					<!-- wp:post-terms {"term":"category"} /-->
-					<!-- wp:post-title {"level":2,"isLink":true,"fontSize":"lg"} /-->
-					<!-- wp:post-excerpt {"moreText":"Continue reading","excerptLength":18} /-->
-					<!-- wp:post-date /-->
-				</div>
-				<!-- /wp:group -->
-			<!-- /wp:post-template -->
+	<!-- Pattern: Menu Board — the signature dot-leader menu, drinks + food -->
+	<!-- wp:pattern {"slug":"parcel/menu-board"} /-->
 
-			<!-- wp:query-no-results -->
-				<!-- wp:paragraph -->
-				<p>No posts yet. The first words are on their way.</p>
-				<!-- /wp:paragraph -->
-			<!-- /wp:query-no-results -->
-		</div>
-		<!-- /wp:query -->
+	<!-- Pattern: Early Pour Promo Band — roast-dark CTA banner -->
+	<!-- wp:pattern {"slug":"parcel/promo-band"} /-->
 
-	</div>
-	<!-- /wp:group -->
+	<!-- Pattern: Hours & Location — visit-us band with order-ahead card -->
+	<!-- wp:pattern {"slug":"parcel/visit-us"} /-->
+
+	<!-- Pattern: Regulars Say — testimonial cards -->
+	<!-- wp:pattern {"slug":"parcel/testimonials"} /-->
+
+	<!-- Pattern: Counter Gallery — four-across photo band -->
+	<!-- wp:pattern {"slug":"parcel/gallery-band"} /-->
 
 </main>
 <!-- /wp:group -->

@@ -1,40 +1,97 @@
-<!-- wp:group {"tagName":"div","className":"cl-footer cl-section--ink","metadata":{"name":"Footer"},"layout":{"type":"constrained","contentSize":"1100px"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|12","bottom":"var:preset|spacing|8","left":"var:preset|spacing|5","right":"var:preset|spacing|5"}}}} -->
-<div class="wp-block-group cl-footer cl-section--ink" style="padding-top:var(--wp--preset--spacing--12);padding-bottom:var(--wp--preset--spacing--8);padding-left:var(--wp--preset--spacing--5);padding-right:var(--wp--preset--spacing--5)">
+<!-- Footer template part for Parcel.
+     Roast-dark band: shop name in Fraunces, hours + address in DM Sans with
+     the same dot-leader hours-row convention as the visit-us pattern, footer
+     nav, and the copyright/credit line. A café's hours belong in the footer
+     of every single page, not only on a dedicated "visit us" page — so this
+     part repeats them, briefly, everywhere. -->
 
-	<!-- wp:columns {"className":"cl-footer__columns","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|8","left":"var:preset|spacing|12"}}}} -->
-	<div class="wp-block-columns cl-footer__columns">
+<!-- wp:group {"tagName":"footer","className":"parcel-site-footer parcel-band--roast","style":{"spacing":{"padding":{"top":"var:preset|spacing|12","bottom":"var:preset|spacing|8","left":"var:preset|spacing|5","right":"var:preset|spacing|5"}}},"layout":{"type":"constrained","contentSize":"1200px"}} -->
+<footer class="wp-block-group parcel-site-footer parcel-band--roast" style="padding-top:var(--wp--preset--spacing--12);padding-bottom:var(--wp--preset--spacing--8);padding-left:var(--wp--preset--spacing--5);padding-right:var(--wp--preset--spacing--5)">
 
-		<!-- wp:column {"width":"50%"} -->
-		<div class="wp-block-column" style="flex-basis:50%">
-			<!-- wp:site-title {"level":0,"isLink":true,"style":{"color":{"text":"var:preset|color|paper"}}} /-->
-			<!-- wp:paragraph {"style":{"color":{"text":"var:preset|color|paper"}}} -->
-			<p style="color:var(--wp--preset--color--paper)">A short line about this site. Edit it in the Site Editor.</p>
+	<!-- wp:columns {"style":{"spacing":{"blockGap":{"top":"var:preset|spacing|8","left":"var:preset|spacing|12"}}}} -->
+	<div class="wp-block-columns">
+
+		<!-- Shop name + short line -->
+		<!-- wp:column {"width":"34%"} -->
+		<div class="wp-block-column" style="flex-basis:34%">
+			<!-- wp:site-title {"level":0,"isLink":true,"style":{"typography":{"fontFamily":"var:preset|font-family|fraunces","fontWeight":"600","fontSize":"var:preset|font-size|xl","letterSpacing":"-0.01em","textDecoration":"none"},"color":{"text":"var:preset|color|roast-fg"}}} /-->
+			<!-- wp:paragraph {"style":{"typography":{"fontFamily":"var:preset|font-family|dm-sans","fontSize":"var:preset|font-size|sm"},"color":{"text":"var:preset|color|roast-fg"},"spacing":{"margin":{"top":"var:preset|spacing|3"}}}} -->
+			<p class="has-text-color" style="color:var(--wp--preset--color--roast-fg);margin-top:var(--wp--preset--spacing--3);font-family:var(--wp--preset--font-family--dm-sans);font-size:var(--wp--preset--font-size--sm)">Small-batch roasting and baking, one neighbourhood counter at a time. Edit this line in the Site Editor.</p>
 			<!-- /wp:paragraph -->
 		</div>
 		<!-- /wp:column -->
 
-		<!-- wp:column -->
-		<div class="wp-block-column">
-			<!-- wp:heading {"level":3,"fontSize":"sm","fontFamily":"sans","style":{"color":{"text":"var:preset|color|paper"}}} -->
-			<h3 class="wp-block-heading has-sans-font-family has-sm-font-size" style="color:var(--wp--preset--color--paper)">Explore</h3>
+		<!-- Hours -->
+		<!-- wp:column {"width":"33%"} -->
+		<div class="wp-block-column" style="flex-basis:33%">
+			<!-- wp:heading {"level":3,"style":{"typography":{"fontFamily":"var:preset|font-family|dm-sans","fontSize":"var:preset|font-size|2xs","fontWeight":"700","letterSpacing":"0.1em","textTransform":"uppercase"},"color":{"text":"var:preset|color|terracotta-soft"}}} -->
+			<h3 class="wp-block-heading" style="color:var(--wp--preset--color--terracotta-soft);font-family:var(--wp--preset--font-family--dm-sans);font-size:var(--wp--preset--font-size--2xs);font-weight:700;letter-spacing:0.1em;text-transform:uppercase">Hours</h3>
 			<!-- /wp:heading -->
-			<!-- wp:navigation {"label":"Footer","overlayMenu":"never","layout":{"type":"flex","orientation":"vertical"}} /-->
+
+			<!-- wp:group {"className":"parcel-hours-row","style":{"spacing":{"margin":{"top":"var:preset|spacing|3"}}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+			<div class="wp-block-group parcel-hours-row" style="margin-top:var(--wp--preset--spacing--3)">
+				<!-- wp:paragraph {"style":{"typography":{"fontFamily":"var:preset|font-family|dm-sans","fontSize":"var:preset|font-size|sm"},"color":{"text":"var:preset|color|roast-fg"}}} -->
+				<p class="has-text-color" style="color:var(--wp--preset--color--roast-fg);font-family:var(--wp--preset--font-family--dm-sans);font-size:var(--wp--preset--font-size--sm)">Mon–Fri</p>
+				<!-- /wp:paragraph -->
+				<!-- wp:spacer {"className":"is-style-parcel-menu-leader","height":"1px"} -->
+				<div style="height:1px" aria-hidden="true" class="wp-block-spacer is-style-parcel-menu-leader"></div>
+				<!-- /wp:spacer -->
+				<!-- wp:paragraph {"style":{"typography":{"fontFamily":"var:preset|font-family|dm-sans","fontSize":"var:preset|font-size|sm"},"color":{"text":"var:preset|color|roast-fg"}}} -->
+				<p class="has-text-color" style="color:var(--wp--preset--color--roast-fg);font-family:var(--wp--preset--font-family--dm-sans);font-size:var(--wp--preset--font-size--sm)">7am – 5pm</p>
+				<!-- /wp:paragraph -->
+			</div>
+			<!-- /wp:group -->
+
+			<!-- wp:group {"className":"parcel-hours-row","layout":{"type":"flex","flexWrap":"nowrap"}} -->
+			<div class="wp-block-group parcel-hours-row">
+				<!-- wp:paragraph {"style":{"typography":{"fontFamily":"var:preset|font-family|dm-sans","fontSize":"var:preset|font-size|sm"},"color":{"text":"var:preset|color|roast-fg"}}} -->
+				<p class="has-text-color" style="color:var(--wp--preset--color--roast-fg);font-family:var(--wp--preset--font-family--dm-sans);font-size:var(--wp--preset--font-size--sm)">Sat–Sun</p>
+				<!-- /wp:paragraph -->
+				<!-- wp:spacer {"className":"is-style-parcel-menu-leader","height":"1px"} -->
+				<div style="height:1px" aria-hidden="true" class="wp-block-spacer is-style-parcel-menu-leader"></div>
+				<!-- /wp:spacer -->
+				<!-- wp:paragraph {"style":{"typography":{"fontFamily":"var:preset|font-family|dm-sans","fontSize":"var:preset|font-size|sm"},"color":{"text":"var:preset|color|roast-fg"}}} -->
+				<p class="has-text-color" style="color:var(--wp--preset--color--roast-fg);font-family:var(--wp--preset--font-family--dm-sans);font-size:var(--wp--preset--font-size--sm)">8am – 4pm</p>
+				<!-- /wp:paragraph -->
+			</div>
+			<!-- /wp:group -->
+		</div>
+		<!-- /wp:column -->
+
+		<!-- Footer navigation -->
+		<!-- wp:column {"width":"33%"} -->
+		<div class="wp-block-column" style="flex-basis:33%">
+			<!-- wp:heading {"level":3,"style":{"typography":{"fontFamily":"var:preset|font-family|dm-sans","fontSize":"var:preset|font-size|2xs","fontWeight":"700","letterSpacing":"0.1em","textTransform":"uppercase"},"color":{"text":"var:preset|color|terracotta-soft"}}} -->
+			<h3 class="wp-block-heading" style="color:var(--wp--preset--color--terracotta-soft);font-family:var(--wp--preset--font-family--dm-sans);font-size:var(--wp--preset--font-size--2xs);font-weight:700;letter-spacing:0.1em;text-transform:uppercase">Visit</h3>
+			<!-- /wp:heading -->
+			<!-- wp:navigation {"textColor":"roast-fg","style":{"typography":{"fontFamily":"var:preset|font-family|dm-sans","fontSize":"var:preset|font-size|sm"},"spacing":{"blockGap":"var:preset|spacing|2"}},"layout":{"type":"flex","orientation":"vertical"}} /-->
 		</div>
 		<!-- /wp:column -->
 
 	</div>
 	<!-- /wp:columns -->
 
-	<!-- wp:group {"className":"cl-footer__bottom","style":{"spacing":{"padding":{"top":"var:preset|spacing|6"},"margin":{"top":"var:preset|spacing|8"},"blockGap":"var:preset|spacing|3"},"border":{"top":{"color":"rgba(255,255,255,0.18)","width":"1px"}}},"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
-	<div class="wp-block-group cl-footer__bottom" style="border-top-color:rgba(255,255,255,0.18);border-top-width:1px;margin-top:var(--wp--preset--spacing--8);padding-top:var(--wp--preset--spacing--6)">
-		<!-- wp:paragraph {"fontSize":"sm","fontFamily":"sans","metadata":{"bindings":{"content":{"source":"colophon/copyright"}}}} -->
-		<p class="has-sans-font-family has-sm-font-size"></p>
+	<!-- Separator -->
+	<!-- wp:separator {"style":{"spacing":{"margin":{"top":"var:preset|spacing|10","bottom":"var:preset|spacing|6"}},"color":{"background":"rgba(255,255,255,0.14)"}}} -->
+	<hr class="wp-block-separator has-alpha-channel-opacity has-background" style="margin-top:var(--wp--preset--spacing--10);margin-bottom:var(--wp--preset--spacing--6);background-color:rgba(255,255,255,0.14)" />
+	<!-- /wp:separator -->
+
+	<!-- Copyright row -->
+	<!-- wp:group {"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between"},"style":{"spacing":{"blockGap":"var:preset|spacing|4"}}} -->
+	<div class="wp-block-group">
+		<!-- Copyright line: bound to the parcel/copyright source (registered in
+		     inc/bindings.php), which composes "© {year} {site}. All rights
+		     reserved." in the site's timezone and locale. -->
+		<!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"parcel/copyright"}}},"style":{"typography":{"fontFamily":"var:preset|font-family|dm-sans","fontSize":"var:preset|font-size|2xs"},"color":{"text":"var:preset|color|terracotta-soft"}}} -->
+		<p class="has-text-color" style="font-family:var(--wp--preset--font-family--dm-sans);font-size:var(--wp--preset--font-size--2xs);color:var(--wp--preset--color--terracotta-soft)"></p>
 		<!-- /wp:paragraph -->
-		<!-- wp:paragraph {"fontSize":"sm","fontFamily":"sans","metadata":{"bindings":{"content":{"source":"colophon/footer-credit"}}}} -->
-		<p class="has-sans-font-family has-sm-font-size">Built with the <a href="https://thisismyurl.com/colophon" rel="nofollow">Colophon</a> theme.</p>
+		<!-- Credit line: bound to the parcel/footer-credit source, which reads
+		     the theme Name and Theme URI from style.css. -->
+		<!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"parcel/footer-credit"}}},"style":{"typography":{"fontFamily":"var:preset|font-family|dm-sans","fontSize":"var:preset|font-size|2xs"},"color":{"text":"var:preset|color|terracotta-soft"}}} -->
+		<p class="has-text-color" style="font-family:var(--wp--preset--font-family--dm-sans);font-size:var(--wp--preset--font-size--2xs);color:var(--wp--preset--color--terracotta-soft)"></p>
 		<!-- /wp:paragraph -->
 	</div>
 	<!-- /wp:group -->
 
-</div>
+</footer>
 <!-- /wp:group -->

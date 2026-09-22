@@ -4,42 +4,24 @@
    ---------------------------------------------------------------------
    theme.json already gives the editor canvas the palette, type, and global
    styles, so the editor mirrors the front end for free. This file carries
-   only what theme.json has no key for:
-   - font-variant-ligatures and font-variant-numeric (OpenType features)
-   - text-wrap: pretty (orphan prevention)
-   - pull-quote bracket rules and italic treatment
-   - the eyebrow paragraph style
-   - the card lift (already present from the original stub)
-
-   Note: the front-end p+p text-indent convention lives in skin.css
-   @layer blocks. In the block editor each Paragraph block is wrapped in
-   its own container, so the adjacent-sibling selector does not fire in
-   the editing canvas — intentionally left out here to avoid confusion.
+   only what theme.json has no key for: the pull-quote's bracket rule, the
+   eyebrow-label preview, and the card treatment editors see while composing
+   the menu board and testimonial patterns.
 
    Loaded via add_editor_style() in inc/setup.php.
    ===================================================================== */
 
-/* OpenType reading refinements — mirrors skin.css @layer blocks. */
-.editor-styles-wrapper :is(p, li) {
-	font-variant-ligatures: common-ligatures;
-	font-variant-numeric:   oldstyle-nums;
-	text-wrap:              pretty;
-	hanging-punctuation:    first allow-end last;
-}
-
 /* Pull quote — mirrored so the editor preview matches the front end. */
 .editor-styles-wrapper .wp-block-pullquote {
-	border-block:  2px solid var(--wp--preset--color--line);
+	border-block:  2px solid var(--wp--preset--color--rule);
 	padding-block: var(--wp--preset--spacing--8);
 	text-align:    center;
 }
 .editor-styles-wrapper .wp-block-pullquote blockquote p {
-	font-family:            var(--wp--preset--font-family--eb-garamond), Georgia, serif;
-	font-style:             italic;
-	font-size:              clamp(1.25rem, 2.5vw, 1.75rem);
-	line-height:            1.35;
-	font-variant-ligatures: common-ligatures;
-	text-indent:            0;
+	font-family: var(--wp--preset--font-family--fraunces), Georgia, serif;
+	font-style:  italic;
+	font-size:   clamp(1.25rem, 2.5vw, 1.75rem);
+	line-height: 1.4;
 }
 .editor-styles-wrapper .wp-block-pullquote cite {
 	display:        block;
@@ -52,15 +34,25 @@
 }
 
 /* Eyebrow paragraph style — lets editors see the treatment at write-time. */
-.editor-styles-wrapper .is-style-cl-eyebrow {
-	font-size:      0.75rem;
-	font-weight:    400;
+.editor-styles-wrapper .is-style-parcel-eyebrow {
+	font-size:      0.875rem;
+	font-weight:    700;
 	letter-spacing: 0.12em;
 	text-transform: uppercase;
-	color:          var(--wp--preset--color--ink-muted);
+	color:          var(--wp--preset--color--terracotta);
 }
 
-/* Card lift — mirrored so the editor preview matches the front end. */
-.editor-styles-wrapper .cl-card {
-	transition: transform 200ms cubic-bezier(0.4, 0, 0.2, 1);
+/* Menu dot leader — mirrored so the editor preview matches the front end;
+   without this the spacer block shows as an empty invisible box while
+   composing the menu board or the hours row. */
+.editor-styles-wrapper .is-style-parcel-menu-leader {
+	border-bottom: 2px dotted var(--wp--preset--color--rule);
+}
+
+/* Card — mirrored so editors see the paper-soft surface while composing
+   testimonial and feature-grid captions. */
+.editor-styles-wrapper .is-style-parcel-card {
+	background:    var(--wp--preset--color--paper-soft);
+	border-radius: 0.75rem;
+	padding:       var(--wp--preset--spacing--6);
 }

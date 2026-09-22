@@ -1,20 +1,26 @@
-<!-- wp:group {"tagName":"div","className":"cl-header","metadata":{"name":"Header"},"layout":{"type":"constrained","contentSize":"1100px"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|5","bottom":"var:preset|spacing|5","left":"var:preset|spacing|5","right":"var:preset|spacing|5"}}}} -->
-<div class="wp-block-group cl-header" style="padding-top:var(--wp--preset--spacing--5);padding-bottom:var(--wp--preset--spacing--5);padding-left:var(--wp--preset--spacing--5);padding-right:var(--wp--preset--spacing--5)">
+<!-- Header template part for Parcel.
+     Storefront masthead: site title in Fraunces 600, navigation in DM Sans
+     700. Paper background, hairline border at bottom. The nav is where a
+     shop hangs "Menu" and "Order ahead" — no utility bar above it, because
+     a café's most important information (hours, address) lives in the
+     footer's roast band and the visit-us pattern, not buried in a strip
+     nobody reads above the logo.
 
-	<!-- wp:group {"className":"cl-header__inner","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
-	<div class="wp-block-group cl-header__inner">
+     The "Skip to content" link is rendered in PHP on wp_body_open (see
+     render_skip_link() in inc/setup.php) so its label is translatable; it
+     prints before this part, as the first focusable element in the DOM. -->
 
-		<!-- wp:group {"className":"cl-header__branding","layout":{"type":"flex","verticalAlignment":"center"}} -->
-		<div class="wp-block-group cl-header__branding">
-			<!-- wp:site-logo {"width":48} /-->
-			<!-- wp:site-title {"level":0,"isLink":true} /-->
-		</div>
-		<!-- /wp:group -->
+<!-- wp:group {"tagName":"header","className":"parcel-site-header","style":{"spacing":{"padding":{"top":"var:preset|spacing|5","bottom":"var:preset|spacing|5","left":"var:preset|spacing|5","right":"var:preset|spacing|5"}},"border":{"bottom":{"color":"var:preset|color|rule","style":"solid","width":"1px"}},"color":{"background":"var:preset|color|paper"}},"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
+<header class="wp-block-group parcel-site-header" style="padding-top:var(--wp--preset--spacing--5);padding-bottom:var(--wp--preset--spacing--5);padding-left:var(--wp--preset--spacing--5);padding-right:var(--wp--preset--spacing--5);border-bottom:1px solid var(--wp--preset--color--rule);background-color:var(--wp--preset--color--paper)">
 
-		<!-- wp:navigation {"label":"Primary","overlayMenu":"mobile","layout":{"type":"flex","justifyContent":"right","flexWrap":"wrap"}} /-->
-
+	<!-- wp:group {"className":"parcel-header__branding","layout":{"type":"flex","verticalAlignment":"center"},"style":{"spacing":{"blockGap":"var:preset|spacing|3"}}} -->
+	<div class="wp-block-group parcel-header__branding">
+		<!-- wp:site-logo {"width":40} /-->
+		<!-- wp:site-title {"level":0,"isLink":true,"style":{"typography":{"fontFamily":"var:preset|font-family|fraunces","fontWeight":"600","fontSize":"var:preset|font-size|lg","letterSpacing":"-0.01em","textDecoration":"none"},"color":{"text":"var:preset|color|ink"}}} /-->
 	</div>
 	<!-- /wp:group -->
 
-</div>
+	<!-- wp:navigation {"textColor":"ink","overlayBackgroundColor":"paper","overlayTextColor":"ink","style":{"typography":{"fontFamily":"var:preset|font-family|dm-sans","fontSize":"var:preset|font-size|sm","fontWeight":"700","letterSpacing":"0.01em"}},"layout":{"type":"flex","justifyContent":"right"}} /-->
+
+</header>
 <!-- /wp:group -->

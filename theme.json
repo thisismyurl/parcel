@@ -1,29 +1,33 @@
 {
 	"$schema": "https://schemas.wp.org/wp/6.8/theme.json",
 	"version": 3,
-	"_comment_architecture": "[CORE structure] The top-level keys, the settings shape, and the templateParts/customTemplates skeleton are the portable scaffold every theme in the line keeps. [SKIN values] The palette, fontFamilies, fontSizes, spacing values, and the whole styles block are design — re-authored per theme. Colophon's own skin is a warm literary design (EB Garamond + Spectral, ink-on-paper palette). The CLI does not auto-merge this file; `colophon doctor` reports drift in the core-owned settings keys instead.",
+	"_comment_architecture": "[CORE structure] The top-level keys, the settings shape, and the templateParts/customTemplates skeleton are the portable scaffold every theme in the line keeps. [SKIN values] The palette, fontFamilies, fontSizes, spacing values, and the whole styles block are design — re-authored per theme. Parcel's skin is a small-batch coffee-roaster/bakery design: Fraunces (a display serif with real weight and warmth) for headlines, DM Sans for body and UI. The palette is a restrained roast-and-cream — deliberately quieter than the saturated orange of a generic coffee-shop template.",
 	"settings": {
 		"appearanceTools": true,
 		"useRootPaddingAwareAlignments": true,
 		"color": {
-			"_comment": "[SKIN] Warm literary palette — ink-on-paper, one library-cloth teal accent. All text/background pairs clear WCAG AA. defaultPalette off so the editor offers only the theme's tokens.",
+			"_comment": "[SKIN] Roast-and-cream palette. terracotta is the single accent — reserved for CTAs and large display text (see WCAG note in skin.css: terracotta-on-paper is 4.25:1, AA for large text only; white-on-terracotta is 4.57:1 and carries every button label). defaultPalette off so the editor offers only the theme's own tokens.",
 			"defaultPalette": false,
 			"defaultGradients": false,
 			"defaultDuotone": false,
 			"palette": [
-				{ "slug": "ink",         "color": "#1c1917", "name": "Ink" },
-				{ "slug": "ink-soft",    "color": "#433e3b", "name": "Ink Soft" },
-				{ "slug": "ink-muted",   "color": "#6b6460", "name": "Ink Muted" },
-				{ "slug": "ink-deep",    "color": "#0f0d0c", "name": "Ink Deep" },
-				{ "slug": "line",        "color": "#dedad3", "name": "Hairline" },
-				{ "slug": "accent",      "color": "#3d6b5e", "name": "Accent" },
-				{ "slug": "accent-soft", "color": "#e8f0ed", "name": "Accent Soft" },
-				{ "slug": "paper-soft",  "color": "#f2f0eb", "name": "Paper Soft" },
-				{ "slug": "paper",       "color": "#faf9f6", "name": "Paper" }
-			]
+				{ "slug": "ink",             "color": "#2A1D14", "name": "Ink" },
+				{ "slug": "ink-soft",        "color": "#4A3728", "name": "Ink Soft" },
+				{ "slug": "ink-muted",       "color": "#6E5C4A", "name": "Ink Muted" },
+				{ "slug": "paper",           "color": "#FBF6ED", "name": "Paper" },
+				{ "slug": "paper-soft",      "color": "#F3E9D8", "name": "Paper Soft" },
+				{ "slug": "paper-deep",      "color": "#E7D8BC", "name": "Paper Deep (decorative only)" },
+				{ "slug": "terracotta",      "color": "#B75C32", "name": "Terracotta (large text/UI only)" },
+				{ "slug": "terracotta-soft", "color": "#F1DDCB", "name": "Terracotta Soft" },
+				{ "slug": "roast",           "color": "#241812", "name": "Roast (dark band)" },
+				{ "slug": "roast-fg",        "color": "#F3E9D8", "name": "Roast Foreground (edition-stable light)" },
+				{ "slug": "rule",            "color": "#DED0B8", "name": "Rule (decorative only)" },
+				{ "slug": "white",           "color": "#FFFFFF", "name": "White" }
+			],
+			"gradients": []
 		},
 		"typography": {
-			"_comment": "[SKIN] EB Garamond (headings/display) and Spectral (body/reading) — both SIL OFL 1.1, self-hosted under assets/fonts/. System stacks kept as fallbacks; the starter inherits them until a re-skin swaps them out.",
+			"_comment": "[SKIN] Fraunces (display serif, self-hosted OFL) for headings; DM Sans (warm geometric sans, self-hosted OFL) for body and UI. Fraunces carries the brand's character — it is what separates Parcel from every stock coffee-shop template that reaches for a generic script font.",
 			"fluid": true,
 			"customFontSize": false,
 			"lineHeight": true,
@@ -32,91 +36,47 @@
 			"textDecoration": true,
 			"fontFamilies": [
 				{
-					"name": "EB Garamond",
-					"slug": "eb-garamond",
-					"fontFamily": "'EB Garamond', Georgia, 'Times New Roman', Times, serif",
+					"name": "Fraunces",
+					"slug": "fraunces",
+					"fontFamily": "Fraunces, Georgia, 'Times New Roman', serif",
 					"fontFace": [
-						{
-							"fontFamily": "EB Garamond",
-							"fontWeight": "400 700",
-							"fontStyle": "normal",
-							"fontDisplay": "swap",
-							"src": [ "file:./assets/fonts/eb-garamond/eb-garamond-normal-latin-ext.woff2", "file:./assets/fonts/eb-garamond/eb-garamond-normal.woff2" ]
-						},
-						{
-							"fontFamily": "EB Garamond",
-							"fontWeight": "400 500",
-							"fontStyle": "italic",
-							"fontDisplay": "swap",
-							"src": [ "file:./assets/fonts/eb-garamond/eb-garamond-italic-latin-ext.woff2", "file:./assets/fonts/eb-garamond/eb-garamond-italic.woff2" ]
-						}
+						{ "fontFamily": "Fraunces", "fontWeight": "400", "fontStyle": "normal", "fontDisplay": "swap", "src": [ "file:./assets/fonts/fraunces/fraunces-400.woff2" ] },
+						{ "fontFamily": "Fraunces", "fontWeight": "500", "fontStyle": "normal", "fontDisplay": "swap", "src": [ "file:./assets/fonts/fraunces/fraunces-500.woff2" ] },
+						{ "fontFamily": "Fraunces", "fontWeight": "600", "fontStyle": "normal", "fontDisplay": "swap", "src": [ "file:./assets/fonts/fraunces/fraunces-600.woff2" ] },
+						{ "fontFamily": "Fraunces", "fontWeight": "700", "fontStyle": "normal", "fontDisplay": "swap", "src": [ "file:./assets/fonts/fraunces/fraunces-700.woff2" ] },
+						{ "fontFamily": "Fraunces", "fontWeight": "500", "fontStyle": "italic", "fontDisplay": "swap", "src": [ "file:./assets/fonts/fraunces/fraunces-500-italic.woff2" ] },
+						{ "fontFamily": "Fraunces", "fontWeight": "600", "fontStyle": "italic", "fontDisplay": "swap", "src": [ "file:./assets/fonts/fraunces/fraunces-600-italic.woff2" ] }
 					]
 				},
 				{
-					"name": "Spectral",
-					"slug": "spectral",
-					"fontFamily": "'Spectral', Georgia, 'Times New Roman', Times, serif",
+					"name": "DM Sans",
+					"slug": "dm-sans",
+					"fontFamily": "'DM Sans', 'Helvetica Neue', Arial, sans-serif",
 					"fontFace": [
-						{
-							"fontFamily": "Spectral",
-							"fontWeight": "300",
-							"fontStyle": "normal",
-							"fontDisplay": "swap",
-							"src": [ "file:./assets/fonts/spectral/spectral-300-latin-ext.woff2", "file:./assets/fonts/spectral/spectral-300.woff2" ]
-						},
-						{
-							"fontFamily": "Spectral",
-							"fontWeight": "400",
-							"fontStyle": "normal",
-							"fontDisplay": "swap",
-							"src": [ "file:./assets/fonts/spectral/spectral-400-latin-ext.woff2", "file:./assets/fonts/spectral/spectral-400.woff2" ]
-						},
-						{
-							"fontFamily": "Spectral",
-							"fontWeight": "400",
-							"fontStyle": "italic",
-							"fontDisplay": "swap",
-							"src": [ "file:./assets/fonts/spectral/spectral-400-italic-latin-ext.woff2", "file:./assets/fonts/spectral/spectral-400-italic.woff2" ]
-						},
-						{
-							"fontFamily": "Spectral",
-							"fontWeight": "600",
-							"fontStyle": "normal",
-							"fontDisplay": "swap",
-							"src": [ "file:./assets/fonts/spectral/spectral-600-latin-ext.woff2", "file:./assets/fonts/spectral/spectral-600.woff2" ]
-						}
+						{ "fontFamily": "DM Sans", "fontWeight": "400", "fontStyle": "normal", "fontDisplay": "swap", "src": [ "file:./assets/fonts/dm-sans/dm-sans-400.woff2" ] },
+						{ "fontFamily": "DM Sans", "fontWeight": "500", "fontStyle": "normal", "fontDisplay": "swap", "src": [ "file:./assets/fonts/dm-sans/dm-sans-500.woff2" ] },
+						{ "fontFamily": "DM Sans", "fontWeight": "600", "fontStyle": "normal", "fontDisplay": "swap", "src": [ "file:./assets/fonts/dm-sans/dm-sans-600.woff2" ] },
+						{ "fontFamily": "DM Sans", "fontWeight": "700", "fontStyle": "normal", "fontDisplay": "swap", "src": [ "file:./assets/fonts/dm-sans/dm-sans-700.woff2" ] },
+						{ "fontFamily": "DM Sans", "fontWeight": "400", "fontStyle": "italic", "fontDisplay": "swap", "src": [ "file:./assets/fonts/dm-sans/dm-sans-400-italic.woff2" ] }
 					]
-				},
-				{
-					"name": "Serif",
-					"slug": "serif",
-					"fontFamily": "Georgia, 'Times New Roman', Times, serif"
-				},
-				{
-					"name": "Sans",
-					"slug": "sans",
-					"fontFamily": "system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
-				},
-				{
-					"name": "Mono",
-					"slug": "mono",
-					"fontFamily": "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace"
 				}
 			],
 			"fontSizes": [
-				{ "name": "X-Small",  "slug": "xs",      "size": "0.75rem",                                                                    "fluid": false },
-				{ "name": "Small",    "slug": "sm",      "size": "clamp(0.875rem, 0.85rem + 0.12vw, 0.9375rem)",  "fluid": { "min": "0.875rem",  "max": "0.9375rem" } },
-				{ "name": "Base",     "slug": "base",    "size": "clamp(1.0625rem, 1rem + 0.25vw, 1.125rem)",      "fluid": { "min": "1.0625rem", "max": "1.125rem" } },
-				{ "name": "Medium",   "slug": "md",      "size": "clamp(1.2rem, 1.1rem + 0.4vw, 1.45rem)",         "fluid": { "min": "1.2rem",    "max": "1.45rem" } },
-				{ "name": "Large",    "slug": "lg",      "size": "clamp(1.5rem, 1.3rem + 0.9vw, 2rem)",            "fluid": { "min": "1.5rem",    "max": "2rem" } },
-				{ "name": "X-Large",  "slug": "xl",      "size": "clamp(2rem, 1.6rem + 1.8vw, 3rem)",              "fluid": { "min": "2rem",      "max": "3rem" } },
-				{ "name": "2X-Large", "slug": "2xl",     "size": "clamp(2.5rem, 1.9rem + 3vw, 4.5rem)",            "fluid": { "min": "2.5rem",    "max": "4.5rem" } },
-				{ "name": "3X-Large", "slug": "3xl",     "size": "clamp(3rem, 2.2rem + 4vw, 5rem)",                "fluid": { "min": "3rem",      "max": "5rem" } },
-				{ "name": "Display",  "slug": "display", "size": "clamp(3rem, 1.8rem + 6vw, 7rem)",                "fluid": { "min": "3rem",      "max": "7rem" } }
+				{ "name": "2X-Small", "slug": "2xs",     "size": "0.6875rem", "fluid": false },
+				{ "name": "X-Small",  "slug": "xs",      "size": "clamp(0.75rem, 0.72rem + 0.15vw, 0.875rem)",   "fluid": { "min": "0.75rem",  "max": "0.875rem" } },
+				{ "name": "Small",    "slug": "sm",      "size": "clamp(0.875rem, 0.83rem + 0.22vw, 1rem)",      "fluid": { "min": "0.875rem", "max": "1rem" } },
+				{ "name": "Base",     "slug": "base",    "size": "clamp(1rem, 0.96rem + 0.22vw, 1.125rem)",      "fluid": { "min": "1rem",     "max": "1.125rem" } },
+				{ "name": "Medium",   "slug": "md",      "size": "clamp(1.125rem, 1.07rem + 0.27vw, 1.25rem)",   "fluid": { "min": "1.125rem", "max": "1.25rem" } },
+				{ "name": "Large",    "slug": "lg",      "size": "clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem)",      "fluid": { "min": "1.25rem",  "max": "1.5rem" } },
+				{ "name": "X-Large",  "slug": "xl",      "size": "clamp(1.5rem, 1.35rem + 0.75vw, 2rem)",        "fluid": { "min": "1.5rem",   "max": "2rem" } },
+				{ "name": "2X-Large", "slug": "2xl",     "size": "clamp(1.75rem, 1.5rem + 1.25vw, 2.5rem)",      "fluid": { "min": "1.75rem",  "max": "2.5rem" } },
+				{ "name": "3X-Large", "slug": "3xl",     "size": "clamp(2rem, 1.6rem + 2vw, 3.5rem)",            "fluid": { "min": "2rem",     "max": "3.5rem" } },
+				{ "name": "4X-Large", "slug": "4xl",     "size": "clamp(2.5rem, 1.9rem + 3vw, 5rem)",            "fluid": { "min": "2.5rem",   "max": "5rem" } },
+				{ "name": "Display",  "slug": "display", "size": "clamp(2.75rem, 1.8rem + 4.75vw, 6rem)",        "fluid": { "min": "2.75rem",  "max": "6rem" } }
 			]
 		},
 		"spacing": {
-			"_comment": "[CORE structure / SKIN values] A linear step scale.",
+			"_comment": "[CORE structure / SKIN values] A linear step scale, shared shape with the rest of the line.",
 			"customSpacingSize": false,
 			"spacingSizes": [
 				{ "name": "1",  "slug": "1",  "size": "0.25rem" },
@@ -129,32 +89,43 @@
 				{ "name": "10", "slug": "10", "size": "3rem" },
 				{ "name": "12", "slug": "12", "size": "4rem" },
 				{ "name": "16", "slug": "16", "size": "6rem" },
-				{ "name": "20", "slug": "20", "size": "8rem" }
+				{ "name": "20", "slug": "20", "size": "8rem" },
+				{ "name": "24", "slug": "24", "size": "10rem" }
 			]
 		},
 		"layout": {
 			"_comment": "[CORE structure / SKIN values] contentSize = reading measure; wideSize = the band width.",
 			"contentSize": "720px",
-			"wideSize": "1100px"
+			"wideSize": "1200px"
 		},
 		"border": { "color": true, "radius": true, "style": true, "width": true },
 		"dimensions": { "minHeight": true, "aspectRatio": true },
 		"position": { "sticky": true },
+		"shadow": {
+			"defaultPresets": false,
+			"presets": [ { "name": "None", "slug": "none", "shadow": "none" } ]
+		},
 		"blocks": {
 			"core/button": { "border": { "radius": false } },
 			"core/post-featured-image": { "allowResize": false }
+		},
+		"custom": {
+			"colophon-light": "#FBF6ED",
+			"colophon-dark": "#2A1D14",
+			"colophon-accent": "#B75C32"
 		}
 	},
 	"styles": {
-		"_comment": "[SKIN] Warm literary design. EB Garamond for headings, Spectral for body — ink-on-paper palette. A theme built on Colophon replaces this whole block.",
+		"_comment": "[SKIN] Warm roast-and-cream design. Fraunces for headings, DM Sans for body and UI.",
 		"color": {
 			"background": "var(--wp--preset--color--paper)",
 			"text": "var(--wp--preset--color--ink)"
 		},
 		"typography": {
-			"fontFamily": "var(--wp--preset--font-family--spectral)",
+			"fontFamily": "var(--wp--preset--font-family--dm-sans)",
 			"fontSize": "var(--wp--preset--font-size--base)",
-			"lineHeight": "1.72"
+			"fontWeight": "400",
+			"lineHeight": "1.65"
 		},
 		"spacing": {
 			"blockGap": "var(--wp--preset--spacing--6)",
@@ -165,90 +136,92 @@
 		},
 		"elements": {
 			"h1": {
-				"typography": { "fontFamily": "var(--wp--preset--font-family--eb-garamond)", "fontSize": "var(--wp--preset--font-size--2xl)", "fontWeight": "700", "lineHeight": "1.12", "letterSpacing": "-0.02em", "fontStyle": "normal" },
-				"color": { "text": "var(--wp--preset--color--ink-deep)" }
+				"typography": { "fontFamily": "var(--wp--preset--font-family--fraunces)", "fontSize": "var(--wp--preset--font-size--display)", "fontWeight": "600", "lineHeight": "1.02", "letterSpacing": "-0.02em" },
+				"color": { "text": "var(--wp--preset--color--ink)" }
 			},
 			"h2": {
-				"typography": { "fontFamily": "var(--wp--preset--font-family--eb-garamond)", "fontSize": "var(--wp--preset--font-size--xl)", "fontWeight": "700", "lineHeight": "1.2", "letterSpacing": "-0.015em", "fontStyle": "normal" },
+				"typography": { "fontFamily": "var(--wp--preset--font-family--fraunces)", "fontSize": "var(--wp--preset--font-size--3xl)", "fontWeight": "600", "lineHeight": "1.08", "letterSpacing": "-0.015em" },
 				"color": { "text": "var(--wp--preset--color--ink)" }
 			},
 			"h3": {
-				"typography": { "fontFamily": "var(--wp--preset--font-family--eb-garamond)", "fontSize": "var(--wp--preset--font-size--lg)", "fontWeight": "500", "lineHeight": "1.3", "letterSpacing": "-0.01em", "fontStyle": "normal" },
-				"color": { "text": "var(--wp--preset--color--ink)" }
+				"typography": { "fontFamily": "var(--wp--preset--font-family--fraunces)", "fontSize": "var(--wp--preset--font-size--xl)", "fontWeight": "500", "fontStyle": "italic", "lineHeight": "1.2" },
+				"color": { "text": "var(--wp--preset--color--ink-soft)" }
 			},
 			"h4": {
-				"typography": { "fontFamily": "var(--wp--preset--font-family--eb-garamond)", "fontSize": "var(--wp--preset--font-size--md)", "fontWeight": "500", "lineHeight": "1.35", "fontStyle": "normal" },
+				"typography": { "fontFamily": "var(--wp--preset--font-family--dm-sans)", "fontSize": "var(--wp--preset--font-size--md)", "fontWeight": "700", "lineHeight": "1.3" },
 				"color": { "text": "var(--wp--preset--color--ink)" }
 			},
 			"h5": {
-				"typography": { "fontFamily": "var(--wp--preset--font-family--spectral)", "fontSize": "var(--wp--preset--font-size--sm)", "fontWeight": "600", "lineHeight": "1.4", "letterSpacing": "0.04em", "fontStyle": "normal" },
+				"typography": { "fontFamily": "var(--wp--preset--font-family--dm-sans)", "fontSize": "var(--wp--preset--font-size--sm)", "fontWeight": "700", "letterSpacing": "0.04em", "textTransform": "uppercase" },
 				"color": { "text": "var(--wp--preset--color--ink-soft)" }
 			},
 			"h6": {
-				"typography": { "fontFamily": "var(--wp--preset--font-family--spectral)", "fontSize": "var(--wp--preset--font-size--xs)", "fontWeight": "600", "lineHeight": "1.5", "letterSpacing": "0.06em", "fontStyle": "normal" },
+				"typography": { "fontFamily": "var(--wp--preset--font-family--dm-sans)", "fontSize": "var(--wp--preset--font-size--2xs)", "fontWeight": "700", "letterSpacing": "0.08em", "textTransform": "uppercase" },
 				"color": { "text": "var(--wp--preset--color--ink-muted)" }
 			},
 			"link": {
-				"color": { "text": "var(--wp--preset--color--accent)" },
+				"color": { "text": "var(--wp--preset--color--ink)" },
 				"typography": { "textDecoration": "underline" },
-				":hover": { "color": { "text": "var(--wp--preset--color--ink)" } },
-				":focus": { "color": { "text": "var(--wp--preset--color--ink)" } }
+				":hover": { "color": { "text": "var(--wp--preset--color--terracotta)" } },
+				":focus": { "color": { "text": "var(--wp--preset--color--terracotta)" } }
 			},
 			"button": {
-				"color": { "background": "var(--wp--preset--color--ink)", "text": "var(--wp--preset--color--paper)" },
-				"typography": { "fontFamily": "var(--wp--preset--font-family--spectral)", "fontSize": "var(--wp--preset--font-size--sm)", "fontWeight": "400", "letterSpacing": "0.03em" },
-				"border": { "radius": "2px" },
-				"spacing": { "padding": { "top": "var(--wp--preset--spacing--2)", "bottom": "var(--wp--preset--spacing--2)", "left": "var(--wp--preset--spacing--4)", "right": "var(--wp--preset--spacing--4)" } },
-				":hover": { "color": { "background": "var(--wp--preset--color--accent)", "text": "var(--wp--preset--color--paper)" } },
-				":focus": { "color": { "background": "var(--wp--preset--color--accent)", "text": "var(--wp--preset--color--paper)" } }
+				"color": { "background": "var(--wp--preset--color--terracotta)", "text": "var(--wp--preset--color--white)" },
+				"typography": { "fontFamily": "var(--wp--preset--font-family--dm-sans)", "fontSize": "var(--wp--preset--font-size--sm)", "fontWeight": "700", "letterSpacing": "0.01em" },
+				"border": { "radius": "999px" },
+				"spacing": { "padding": { "top": "var(--wp--preset--spacing--4)", "bottom": "var(--wp--preset--spacing--4)", "left": "var(--wp--preset--spacing--6)", "right": "var(--wp--preset--spacing--6)" } },
+				":hover": { "color": { "background": "var(--wp--preset--color--ink)", "text": "var(--wp--preset--color--white)" } },
+				":focus": { "color": { "background": "var(--wp--preset--color--ink)", "text": "var(--wp--preset--color--white)" } }
 			}
 		},
 		"blocks": {
 			"core/paragraph": {
-				"typography": { "fontFamily": "var(--wp--preset--font-family--spectral)", "fontSize": "var(--wp--preset--font-size--base)", "lineHeight": "1.72" }
+				"typography": { "fontFamily": "var(--wp--preset--font-family--dm-sans)", "fontSize": "var(--wp--preset--font-size--base)", "lineHeight": "1.65" }
 			},
 			"core/pullquote": {
-				"typography": { "fontFamily": "var(--wp--preset--font-family--eb-garamond)", "fontSize": "var(--wp--preset--font-size--lg)", "fontStyle": "italic", "lineHeight": "1.5" },
+				"typography": { "fontFamily": "var(--wp--preset--font-family--fraunces)", "fontSize": "var(--wp--preset--font-size--lg)", "fontStyle": "italic", "lineHeight": "1.4" },
 				"color": { "text": "var(--wp--preset--color--ink)", "background": "transparent" }
 			},
 			"core/quote": {
-				"typography": { "fontFamily": "var(--wp--preset--font-family--eb-garamond)", "fontSize": "var(--wp--preset--font-size--md)", "fontStyle": "italic", "lineHeight": "1.6" },
+				"typography": { "fontFamily": "var(--wp--preset--font-family--fraunces)", "fontSize": "var(--wp--preset--font-size--md)", "fontStyle": "italic", "lineHeight": "1.5" },
 				"color": { "text": "var(--wp--preset--color--ink-soft)" },
+				"border": { "color": "var(--wp--preset--color--terracotta)", "style": "solid", "width": "0 0 0 3px" },
 				"spacing": { "padding": { "left": "var(--wp--preset--spacing--5)" } }
 			},
 			"core/code": {
-				"typography": { "fontFamily": "var(--wp--preset--font-family--mono)", "fontSize": "var(--wp--preset--font-size--sm)", "lineHeight": "1.6" },
+				"typography": { "fontFamily": "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace", "fontSize": "var(--wp--preset--font-size--sm)", "lineHeight": "1.6" },
 				"color": { "background": "var(--wp--preset--color--paper-soft)", "text": "var(--wp--preset--color--ink)" }
 			},
 			"core/post-title": {
-				"typography": { "fontFamily": "var(--wp--preset--font-family--eb-garamond)", "fontWeight": "700", "lineHeight": "1.12", "letterSpacing": "-0.02em", "textDecoration": "none" },
-				"color": { "text": "var(--wp--preset--color--ink-deep)" }
+				"typography": { "fontFamily": "var(--wp--preset--font-family--fraunces)", "fontWeight": "600", "lineHeight": "1.1", "letterSpacing": "-0.015em", "textDecoration": "none" },
+				"color": { "text": "var(--wp--preset--color--ink)" }
 			},
 			"core/post-excerpt": {
-				"typography": { "fontFamily": "var(--wp--preset--font-family--spectral)", "fontSize": "var(--wp--preset--font-size--base)", "lineHeight": "1.7" },
+				"typography": { "fontFamily": "var(--wp--preset--font-family--dm-sans)", "fontSize": "var(--wp--preset--font-size--base)", "lineHeight": "1.65" },
 				"color": { "text": "var(--wp--preset--color--ink-soft)" }
 			},
 			"core/post-date": {
-				"typography": { "fontFamily": "var(--wp--preset--font-family--spectral)", "fontSize": "var(--wp--preset--font-size--sm)" },
+				"typography": { "fontFamily": "var(--wp--preset--font-family--dm-sans)", "fontSize": "var(--wp--preset--font-size--xs)" },
 				"color": { "text": "var(--wp--preset--color--ink-muted)" }
 			},
 			"core/post-terms": {
-				"typography": { "fontFamily": "var(--wp--preset--font-family--spectral)", "fontSize": "var(--wp--preset--font-size--sm)", "fontWeight": "600", "letterSpacing": "0.08em", "textTransform": "uppercase" },
-				"color": { "text": "var(--wp--preset--color--accent)" }
+				"typography": { "fontFamily": "var(--wp--preset--font-family--dm-sans)", "fontSize": "var(--wp--preset--font-size--2xs)", "fontWeight": "700", "letterSpacing": "0.1em", "textTransform": "uppercase" },
+				"color": { "text": "var(--wp--preset--color--terracotta)" }
 			},
 			"core/site-title": {
-				"typography": { "fontFamily": "var(--wp--preset--font-family--eb-garamond)", "fontSize": "var(--wp--preset--font-size--lg)", "fontWeight": "700", "textDecoration": "none" },
+				"typography": { "fontFamily": "var(--wp--preset--font-family--fraunces)", "fontSize": "var(--wp--preset--font-size--lg)", "fontWeight": "600", "letterSpacing": "-0.01em", "textDecoration": "none" },
 				"color": { "text": "var(--wp--preset--color--ink)" }
 			},
 			"core/site-tagline": {
-				"typography": { "fontFamily": "var(--wp--preset--font-family--spectral)", "fontSize": "var(--wp--preset--font-size--sm)", "letterSpacing": "0.06em", "textTransform": "uppercase" },
+				"typography": { "fontFamily": "var(--wp--preset--font-family--dm-sans)", "fontSize": "var(--wp--preset--font-size--2xs)", "letterSpacing": "0.1em", "textTransform": "uppercase" },
 				"color": { "text": "var(--wp--preset--color--ink-muted)" }
 			},
 			"core/navigation": {
-				"typography": { "fontFamily": "var(--wp--preset--font-family--spectral)", "fontSize": "var(--wp--preset--font-size--sm)", "fontWeight": "400", "letterSpacing": "0.04em" }
+				"typography": { "fontFamily": "var(--wp--preset--font-family--dm-sans)", "fontSize": "var(--wp--preset--font-size--sm)", "fontWeight": "600", "letterSpacing": "0.01em" }
 			},
 			"core/separator": {
-				"color": { "text": "var(--wp--preset--color--line)" }
+				"color": { "text": "var(--wp--preset--color--rule)" },
+				"border": { "color": "var(--wp--preset--color--rule)", "width": "1px" }
 			}
 		}
 	},

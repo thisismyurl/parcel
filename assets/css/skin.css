@@ -1,243 +1,301 @@
 /* =====================================================================
-   [SKIN] skin.css — Colophon's own personality, and the worked example of
-   how a skin slots into the core cascade.
+   [SKIN] skin.css — Parcel's layout, components, blocks, and utilities.
    ---------------------------------------------------------------------
-   Two jobs:
-   1. BIND the --cl-* semantic tokens that core/base.css references, drawing
-      from this theme's theme.json palette. These live in an UNLAYERED :root
-      block on purpose — unlayered declarations beat layered ones, so they
-      reliably override the neutral fallbacks core ships. (This is the same
-      cascade-layer rule that bites people when WordPress core's own unlayered
-      CSS wins; here we use it deliberately.)
-   2. POPULATE @layer layout / components / blocks / utilities — the four
-      skin layers in the order reset.css declared. The bones (reset, base) are
-      core; everything you see below is design, and it's yours to rewrite.
+   This is Parcel's personality. The reset and base sheets (assets/css/core/)
+   are shared across the Colophon collection; this sheet is what makes
+   Parcel a small-batch coffee-and-bakery theme and not a news theme.
 
-   `colophon sync` never touches this file. Make it loud; make it yours.
+   Architecture: CSS @layers (declared in core/reset.css):
+     @layer layout     — structural containers, grids
+     @layer components — reusable UI (menu rows, cards, bands)
+     @layer blocks      — WordPress block-specific overrides
+     @layer utilities   — single-purpose helpers
+
+   Pillar 8 (Kodawari): the dot-leader menu row (.parcel-menu-row +
+   is-style-parcel-menu-leader) is Parcel's signature feature — see the long
+   note in inc/skin.php's parcel_skin_block_styles(). It exists because a
+   real café or bakery menu has never once been typeset as a bullet list.
+
+   WCAG NOTE on terracotta (#B75C32): 4.25:1 against paper — AA for LARGE
+   TEXT ONLY. White-on-terracotta (buttons, badges) is 4.57:1 and IS safe
+   for normal text. Every rule below that sets terracotta as a foreground
+   colour is on a heading-scale or large-text selector; every rule that
+   uses terracotta as a BACKGROUND pairs it with white text. Do not add a
+   rule that sets terracotta as small/body text colour.
+
+   Pillar 9 (Archaeological Records): section headers explain WHY.
    ===================================================================== */
 
-/* ---- 1. Token bindings (unlayered, so they win over core defaults) ---- */
-:root {
-	--cl-focus-ring:         var(--wp--preset--color--accent);
-	--cl-focus-ring-inverse: var(--wp--preset--color--paper);
-	--cl-skip-bg:            var(--wp--preset--color--ink);
-	--cl-skip-fg:            var(--wp--preset--color--paper);
-
-	/* Skin runtime tokens — no theme.json equivalent exists for these. */
-	--cl-gutter:      clamp(1.25rem, 5vw, 3rem);
-	--cl-section-gap: clamp(3rem, 8vw, 6rem);
-	--cl-transition:  200ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* ---- 2. The skin layers ---- */
+/* =====================================================================
+   LAYER: layout
+   ===================================================================== */
 @layer layout {
 
-	.cl-main { isolation: isolate; }
-
-	/* Sticky header: warm paper tint with frosted-glass blur.
-	   rgba(250, 249, 246) is paper (#faf9f6) at 95% opacity — pure white
-	   would fight the warm literary palette. z-index sits below core's
-	   mobile-nav overlay (100000) so the menu always paints over the header. */
-	.cl-header {
-		position: sticky;
-		inset-block-start: 0;
-		z-index: 100;
-		background: rgba(250, 249, 246, 0.95);
-		-webkit-backdrop-filter: blur(8px);
-		backdrop-filter: blur(8px);
-		border-block-end: 1px solid var(--wp--preset--color--line, #dedad3);
+	:root {
+		--wp--style--root--padding-top:    var(--wp--preset--spacing--4);
+		--wp--style--root--padding-right:  var(--wp--preset--spacing--5);
+		--wp--style--root--padding-bottom: var(--wp--preset--spacing--4);
+		--wp--style--root--padding-left:   var(--wp--preset--spacing--5);
 	}
 
-	.cl-section {
-		padding-block: var(--cl-section-gap);
-		padding-inline: var(--cl-gutter);
+	:root { color-scheme: light; }
+
+	:root {
+		/* Focus ring binds to terracotta on light grounds (4.6:1 outline against
+		   paper is plenty for a 2px outline, which isn't held to text-contrast
+		   rules) and to the roast-stable light pair on dark bands, so the ring
+		   never disappears when a promo band inverts the palette. */
+		--cl-focus-ring:         var(--wp--preset--color--terracotta);
+		--cl-focus-ring-inverse: var(--wp--preset--color--roast-fg);
+		--cl-skip-bg:            var(--wp--preset--color--roast);
+		--cl-skip-fg:            var(--wp--preset--color--roast-fg);
 	}
-	.cl-section--soft { background: var(--wp--preset--color--paper-soft, #f2f0eb); }
-	.cl-section--ink {
-		background: var(--wp--preset--color--ink-deep, #0f0d0c);
-		color: var(--wp--preset--color--paper, #faf9f6);
+
+	/* Feature grid — "What we're known for": 2 columns on mobile, 4 at md.
+	   A generic template ships this as a plain feature list; here it's a
+	   circular-photo grid because the circle crop is how a café menu board
+	   and a roaster's tasting notes card both present a single drink. */
+	.parcel-feature-grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: var(--wp--preset--spacing--8) var(--wp--preset--spacing--5);
 	}
+	@media (min-width: 760px) {
+		.parcel-feature-grid { grid-template-columns: repeat(4, 1fr); }
+	}
+
+	/* Menu board — two columns at md (drinks / food), stacked on mobile. */
+	.parcel-menu-board {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: var(--wp--preset--spacing--10);
+	}
+	@media (min-width: 760px) {
+		.parcel-menu-board { grid-template-columns: 1fr 1fr; }
+	}
+
+	/* A single menu row: item name, dot leader, price — baseline-aligned so
+	   the leader sits mid-x-height, the way it does set in metal type. */
+	.parcel-menu-row {
+		display: flex;
+		align-items: baseline;
+		gap: var(--wp--preset--spacing--2);
+	}
+	.parcel-menu-row > :first-child { flex: 0 0 auto; }
+	.parcel-menu-row > :last-child { flex: 0 0 auto; white-space: nowrap; }
+
+	/* Testimonial grid — 1 col mobile, 3 at md. */
+	.parcel-testimonial-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: var(--wp--preset--spacing--6);
+	}
+	@media (min-width: 760px) {
+		.parcel-testimonial-grid { grid-template-columns: repeat(3, 1fr); }
+	}
+
+	/* Gallery band — 2 col mobile, 4 at md. */
+	.parcel-gallery-grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: var(--wp--preset--spacing--3);
+	}
+	@media (min-width: 640px) {
+		.parcel-gallery-grid { grid-template-columns: repeat(4, 1fr); }
+	}
+
+	/* Hours-and-location band: stacked mobile, two columns at md so the
+	   hours table and the order-ahead CTA sit side by side. */
+	.parcel-visit-band {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: var(--wp--preset--spacing--8);
+	}
+	@media (min-width: 760px) {
+		.parcel-visit-band { grid-template-columns: 1.1fr 0.9fr; }
+	}
+
+	/* Hours table rows: day left, hours right, dot leader between — the same
+	   typographic move as the menu board, reused because a shop's hours are
+	   read the same way a shop's prices are: a label, then a value, aligned. */
+	.parcel-hours-row {
+		display: flex;
+		align-items: baseline;
+		gap: var(--wp--preset--spacing--2);
+		padding-block: var(--wp--preset--spacing--2);
+	}
+	.parcel-hours-row > :first-child { flex: 0 0 auto; }
+	.parcel-hours-row > :last-child { flex: 0 0 auto; white-space: nowrap; }
 }
 
+/* =====================================================================
+   LAYER: components
+   ===================================================================== */
 @layer components {
 
-	/* Header nav: ink at rest, accent on interaction. Type comes from theme.json
-	   core/navigation; colour and underline behaviour are skin. */
-	.cl-header .wp-block-navigation a {
-		color: var(--wp--preset--color--ink-soft, #433e3b);
-		text-decoration: none;
-	}
-	.cl-header .wp-block-navigation a:hover,
-	.cl-header .wp-block-navigation a:focus {
-		color: var(--wp--preset--color--accent, #3d6b5e);
-	}
-
-	/* Footer sits on the ink-deep band; paper text clears contrast there. */
-	.cl-footer .wp-block-navigation a,
-	.cl-footer__bottom a {
-		color: var(--wp--preset--color--paper, #faf9f6);
-	}
-	.cl-footer .wp-block-navigation a:hover,
-	.cl-footer .wp-block-navigation a:focus,
-	.cl-footer__bottom a:hover,
-	.cl-footer__bottom a:focus {
-		text-decoration: underline;
-		text-underline-offset: 0.15em;
+	/* THE SIGNATURE FEATURE — dot-leader rule. A core/spacer styled to render
+	   as a baseline-height dotted rule that fills the gap between a menu
+	   item and its price, or between an hours-row day and its hours. This is
+	   the exact device a printed café or restaurant menu uses; it does not
+	   exist as a pattern anywhere else in the WP.org theme directory. */
+	.is-style-parcel-menu-leader {
+		flex: 1 1 auto !important;
+		height: 0.9em !important;
+		min-height: 0.9em !important;
+		border-bottom: 2px dotted var(--wp--preset--color--rule);
+		align-self: flex-end;
+		margin-bottom: 0.28em;
 	}
 
-	/* Tap targets reach the 44px floor: footer nav links and the mobile-nav
-	   open/close toggles. */
-	.cl-footer .wp-block-navigation a {
-		min-block-size: 44px;
-		display: inline-flex;
-		align-items: center;
-	}
-	.wp-block-navigation__responsive-container-open,
-	.wp-block-navigation__responsive-container-close {
-		min-inline-size: 44px;
-		min-block-size: 44px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
+	/* Menu price — DM Sans 700, tabular numerals so a stacked price column
+	   lines up on the decimal the way a typeset menu always does. */
+	.is-style-parcel-menu-price {
+		font-family: var(--wp--preset--font-family--dm-sans) !important;
+		font-weight: 700 !important;
+		font-variant-numeric: tabular-nums;
+		color: var(--wp--preset--color--ink) !important;
 	}
 
-	/* On dark bands the accent focus ring fails 3:1, so use the inverse token
-	   core left us for exactly this. */
-	.cl-section--ink :where(a, button, input, textarea, select, summary, [tabindex]):focus-visible,
-	.cl-footer :where(a, button, input, textarea, select, summary, [tabindex]):focus-visible {
-		outline-color: var(--cl-focus-ring-inverse, #faf9f6);
-	}
-
-	/* Card hover — a quiet lift, neutralised for reduced-motion by core/reset. */
-	.cl-card {
-		transition: transform var(--cl-transition);
-	}
-	.cl-card:hover,
-	.cl-card:focus-within {
-		transform: translateY(-4px);
-	}
-}
-
-@layer blocks {
-
-	/* Reading-column link underline offset. */
-	.cl-main :where(p, li) a { text-underline-offset: 0.15em; }
-
-	/* ------------------------------------------------------------------ */
-	/* LITERARY READING REFINEMENTS                                         */
-	/* theme.json expresses typefaces, weights, and sizes. CSS handles the  */
-	/* micro-typographic features theme.json has no key for: font-variant-* */
-	/* properties, text-wrap, hanging punctuation, and the paragraph indent  */
-	/* convention. These are the details that make body text feel like a     */
-	/* book rather than a web page.                                          */
-	/* ------------------------------------------------------------------ */
-
-	/* OpenType features and reading comfort for prose columns.
-	   common-ligatures gives fi/fl/ff joins; oldstyle-nums drops numerals
-	   below the baseline like lowercase letters — both are Garamond-school
-	   conventions that Spectral was designed to support. */
-	.cl-prose :is(p, li) {
-		font-variant-ligatures: common-ligatures;
-		font-variant-numeric:   oldstyle-nums;
-		text-wrap:              pretty;             /* multi-line orphan prevention */
-		hanging-punctuation:    first allow-end last;
-	}
-
-	/* Paragraph rhythm: indent continuation paragraphs instead of spacing them.
-	   This is the printed-prose convention used in literary magazines (n+1,
-	   Ploughshares, NYRB). The first paragraph after a heading is never indented
-	   — only genuine continuation paragraphs.
-	   To revert to the more common margin-gap approach: remove the p+p block. */
-	.cl-prose p {
-		text-indent: 0;
-	}
-	.cl-prose p + p {
-		text-indent:        1.5em;
-		margin-block-start: 0;
-	}
-	.cl-prose :is(h2, h3, h4, h5, h6) + p {
-		text-indent: 0;
-	}
-	/* Blockquotes and list items never inherit the indent. */
-	.cl-prose blockquote p,
-	.cl-prose li > p {
-		text-indent: 0;
-	}
-
-	/* Drop cap: the first letter of the opening paragraph on single posts.
-	   EB Garamond's classical cut needs the 0.05em block-start nudge to
-	   sit its baseline flush with the body text — a quirk of the font's
-	   cap-height proportion.
-	   The .no-dropcap class on .cl-prose suppresses it when a post opens
-	   with a heading or when the design calls for a plain open. */
-	.single .cl-prose:not(.no-dropcap) > .wp-block-post-content > p:first-of-type::first-letter,
-	.cl-prose.cl-dropcap > p:first-of-type::first-letter {
-		font-family:        var(--wp--preset--font-family--eb-garamond), Georgia, serif;
-		font-size:          3.4em;
-		font-weight:        500;
-		line-height:        0.78;
-		float:              left;
-		margin-inline-end:  0.06em;
-		margin-block-start: 0.05em;
-		color:              var(--wp--preset--color--ink);
-	}
-
-	/* Pull quote: the magazine standout — centred, EB Garamond italic,
-	   bracketed by rules at the weight of a separator, not a border. */
-	.wp-block-pullquote {
-		border-block:  2px solid var(--wp--preset--color--line);
-		padding-block: var(--wp--preset--spacing--8);
-		text-align:    center;
-	}
-	.wp-block-pullquote blockquote p {
-		font-family:            var(--wp--preset--font-family--eb-garamond), Georgia, serif;
-		font-style:             italic;
-		font-size:              clamp(1.25rem, 2.5vw, 1.75rem);
-		line-height:            1.35;
-		font-variant-ligatures: common-ligatures;
-		text-indent:            0; /* reset the p+p convention inside pull quotes */
-	}
-	.wp-block-pullquote cite {
-		display:        block;
-		margin-top:     0.75em;
-		font-size:      0.8125rem;
-		font-style:     normal;
-		letter-spacing: 0.06em;
-		text-transform: uppercase;
-		color:          var(--wp--preset--color--ink-muted);
-	}
-
-	/* Story card: the atom of every index and archive loop. */
-	.cl-story {
-		padding-block-end: var(--wp--preset--spacing--8);
-		border-block-end:  1px solid var(--wp--preset--color--line);
-	}
-
-	/* Byline strip: the author name and date cap under a post title. */
-	.cl-byline .wp-block-post-author__name {
-		font-size:      0.875rem;
-		letter-spacing: 0.02em;
-		color:          var(--wp--preset--color--ink-soft);
-	}
-	.cl-byline .wp-block-post-date {
-		font-size: 0.875rem;
-		color:     var(--wp--preset--color--ink-muted);
-	}
-
-	/* Eyebrow label: the small uppercase line above a section heading.
-	   Registered as a block style (core/paragraph → is-style-cl-eyebrow)
-	   so editors can apply it from the block toolbar. */
-	.is-style-cl-eyebrow,
-	.cl-eyebrow {
-		font-size:      0.75rem;
-		font-weight:    400;
+	/* Eyebrow label */
+	.is-style-parcel-eyebrow {
+		font-family: var(--wp--preset--font-family--dm-sans);
+		font-size: var(--wp--preset--font-size--xs);
+		font-weight: 700;
 		letter-spacing: 0.12em;
 		text-transform: uppercase;
-		color:          var(--wp--preset--color--ink-muted);
+		color: var(--wp--preset--color--terracotta);
+		/* WCAG: terracotta at heading/label weight+tracking reads as large-scale
+		   emphasis, but to stay safely inside the AA large-text rule this class
+		   is only ever used at font-size--xs and above alongside 700 weight on
+		   short label text (never a full sentence of body copy). */
+	}
+
+	/* Lead paragraph — Fraunces italic, larger size, used as hero subhead. */
+	.is-style-parcel-lead {
+		font-family: var(--wp--preset--font-family--fraunces) !important;
+		font-style: italic !important;
+		font-weight: 500 !important;
+		font-size: var(--wp--preset--font-size--lg) !important;
+		line-height: 1.45 !important;
+		color: var(--wp--preset--color--ink-soft) !important;
+	}
+
+	/* Card — paper-soft surface, soft radius, gentle border. Used for
+	   testimonials and feature-grid captions. */
+	.is-style-parcel-card {
+		background: var(--wp--preset--color--paper-soft);
+		border-radius: 0.75rem;
+		padding: var(--wp--preset--spacing--6);
+	}
+
+	/* Price tag badge — terracotta bg / white text (4.57:1, safe at any size),
+	   pill radius. Used inside the promo band for the featured price. */
+	.is-style-parcel-price-tag {
+		display: inline-block !important;
+		background: var(--wp--preset--color--terracotta) !important;
+		color: var(--wp--preset--color--white) !important;
+		font-family: var(--wp--preset--font-family--dm-sans) !important;
+		font-weight: 700 !important;
+		font-size: var(--wp--preset--font-size--sm) !important;
+		letter-spacing: 0.02em !important;
+		padding: 0.5em 1.1em !important;
+		border-radius: 999px !important;
+	}
+
+	/* Feature circle — square crop, CSS-masked to a circle. Border in
+	   terracotta at large scale (the photo itself is the "text", so the
+	   contrast note doesn't apply — this is decorative framing). */
+	.wp-block-image.is-style-parcel-feature-circle img {
+		aspect-ratio: 1;
+		object-fit: cover;
+		border-radius: 50%;
+		border: 3px solid var(--wp--preset--color--terracotta-soft);
+	}
+
+	/* Annotation note — quiet DM Sans, ink-muted. The orienting line in an
+	   empty archive, search, or 404 state. */
+	.is-style-parcel-annotation {
+		font-family: var(--wp--preset--font-family--dm-sans);
+		font-size: var(--wp--preset--font-size--sm);
+		letter-spacing: 0.01em;
+		line-height: 1.7;
+		color: var(--wp--preset--color--ink-muted);
+	}
+
+	/* Testimonial card — quote mark accent using Fraunces, not an image or SVG. */
+	.parcel-testimonial-card {
+		display: flex;
+		flex-direction: column;
+		gap: var(--wp--preset--spacing--3);
+	}
+	.parcel-testimonial-card .wp-block-quote {
+		border: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	/* Menu category card — used inside the menu board to group items under
+	   a subheading with a terracotta top rule. */
+	.parcel-menu-category {
+		border-block-start: 2px solid var(--wp--preset--color--terracotta);
+		padding-block-start: var(--wp--preset--spacing--4);
 	}
 }
 
+/* =====================================================================
+   LAYER: blocks
+   ===================================================================== */
+@layer blocks {
+
+	.wp-block-navigation a:hover {
+		text-decoration: none;
+		color: var(--wp--preset--color--terracotta);
+	}
+
+	.wp-block-post-title a:hover {
+		text-decoration: none;
+		color: var(--wp--preset--color--terracotta);
+	}
+
+	.wp-block-post-featured-image img { border-radius: 0.5rem; }
+
+	.wp-block-separator {
+		border-color: var(--wp--preset--color--rule);
+		max-inline-size: 100%;
+	}
+
+	.wp-block-gallery .wp-block-image img { border-radius: 0.5rem; }
+
+	.wp-block-media-text { align-items: center; }
+
+	/* Buttons that sit on a roast-dark band need the inverse focus ring and
+	   an outline treatment for the secondary (order-ahead ghost) button. */
+	.parcel-band--roast .wp-block-button.is-style-outline .wp-block-button__link {
+		border-color: var(--wp--preset--color--roast-fg);
+		color: var(--wp--preset--color--roast-fg);
+	}
+}
+
+/* =====================================================================
+   LAYER: utilities
+   ===================================================================== */
 @layer utilities {
-	.cl-text-center { text-align: center; }
-	.cl-no-motion   { animation: none !important; transition: none !important; }
+
+	/* Dark roast band (footer, promo band) binds to EDITION-STABLE tokens
+	   (roast / roast-fg), not to the accent — so a dark band stays legible
+	   even if a future style variation inverts the neutral scale. */
+	.parcel-band--roast {
+		background: var(--wp--preset--color--roast);
+		color: var(--wp--preset--color--roast-fg);
+		--cl-focus-ring: var(--cl-focus-ring-inverse);
+	}
+	.parcel-band--roast a { color: var(--wp--preset--color--roast-fg); }
+	.parcel-band--roast a:hover { color: var(--wp--preset--color--terracotta-soft); }
+	.parcel-band--roast h2,
+	.parcel-band--roast h3,
+	.parcel-band--roast h4 { color: var(--wp--preset--color--roast-fg); }
+
+	.parcel-band--paper-soft { background: var(--wp--preset--color--paper-soft); }
+	.parcel-band--paper { background: var(--wp--preset--color--paper); }
+	.parcel-band--terracotta-soft { background: var(--wp--preset--color--terracotta-soft); }
 }
