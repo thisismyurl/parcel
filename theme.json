@@ -31,6 +31,7 @@
 			"_comment": "[SKIN] Fraunces (display serif, self-hosted OFL) for headings; DM Sans (warm geometric sans, self-hosted OFL) for body and UI. Fraunces carries the brand's character — it is what separates Parcel from every stock coffee-shop template that reaches for a generic script font.",
 			"fluid": true,
 			"customFontSize": false,
+			"defaultFontSizes": false,
 			"lineHeight": true,
 			"letterSpacing": true,
 			"textTransform": true,
@@ -79,6 +80,7 @@
 		"spacing": {
 			"_comment": "[CORE structure / SKIN values] A linear step scale, shared shape with the rest of the line.",
 			"customSpacingSize": false,
+			"defaultSpacingSizes": false,
 			"spacingSizes": [
 				{ "name": "1",  "slug": "1",  "size": "0.25rem" },
 				{ "name": "2",  "slug": "2",  "size": "0.5rem" },
@@ -140,7 +142,7 @@
 				"color": { "text": "var(--wp--preset--color--ink)" }
 			},
 			"h2": {
-				"typography": { "fontFamily": "var(--wp--preset--font-family--fraunces)", "fontSize": "var(--wp--preset--font-size--3xl)", "fontWeight": "600", "lineHeight": "1.08", "letterSpacing": "-0.015em" },
+				"typography": { "fontFamily": "var(--wp--preset--font-family--fraunces)", "fontSize": "var(--wp--preset--font-size--3-xl)", "fontWeight": "600", "lineHeight": "1.08", "letterSpacing": "-0.015em" },
 				"color": { "text": "var(--wp--preset--color--ink)" }
 			},
 			"h3": {
@@ -156,7 +158,7 @@
 				"color": { "text": "var(--wp--preset--color--ink-soft)" }
 			},
 			"h6": {
-				"typography": { "fontFamily": "var(--wp--preset--font-family--dm-sans)", "fontSize": "var(--wp--preset--font-size--2xs)", "fontWeight": "700", "letterSpacing": "0.08em", "textTransform": "uppercase" },
+				"typography": { "fontFamily": "var(--wp--preset--font-family--dm-sans)", "fontSize": "var(--wp--preset--font-size--2-xs)", "fontWeight": "700", "letterSpacing": "0.08em", "textTransform": "uppercase" },
 				"color": { "text": "var(--wp--preset--color--ink-muted)" }
 			},
 			"link": {
@@ -205,7 +207,7 @@
 				"color": { "text": "var(--wp--preset--color--ink-muted)" }
 			},
 			"core/post-terms": {
-				"typography": { "fontFamily": "var(--wp--preset--font-family--dm-sans)", "fontSize": "var(--wp--preset--font-size--2xs)", "fontWeight": "700", "letterSpacing": "0.1em", "textTransform": "uppercase" },
+				"typography": { "fontFamily": "var(--wp--preset--font-family--dm-sans)", "fontSize": "var(--wp--preset--font-size--2-xs)", "fontWeight": "700", "letterSpacing": "0.1em", "textTransform": "uppercase" },
 				"color": { "text": "var(--wp--preset--color--terracotta-deep)" }
 			},
 			"core/site-title": {
@@ -213,7 +215,7 @@
 				"color": { "text": "var(--wp--preset--color--ink)" }
 			},
 			"core/site-tagline": {
-				"typography": { "fontFamily": "var(--wp--preset--font-family--dm-sans)", "fontSize": "var(--wp--preset--font-size--2xs)", "letterSpacing": "0.1em", "textTransform": "uppercase" },
+				"typography": { "fontFamily": "var(--wp--preset--font-family--dm-sans)", "fontSize": "var(--wp--preset--font-size--2-xs)", "letterSpacing": "0.1em", "textTransform": "uppercase" },
 				"color": { "text": "var(--wp--preset--color--ink-muted)" }
 			},
 			"core/navigation": {

@@ -3,7 +3,7 @@ Contributors: thisismyurl
 Requires at least: 7.0
 Tested up to: 7.1
 Requires PHP: 8.1
-Stable tag: 1.6162.1430
+Stable tag: 1.6265.1630
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Tags: blog, e-commerce, one-column, two-columns, full-site-editing, block-patterns, editor-style, custom-colors, custom-logo, custom-menu, featured-images, accessibility-ready, translation-ready, rtl-language-support, wide-blocks, threaded-comments
@@ -85,6 +85,23 @@ Baseline support is declared (product gallery zoom, lightbox, and slider). Parce
 To build your own theme on Colophon, see GUIDE.md in the theme folder.
 
 == Changelog ==
+
+= 1.6265.1630 =
+Synced two fixes from Colophon core (1.6265.1620), found during independent
+wp-expert reviews of Kerf and Halyard, since this theme was still running
+the pre-fix core:
+
+* inc/bindings.php now registers the {slug}/footer-credit block-bindings
+  source that parts/footer.html has bound its credit line to since the line
+  existed. The source was never registered anywhere in the collection, so
+  the credit rendered as an empty paragraph in every footer. functions.php
+  also gained the file_exists() guard on the WP-CLI require that a separate
+  regression had dropped.
+* theme.json's h1/h2 styles had the same --2xl/--3xl kebab-case bug described above. Corrected.
+* settings.typography.defaultFontSizes and
+  settings.spacing.defaultSpacingSizes set to false, matching the rest of the
+  collection, so the editor's own auto-generated presets stop merging with
+  this theme's own curated set.
 
 = 1.6162.1430 =
 * Full re-skin from the Colophon starter core: Fraunces + DM Sans self-hosted OFL fonts, roast-and-cream palette (12 tokens, WCAG-checked).
