@@ -39,7 +39,7 @@ And it is a member of a small family of free WordPress themes, each copied from 
 * Core Web Vitals discipline — self-hosted fonts, font-display: swap, LCP font preloaded, no render-blocking requests.
 * Six-layer CSS cascade (reset, base, layout, components, blocks, utilities).
 * WP-CLI — wp parcel version, info, flush.
-* Filterable hooks at every extension point — content_width, skip_link_target, skip_link_label, register_nav_menus, copyright_date_format, register_image_sizes, register_block_styles, register_pattern_categories, onboarding_capability, footer_credit, and more.
+* Filterable hooks at every extension point — content_width, skip_link_target, skip_link_label, register_nav_menus, copyright_date_format, register_image_sizes, register_block_styles, register_pattern_categories, onboarding_capability, and more.
 * Translation-ready — every user-facing string is internationalised.
 * RTL-ready through CSS logical properties.
 
@@ -75,14 +75,6 @@ Yes. Add your font files to assets/fonts/, declare them in theme.json under sett
 
 Baseline support is declared (product gallery zoom, lightbox, and slider). Parcel doesn't ship custom WooCommerce templates — a block theme without any resolves to WooCommerce's own block-based templates automatically, inheriting Parcel's palette and type through theme.json. If you're running a full storefront, review WooCommerce's own template documentation for anything beyond the basics.
 
-= How do I remove the footer credit? =
-
-Two ways. In the Site Editor, open the Footer template part and delete the credit paragraph — takes about 30 seconds. Or, in a child theme or custom plugin, add:
-
-  add_filter( 'parcel/footer_credit', '__return_empty_string' );
-
-Either way. No hard feelings.
-
 == Installation ==
 
 1. In your WordPress admin, go to Appearance > Themes > Add New.
@@ -101,7 +93,7 @@ To build your own theme on Colophon, see GUIDE.md in the theme folder.
 * New block styles: parcel-menu-leader, parcel-menu-price, parcel-eyebrow, parcel-lead, parcel-card, parcel-price-tag, parcel-feature-circle, parcel-annotation.
 * New image crop sizes: parcel-hero (4:5), parcel-feature (1:1), parcel-gallery (1:1), parcel-story (3:4).
 * Rewrote front-page, page, single, archive, index, and 404 templates for the storefront design; renamed all skin CSS classes and block styles from the generic cl- prefix to parcel-.
-* Fixed the footer's copyright/credit block bindings to reference the parcel/copyright and parcel/footer-credit sources (were pointing at the unrelated colophon/ namespace, inherited unedited from the starter core).
+* Fixed the footer's copyright line to bind to the real parcel/copyright source (was pointing at the unrelated colophon/ namespace, inherited unedited from the starter core). The separate credit line bound to a source no theme in this line actually registers (parcel/footer-credit); removed it rather than point it at a filter that doesn't exist.
 * editor-style.css rewritten to mirror the new pull-quote, eyebrow, menu-leader, and card treatments.
 
 = 1.0.0 =
